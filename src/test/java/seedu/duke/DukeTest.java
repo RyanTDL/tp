@@ -201,10 +201,12 @@ class DukeTest {
 
     @Test
     public void generateSmartItineraryCommand_nullUserDetails_throwsException() {
-        Exception exception = assertThrows(FlirtForkException.class, () -> {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             new GenerateSmartItineraryCommand(null);
         });
         assertTrue(exception.getMessage().contains("User details are required"));
     }
+    
+
 
 }
