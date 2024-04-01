@@ -66,8 +66,10 @@ Expected outcome:
 ```
 I know you are excited to Flirt & Fork :) Here's how: 
 
-To take a look at potential restaurants, activities, or gifts simply send me the following: 
-'list'
+----------------------------------------- 
+| Command to type | Function of feature | 
+----------------------------------------- 
+1. list: Take a look at potential restaurants, activities, or gifts 
 
 ...
 ```
@@ -209,14 +211,32 @@ That's great! Enjoy your date!
 ```
 
 ### Generate a smart itinerary, based on your user profile: `smart`
-Generates out a smart itinerary, based off the user information given to Duke
+The smart command generates a personalised itinerary tailored to your preferences, including your favorite cuisine and preferred location. This feature takes into account the details you've provided to Duke to recommend a combination of food and activities that align with your tastes and interests.
 
-Format: `smart`
+Format: smart
 
-Expected outcome:
+Simply enter smart to let Duke create a custom itinerary for you. Ensure your user profile is updated with your current preferences for the best recommendations.
+
+Expected Outcome
+
+Upon executing the smart command, Flirt & Fork will display a curated itinerary that includes two food options and two activities. These suggestions are based on your default location and favourite cuisine, aiming to enhance your experience with personalized options.
+
+If Flirt & Fork successfully generates an itinerary, you'll see something like this:
+
+```
+Here is a rough itinerary for your date: 
+We begin with lunch at Five Guys, followed by some fun at Museum of Ice Cream.
+We proceed to have dinner at Tolido's Expresso Nook, and finish the night at Haw Par Villa.
+
 ```
 
-```
+In cases where your preferences are too unique or if an unexpected error occurs, Flirt & Fork will inform you that it was unable to generate a suitable itinerary, encouraging you to try again or adjust your profile preferences.
+
+Notes:
+
+- The itinerary suggestions are based on the current database of foods and activities within Flirt & Fork. For the best experience, make sure your user details are up to date.
+- If Flirt & Fork encounters difficulty in generating an itinerary due to overly unique preferences or other issues, you will receive a message encouraging you to adjust your preferences or try again.
+By using the smart command, you can discover new and exciting ways to enjoy your day, tailored specifically to what you love.
 
 
 ### Add a restaurant to your favourites: `food`
@@ -311,6 +331,8 @@ Format: `exit`
 
 Expected outcome:
 ```
+Love, like a good meal, is all about timing.
+Keep your love simmering and your fork ready, see you at the next course!
 
 ```
 
