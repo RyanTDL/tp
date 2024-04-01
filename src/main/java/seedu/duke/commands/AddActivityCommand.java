@@ -43,7 +43,8 @@ public class AddActivityCommand extends Command {
                 System.out.println("Invalid price/location given");
                 System.out.println("Please type in the command 'help' to view our Legend for reference");
             } else {
-                Activity activity = new Activity(inputtedDescription, inputtedLocation, inputtedPrice, "U");
+                Activity activity = new Activity("[Activity] " + inputtedDescription, 
+                        inputtedLocation, inputtedPrice, "U");
                 favourites.addFavourite(activity);
                 System.out.println("Cupid's arrow strikes! This is now in your favourites. \n" + activity);
                 ui.showFavourite("You've collected " + favourites.getFavourites().size() + " romantic treasures!");

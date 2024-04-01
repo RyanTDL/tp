@@ -43,7 +43,8 @@ public class AddFoodCommand extends Command {
                 System.out.println("Invalid price/location given");
                 System.out.println("Please type in the command 'help' to view our Legend for reference");
             } else {
-                Food food = new Food(inputtedDescription, inputtedLocation, inputtedPrice, inputtedCuisine, "U");
+                Food food = new Food("[Food] " +inputtedDescription, inputtedLocation, 
+                        inputtedPrice, inputtedCuisine, "U");
                 favourites.addFavourite(food);
                 System.out.println("Cupid's arrow strikes! This is now in your favourites. \n" + food);
                 ui.showFavourite("You've collected " + favourites.getFavourites().size() + " romantic treasures!");
