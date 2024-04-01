@@ -222,13 +222,13 @@ Expected outcome:
 ### Add a restaurant to your favourites: `food`
 Adds a new restaurant to your favourited list.
 
-Format: `food (name of eatery) (location) (price)`
+Format: `food [name of eatery] [location] [price] [cuisine]`
 
 * The `location` and `price` inputted must be inside the legend. 
 
 Example of usage: 
-`food East Coast BBQ NE B`
-`food Omakase C S`
+`food East Coast BBQ NE B J`
+`food Omakase C S J`
 
 Expected outcome:
 ```
@@ -239,7 +239,7 @@ Expected outcome:
 ### Add an activity to your favourites: `activity`
 Adds a new activity to your favourited list.
 
-Format: `activity (name of activity) (location) (price)`
+Format: `activity [name of activity] [location] [price]`
 
 * The `location` and `price` inputted must be inside the legend. 
 
@@ -255,7 +255,7 @@ Expected outcome:
 ### Find an entry from your favourited list: `find`
 Finds relevant entries from your favourited list, based on the keyword inputted.
 
-Format: `find (keyword)`
+Format: `find [keyword]`
 
 * The `keyword` is case-sensitive. `Japanese` will not yield the same result as `japanese`. 
 * The `keyword` can contain multiple words.

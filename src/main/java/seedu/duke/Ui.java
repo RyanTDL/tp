@@ -39,32 +39,22 @@ public class Ui {
 
     public void helpMessage() {
         System.out.println(
-            "To take a look at potential restaurants, activities, or gifts simply send me the following: \n" +
-            "'list'\n\n" +
-            "To let me know more about yourself, simply send me the following: \n" +
-            "'me'\n\n" +
-            "To generate a randomised date idea, simply send me the following: \n" +
-            "'idea'\n\n" +
-            "To generate a randomised gift idea, simply send me the following: \n" +
-            "'gift'\n\n" +
-            "To generate a suitable date itinerary based on your preferences, simply send me the following: \n" +
-            "'itinerary' [space] '(preferred location)' [space] '(preferred price)'\n\n" +
-            "To generate a smart itinerary, simply send me the following AFTER you have completed 'me': \n" +
-            "'smart'\n\n" +
-            "To add food to your favourites, simply send me the following: \n" +
-            "'food' [space] '(name of eatery)' [space] '(location)' [space] '(price)'\n\n" +
-            "To add an activity to your favourites, simply send me the following: \n" +
-            "'activity' [space] '(name of activity)'[space] '(location)' [space] '(price)'\n\n" +
-            "To find an entry from your favourites, simply send me the following: \n" +
-            "'find' [space] '(keyword)'\n\n" +
-            "To list out all your favourites, simply send me the following: \n" +
-            "'favourites'\n\n" +
-            "To delete an activity from your favourites, simply send me the following: \n" +
-            "'delete' [space] '(index of entry)'\n\n" +   
-            "To list out all your past date locations and restaurants, simply send me the following: \n" +
-            "'history'\n\n" +         
-            "To exit the program, simply send me the following: \n" +
-            "'exit'\n\n" +
+            "----------------------------------------- \n" +
+            "| Command to type | Function of feature | \n" +
+            "----------------------------------------- \n" +
+            "1. list: Take a look at potential restaurants, activities, or gifts \n\n" +
+            "2. me: Let me know more about yourself \n\n" +
+            "3. idea: Generate a randomised date idea \n\n" +
+            "4. itinerary LOCATION PRICE: Generate a suitable date itinerary based on your preferences \n\n" +
+            "5. smart: Generate a smart itinerary, based on your user profile \n\n" +
+            "6. gift: Generate a randomised gift idea \n\n" +
+            "7. food NAME_OF_EATERY LOCATION PRICE CUISINE: Add a restaurant to your favourites \n\n" +
+            "8. activity NAME_OF_ACTIVITY LOCATION PRICE: Add an activity to your favourites \n\n" +
+            "9. favourites: List out all your favourites \n\n" +
+            "10. delete INDEX_OF_ENTRY: Delete an entry from your favourites \n\n" +
+            "11. find KEYWORD: Find an entry from your favourites, based off keyword \n\n" +
+            "12. history: List out all your past date locations and restaurants \n\n" +
+            "13. exit: Exit the program \n\n" +
 
             "LEGEND (prices):\n" +
             "C: Cheap\n" +

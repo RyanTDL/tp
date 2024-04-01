@@ -63,9 +63,14 @@ public class GenerateItineraryCommand extends Command {
             } else {
                 System.out.println("We apologise! Perhaps you could try again?");
             }
+
         } catch (IllegalArgumentException e) {
-            System.out.println("We could not generate a suitable itineray based on your inputs! Sorry!!");
+            System.out.println("We could not generate a suitable itinerary based on your inputs! Sorry!!");
             LOGGER.log(Level.SEVERE, "Invalid arguments given");
+        } catch (FlirtForkException e) {
+            System.out.println("We could not generate a suitable itinerary based on your inputs! Sorry!!"); 
+            System.out.println("Perhaps you could try a different location or budget?");
+            LOGGER.log(Level.SEVERE, "Insufficient suitable locations in database");
         }
     }
 }
