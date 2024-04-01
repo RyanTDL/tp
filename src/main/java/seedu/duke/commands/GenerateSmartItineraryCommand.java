@@ -73,6 +73,9 @@ public class GenerateSmartItineraryCommand extends Command {
             System.out.println(preferredLocation);
             System.out.println("You are too unique of an individual for smart itineraries! Sorry!!");
             LOGGER.log(Level.SEVERE, "Invalid arguments given");
+        } catch (FlirtForkException e) {
+            System.out.println("We could not generate a suitable itineray!"); 
+            LOGGER.log(Level.SEVERE, "Insufficient suitable locations in database");
         }
     }
     
