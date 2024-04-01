@@ -32,6 +32,10 @@ public class GenerateSmartItineraryCommand extends Command {
      *                    cuisine.
      */
     public GenerateSmartItineraryCommand(UserDetails userDetails) {
+        if (userDetails == null) {
+            LOGGER.log(Level.SEVERE, "User details are not provided at command creation.");
+            throw new IllegalArgumentException("User details are required at command creation.");
+        }
         this.preferredLocation = userDetails.getLocation();
         this.preferredCuisine = userDetails.getCuisine();
     }
@@ -56,11 +60,6 @@ public class GenerateSmartItineraryCommand extends Command {
     @Override
     public void execute(FavouritesList favourites, FoodList foods, ActivityList activities, Ui ui, Storage storage,
             UserDetails userDetails, GiftList gifts) throws FlirtForkException {
-        // Check if userDetails is null
-        if (userDetails == null) {
-            LOGGER.log(Level.SEVERE, "User details are not provided.");
-            throw new FlirtForkException("User details are required to generate a smart itinerary.");
-        }
 
         Food food1;
         Food food2;
