@@ -48,7 +48,7 @@ public class Ui {
             "4. itinerary LOCATION PRICE: Generate a suitable date itinerary based on your preferences \n\n" +
             "5. smart: Generate a smart itinerary, based on your user profile \n\n" +
             "6. gift: Generate a randomised gift idea \n\n" +
-            "7. food NAME_OF_EATERY LOCATION PRICE: Add a restaurant to your favourites \n\n" +
+            "7. food NAME_OF_EATERY LOCATION PRICE CUISINE: Add a restaurant to your favourites \n\n" +
             "8. activity NAME_OF_ACTIVITY LOCATION PRICE: Add an activity to your favourites \n\n" +
             "9. favourites: List out all your favourites \n\n" +
             "10. delete INDEX_OF_ENTRY: Delete an entry from your favourites \n\n" +
