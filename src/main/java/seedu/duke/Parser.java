@@ -71,8 +71,11 @@ public class Parser {
         case "itinerary":
             if (arguments.trim().isEmpty()) {
                 throw new FlirtForkEmptyException();
+            } else if (arguments.split(" ").length!=2) {
+                throw new FlirtForkException("Please follow the format: 'itinerary LOCATION PRICE'");
+            } else {
+                return new GenerateItineraryCommand(arguments);
             }
-            return new GenerateItineraryCommand(arguments);
         case "smart":
             if (!arguments.trim().isEmpty()) {
                 throw new FlirtForkEmptyException();
