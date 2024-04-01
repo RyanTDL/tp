@@ -19,13 +19,13 @@ public class AddFoodCommand extends Command {
         this.description = description;
     }
 
-    private static final String[] prices = {"C", "B", "A", "P", "S"};
-    private static final String[] locations = {"E", "W", "C", "S", "NE", "ACC"};
-
     @Override
     public void execute(FavouritesList favourites, FoodList foods, ActivityList activities, Ui ui,
                         Storage storage, UserDetails userDetails, GiftList gifts) throws FlirtForkException {
         
+                            
+        String[] prices = {"C", "B", "A", "P", "S"};
+        String[] locations = {"E", "W", "C", "S", "NE", "ACC"};
         String[] inputCommands = description.split(" ");
         // To deal with descriptions with multiple spaces: "Bistro C C W" versus "Bistro Bar C C W"
         try {
@@ -39,7 +39,8 @@ public class AddFoodCommand extends Command {
             if (inputtedLocation.length()>3 || inputtedPrice.length()!=1) {
                 System.out.println("Invalid inputs entered");
                 System.out.println("Please follow the format: 'food NAME_OF_EATERY LOCATION PRICE CUISINE'");
-            } else if (!Arrays.asList(prices).contains(inputtedPrice) || !Arrays.asList(locations).contains(inputtedLocation)){
+            } else if (!Arrays.asList(prices).contains(inputtedPrice) || 
+                    !Arrays.asList(locations).contains(inputtedLocation)){
                 System.out.println("Invalid price/location given");
                 System.out.println("Please type in the command 'help' to view our Legend for reference");
             } else {
