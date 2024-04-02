@@ -10,6 +10,8 @@ import seedu.duke.Ui;
 import seedu.duke.UserDetails;
 import seedu.duke.exceptions.FlirtForkException;
 
+import java.util.Scanner;
+
 /**
  * Represents a command to list options of a specified type (food, activities, or gifts).
  */
@@ -18,10 +20,16 @@ public class ListOptionsCommand extends Command {
 
     /**
      * Constructs a ListOptionsCommand object with the specified option type.
+     * Will ask for the user's input until a valid option type is given for construction.
      *
      * @param optionType The type of options to list (food, activities, or gifts).
      */
     public ListOptionsCommand(String optionType) {
+        while (!optionType.equals("food") && !optionType.equals("activities") && !optionType.equals("gifts")) {
+            System.out.println("Invalid option! Please choose 'food', 'activities' or 'gifts'.");;
+            Scanner scanner = new Scanner(System.in);
+            optionType = scanner.nextLine().toLowerCase();
+        }
         this.optionType = optionType;
     }
 
