@@ -131,6 +131,11 @@ public class Ui {
         System.out.println(message);
     }
 
+    /**
+     * Reads and validates the user's location input.
+     *
+     * @return The user's validated location input (E, W, C, S, or NE).
+     */
     public String readUserLocation() {
         String input = readCommand();
         boolean isValid;
@@ -147,6 +152,11 @@ public class Ui {
         return input;
     }
 
+    /**
+     * Reads and validates the user's age input.
+     *
+     * @return The user's validated age input as a String.
+     */
     public String readAge() {
         int age;
         while (true) {
@@ -160,6 +170,11 @@ public class Ui {
         }
     }
 
+    /**
+     * Reads and validates the user's cuisine preference input.
+     *
+     * @return The user's validated cuisine preference input (W, F, J, C, T, K, I, or S).
+     */
     public String readUserCuisine() {
         String input = readCommand();
         boolean isValid;
@@ -184,6 +199,11 @@ public class Ui {
         return input;
     }
 
+    /**
+     * Reads and validates the user's relationship status input.
+     *
+     * @return The user's validated relationship status input (M, R, F, D, S, or X).
+     */
     public String readUserStatus() {
         String input = readCommand();
         boolean isValid;
