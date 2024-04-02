@@ -1,7 +1,5 @@
 package seedu.duke;
 
-import seedu.duke.exceptions.FlirtForkException;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -182,6 +180,28 @@ public class Ui {
             input = readCommand();
             isValid = input.equals("W") || input.equals("F") || input.equals("J") || input.equals("C")
                     || input.equals("T") ||input.equals("K") || input.equals("I") || input.equals("S");
+        }
+        return input;
+    }
+
+    public String readUserStatus() {
+        String input = readCommand();
+        boolean isValid;
+
+        isValid = input.equals("M") || input.equals("R") || input.equals("F")
+                || input.equals("D") || input.equals("S") ||input.equals("X");
+
+        while(!isValid) {
+            showMessage("Please enter your status in this format.\n");
+            showMessage("Enter 'M' if you are Married");
+            showMessage("Enter 'R' if you are in a serious relationship");
+            showMessage("Enter 'F' if you are having a fling");
+            showMessage("Enter 'D' if you are dating/testing the waters");
+            showMessage("Enter 'S' if you are single and ready to mingle");
+            showMessage("Enter 'X' if you are single and only looking to hangout with friends");
+            input = readCommand();
+            isValid = input.equals("M") || input.equals("R") || input.equals("F")
+                    || input.equals("D") || input.equals("S") ||input.equals("X");
         }
         return input;
     }

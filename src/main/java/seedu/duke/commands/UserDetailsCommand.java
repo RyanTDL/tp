@@ -83,7 +83,7 @@ public class UserDetailsCommand extends Command {
         ui.showMessage("Enter 'D' if you are dating/testing the waters");
         ui.showMessage("Enter 'S' if you are single and ready to mingle");
         ui.showMessage("Enter 'X' if you are single and only looking to hangout with friends");
-        String status = ui.readCommand();
+        String status = ui.readUserStatus();
         ui.showMessage("Thanks for letting me know your relationship status! :)");
         System.out.println(HORIZONTAL);
 
