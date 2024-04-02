@@ -44,7 +44,7 @@ public class UserDetailsCommand extends Command {
         System.out.println(HORIZONTAL);
 
         ui.showMessage("Please enter your age:");
-        String age = ui.readCommand();
+        String age = ui.readAge();
         ui.showMessage("Wow, you're " + age + " years young! This might be handy information.");
         System.out.println(HORIZONTAL);
 
@@ -59,7 +59,7 @@ public class UserDetailsCommand extends Command {
         ui.showMessage("C: Central");
         ui.showMessage("S: South");
         ui.showMessage("NE: NorthEast");
-        String location = ui.readCommand();
+        String location = ui.readUserLocation();
         ui.showMessage("Thanks! Don't worry, I won't let the rest know where you stay ;)!");
         System.out.println(HORIZONTAL);
 

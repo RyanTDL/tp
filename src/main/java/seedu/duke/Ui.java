@@ -1,5 +1,7 @@
 package seedu.duke;
 
+import seedu.duke.exceptions.FlirtForkException;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -129,5 +131,34 @@ public class Ui {
 
     public void showMessage(String message) {
         System.out.println(message);
+    }
+
+    public String readUserLocation() {
+        String input = readCommand();
+        boolean isValid;
+
+        isValid = input.equals("E") || input.equals("W") || input.equals("C")
+                || input.equals("S") || input.equals("NE");
+
+        while (!isValid) {
+            System.out.println("Invalid location, please enter E, W, C, S or NE");
+            input = readCommand();
+            isValid = input.equals("E") || input.equals("W") || input.equals("C")
+                    || input.equals("S") || input.equals("NE");
+        }
+        return input;
+    }
+
+    public String readAge() {
+        int age;
+        while (true) {
+            try {
+                String input = readCommand();
+                age = Integer.parseInt(input);
+                return input;
+            } catch (NumberFormatException e) {
+                showMessage("Invalid input. Please enter a valid integer age.");
+            }
+        }
     }
 }
