@@ -130,4 +130,122 @@ public class Ui {
     public void showMessage(String message) {
         System.out.println(message);
     }
+
+    /**
+     * Reads and validates the user's location input.
+     *
+     * @return The user's validated location input (E, W, C, S, or NE).
+     */
+    public String readUserLocation() {
+        String input = readCommand();
+        boolean isValid;
+
+        isValid = input.equals("E") || input.equals("W") || input.equals("C")
+                || input.equals("S") || input.equals("NE");
+
+        while (!isValid) {
+            showMessage("Invalid location, please enter E, W, C, S or NE.");
+            input = readCommand();
+            isValid = input.equals("E") || input.equals("W") || input.equals("C")
+                    || input.equals("S") || input.equals("NE");
+        }
+        return input;
+    }
+
+    /**
+     * Reads and validates the user's age input.
+     *
+     * @return The user's validated age input as a String.
+     */
+    public String readAge() {
+        int age;
+        while (true) {
+            try {
+                String input = readCommand();
+                age = Integer.parseInt(input);
+                return input;
+            } catch (NumberFormatException e) {
+                showMessage("Invalid input. Please enter a valid integer age.");
+            }
+        }
+    }
+
+    /**
+     * Reads and validates the user's cuisine preference input.
+     *
+     * @return The user's validated cuisine preference input (W, F, J, C, T, K, I, or S).
+     */
+    public String readUserCuisine() {
+        String input = readCommand();
+        boolean isValid;
+
+        isValid = input.equals("W") || input.equals("F") || input.equals("J") || input.equals("C")
+                || input.equals("T") ||input.equals("K") || input.equals("I") || input.equals("S");
+
+        while (!isValid) {
+            showMessage("Please enter your preferences in this format.\n");
+            showMessage("W: Western");
+            showMessage("F: Fusion");
+            showMessage("J: Japanese");
+            showMessage("C: Chinese");
+            showMessage("T: Thai");
+            showMessage("K: Korean");
+            showMessage("I: Italian");
+            showMessage("S: Spanish");
+            input = readCommand();
+            isValid = input.equals("W") || input.equals("F") || input.equals("J") || input.equals("C")
+                    || input.equals("T") ||input.equals("K") || input.equals("I") || input.equals("S");
+        }
+        return input;
+    }
+
+    /**
+     * Reads and validates the user's relationship status input.
+     *
+     * @return The user's validated relationship status input (M, R, F, D, S, or X).
+     */
+    public String readUserStatus() {
+        String input = readCommand();
+        boolean isValid;
+
+        isValid = input.equals("M") || input.equals("R") || input.equals("F")
+                || input.equals("D") || input.equals("S") ||input.equals("X");
+
+        while(!isValid) {
+            showMessage("Please enter your status in this format.\n");
+            showMessage("Enter 'M' if you are Married");
+            showMessage("Enter 'R' if you are in a serious relationship");
+            showMessage("Enter 'F' if you are having a fling");
+            showMessage("Enter 'D' if you are dating/testing the waters");
+            showMessage("Enter 'S' if you are single and ready to mingle");
+            showMessage("Enter 'X' if you are single and only looking to hangout with friends");
+            input = readCommand();
+            isValid = input.equals("M") || input.equals("R") || input.equals("F")
+                    || input.equals("D") || input.equals("S") ||input.equals("X");
+        }
+        return input;
+    }
+
+    /**
+     * Reads and validates the user's gender input.
+     *
+     * @return The user's validated gender input (Male, Female, or Other).
+     */
+    public String readUserGender() {
+        String input = readCommand();
+        boolean isValid;
+
+        isValid = input.equals("Male") || input.equals("Female") || input.equals("Other");
+
+        while(!isValid) {
+            showMessage("Please enter your gender in this format.\n");
+            showMessage("'Male' if you are a male");
+            showMessage("'Female' if you are a female");
+            showMessage("'Other' if its none of the above");
+
+            input = readCommand();
+            isValid = input.equals("Male") || input.equals("Female") || input.equals("Other");
+        }
+        return input;
+    }
 }
