@@ -30,20 +30,23 @@ public class GenerateIdeaCommand extends Command {
         Idea idea = new Idea(food, activity);
         System.out.println(idea);
 
-        System.out.println("Are you satisfied with the date idea? [Yes/No]");
-        userSatisfied = ui.readCommand().toLowerCase();
-        if (userSatisfied.equalsIgnoreCase("yes")) {
-            System.out.println("That's great! Enjoy your date!");
-            food.markComplete();
-            activity.markComplete();
-            storage.saveFood(foods);
-            storage.saveActivity(activities);
-            return;
-        } else if (userSatisfied.equalsIgnoreCase("no")) {
-            System.out.println("We apologise! Perhaps you could try again?");
-        } else {
-            ui.ideaSatisfiedErrorMessage();
-            logger.log(Level.WARNING, "input error");
+        while (true) {
+            System.out.println("Are you satisfied with the date idea? [Yes/No]");
+            userSatisfied = ui.readCommand().toLowerCase();
+            if (userSatisfied.equalsIgnoreCase("yes")) {
+                System.out.println("That's great! Enjoy your date!");
+                food.markComplete();
+                activity.markComplete();
+                storage.saveFood(foods);
+                storage.saveActivity(activities);
+                return;
+            } else if (userSatisfied.equalsIgnoreCase("no")) {
+                System.out.println("We apologise! Perhaps you could try again by typing 'idea'?");
+                return;
+            } else {
+                ui.ideaSatisfiedErrorMessage();
+                logger.log(Level.WARNING, "input error");
+            }
         }
     }
 }
