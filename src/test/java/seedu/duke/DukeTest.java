@@ -67,8 +67,6 @@ class DukeTest {
             assertTrue(output.contains("You can do"));
             assertTrue(output.contains("and have a nice meal at"));
             assertTrue(output.length() > 36);
-        } catch (FlirtForkException e) {
-            ui.errorMessage(e.getMessage());
         } finally {
             System.setIn(sysInBackup);
             System.setOut(sysOutBackup);
