@@ -43,6 +43,10 @@ The following activity diagram summarises what happens when a user inputs `idea`
 
 <img src="images/GenerateIdeaActivityDiagram.png" height = "375">
 
+The following sequence diagram shows how `idea` causes various entities to interact with one another:
+
+<img src="images/GenerateIdeaCommandSequenceDiagram.png">
+
 ### [Implemented] Smart Itinerary Generation feature
 
 #### Implementation
