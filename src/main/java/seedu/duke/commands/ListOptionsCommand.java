@@ -48,6 +48,9 @@ public class ListOptionsCommand extends Command {
     @Override
     public void execute(FavouritesList favourites, FoodList foods, ActivityList activities,
                         Ui ui, Storage storage, UserDetails userDetails, GiftList gifts) throws FlirtForkException {
+        assert (optionType.equals("food") || optionType.equals("activities")
+                || optionType.equals("gifts")) : "optionType should be food, activities or gifts";
+
         switch(optionType) {
         case "food":
             printFoodList(ui, foods);
