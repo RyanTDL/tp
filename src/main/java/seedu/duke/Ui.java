@@ -141,7 +141,7 @@ public class Ui {
                 || input.equals("S") || input.equals("NE");
 
         while (!isValid) {
-            System.out.println("Invalid location, please enter E, W, C, S or NE");
+            showMessage("Invalid location, please enter E, W, C, S or NE.");
             input = readCommand();
             isValid = input.equals("E") || input.equals("W") || input.equals("C")
                     || input.equals("S") || input.equals("NE");
@@ -160,5 +160,29 @@ public class Ui {
                 showMessage("Invalid input. Please enter a valid integer age.");
             }
         }
+    }
+
+    public String readUserCuisine() {
+        String input = readCommand();
+        boolean isValid;
+
+        isValid = input.equals("W") || input.equals("F") || input.equals("J") || input.equals("C")
+                || input.equals("T") ||input.equals("K") || input.equals("I") || input.equals("S");
+
+        while (!isValid) {
+            showMessage("Please enter your preferences in this format.\n");
+            showMessage("W: Western");
+            showMessage("F: Fusion");
+            showMessage("J: Japanese");
+            showMessage("C: Chinese");
+            showMessage("T: Thai");
+            showMessage("K: Korean");
+            showMessage("I: Italian");
+            showMessage("S: Spanish");
+            input = readCommand();
+            isValid = input.equals("W") || input.equals("F") || input.equals("J") || input.equals("C")
+                    || input.equals("T") ||input.equals("K") || input.equals("I") || input.equals("S");
+        }
+        return input;
     }
 }

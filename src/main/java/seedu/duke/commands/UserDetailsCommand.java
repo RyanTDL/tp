@@ -72,7 +72,7 @@ public class UserDetailsCommand extends Command {
         ui.showMessage("K: Korean");
         ui.showMessage("I: Italian");
         ui.showMessage("S: Spanish");
-        String cuisine = ui.readCommand();
+        String cuisine = ui.readUserCuisine();
         ui.showMessage("Thanks, this will be useful...");
         System.out.println(HORIZONTAL);
 
