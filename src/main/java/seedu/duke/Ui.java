@@ -225,4 +225,27 @@ public class Ui {
         }
         return input;
     }
+
+    /**
+     * Reads and validates the user's gender input.
+     *
+     * @return The user's validated gender input (Male, Female, or Other).
+     */
+    public String readUserGender() {
+        String input = readCommand();
+        boolean isValid;
+
+        isValid = input.equals("Male") || input.equals("Female") || input.equals("Other");
+
+        while(!isValid) {
+            showMessage("Please enter your gender in this format.\n");
+            showMessage("'Male' if you are a male");
+            showMessage("'Female' if you are a female");
+            showMessage("'Other' if its none of the above");
+
+            input = readCommand();
+            isValid = input.equals("Male") || input.equals("Female") || input.equals("Other");
+        }
+        return input;
+    }
 }

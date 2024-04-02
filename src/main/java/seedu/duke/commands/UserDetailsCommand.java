@@ -48,8 +48,8 @@ public class UserDetailsCommand extends Command {
         ui.showMessage("Wow, you're " + age + " years young! This might be handy information.");
         System.out.println(HORIZONTAL);
 
-        ui.showMessage("Please enter your gender:");
-        String gender = ui.readCommand();
+        ui.showMessage("Please enter your gender(Male/Female/Other):\n");
+        String gender = ui.readUserGender();
         ui.showMessage("I see you're a " + gender + "!");
         System.out.println(HORIZONTAL);
 
