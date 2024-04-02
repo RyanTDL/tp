@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+actor User as User
+
+User -> Ui: idea
+Ui -> GenerateIdeaCommand: GenerateIdeaCommand()
+activate GenerateIdeaCommand
+
+loop userSatisfied != yes
+    GenerateIdeaCommand -> FoodList: getRandomFood()
+    activate FoodList
+    FoodList --> GenerateIdeaCommand
+    deactivate FoodList
+
+    GenerateIdeaCommand -> ActivityList: getRandomActivity()
+    activate ActivityList
+    ActivityList --> GenerateIdeaCommand
+    deactivate ActivityList
+
+    GenerateIdeaCommand -> Idea: Idea(Food, Activity)
+    activate Idea
+    Idea --> GenerateIdeaCommand:
+    deactivate Idea
+    GenerateIdeaCommand --> User: print(idea)
+    deactivate GenerateIdeaCommand
+end
+
+User -> GenerateIdeaCommand: yes
+activate GenerateIdeaCommand
+GenerateIdeaCommand -> Storage: saveFood(foods)
+activate Storage
+GenerateIdeaCommand -> Storage: saveActivity(activities)
+GenerateIdeaCommand --> User: print(doneMessage)
+deactivate Storage
+deactivate GenerateIdeaCommand
+destroy GenerateIdeaCommand
+
+@enduml
