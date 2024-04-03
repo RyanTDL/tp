@@ -66,6 +66,27 @@ Step 3. The execute method of ```GenerateSmartItineraryCommand``` is invoked. It
 
 ![Smart Itinerary Generation Sequence Diagram](images/GenerateSmartItineraryCommandSequenceDiagram.png)
 
+### [Implemented] User Details Collection
+
+#### Implementation
+The UserDetailsCommand is responsible for collecting personal information from the user, which includes name, age, gender, location, favorite cuisine, and relationship status. This command may also conditionally request an anniversary date based on the user's relationship status. The information is then utilized to enhance the application's service and recommendations.
+
+This command extends the Command class and implements the following operations:
+
+`UserDetailsCommand#execute()` — Interacts with the user via the UI to gather personal information and saves it using the `Storage` class.
+Personal details such as name, age, and gender are stored in a `UserDetails` object, which is then serialized to a file by `Storage`.
+These operations are exposed in the system as follows:
+
+The `UserDetailsCommand` is instantiated and called when the user chooses to enter or update their personal details.
+The execute method of this command interacts with other components like `Ui` for input/output and `Storage` for persisting user data.
+Below is the sequence of actions performed by the `UserDetailsCommand` to collect user information.
+
+![User Details Collection Sequence Diagram](images/UserDetailsCommandSequenceDiagram.png)
+
+Each step of the execute method interacts with the user to collect a specific piece of information. Conditional logic is applied to request the anniversary date if the relationship status warrants it. After all information is gathered, the UserDetails object's properties are set accordingly. The final step involves the Storage component saving the details, thus persisting the data for future sessions.
+
+The above sequence diagram depicts the interaction between UserDetailsCommand, the UI, and the Storage component, which highlights the flow of data collection and storage.
+
 
 ### [Proposed] History Tracking feature
 
