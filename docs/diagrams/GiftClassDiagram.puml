@@ -1,0 +1,56 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Favourites {
+    - description : String
+    + getDescription() : String
+    + toString() : String
+    + toFileFormat() : String
+}
+
+class Gift {
+    - completionStatus : String
+    + markComplete() : void
+    + getCompletionStatus() : String
+}
+
+class GiftList {
+    - gifts : ArrayList<Gift>
+    + size() : int
+    + get(int) : Gift
+    + getRandomGift() : Gift
+}
+
+class Ui {
+    - scanner : Scanner
+    + listGifts() : void
+    + listCommand() : void
+    + readCommand() : String
+}
+
+class GenerateGiftCommand {
+    + execute(...) : void
+}
+
+class Storage {
+    - filePath : String
+    + loadGift() : ArrayList<Gift>
+    + saveGift(GiftList) : void
+}
+
+class Parser {
+    + parseCommand(String, UserDetails) : Command
+    + parseGift(String) : Gift
+}
+
+Favourites <|-- Gift
+Gift "1" -- "0..*" GiftList
+GenerateGiftCommand ..> GiftList : uses >
+GenerateGiftCommand ..> Ui : interacts >
+GenerateGiftCommand ..> Storage : uses >
+Ui ..> GiftList : displays >
+Storage ..> Gift : reads/writes >
+Parser ..> GenerateGiftCommand : creates >
+Parser ..> Gift : creates >
+
+@enduml

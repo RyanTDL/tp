@@ -99,7 +99,7 @@ These operations are detailed in the ```Parser``` class, where the ```parseComma
 The ```GenerateGiftCommand```, ```GenerateIdeaCommand```, ```GenerateItineraryCommand``` and ```GenerateSmartItineraryCommand``` update the relevant txt files (GiftList.txt, ActivityList.txt, and FoodList.txt), toggling the "U" indicator, which represents uncomplete, to be "C", which represents complete. This is done by calling the markComplete() method under the ```Activity```/```Food```/```Gift``` class. Updating their status to be marked as completed ensures that they are not called in future
 
 
-## Gift-related Features
+### [Implemented] Generate Random Gift Suggestion
 
 This feature enhances the user experience by offering access to a curated list of gift ideas and enabling the generation of random gift suggestions. 
 
@@ -113,6 +113,8 @@ The feature comprise several key components:
 - `ListOptionsCommands` Class: Provides functionality to list gifts among other options of food and activity.
 - `ViewHistoryCommand` Class: Displays a history of saved gift ideas.
 - `Storage` Class: Manages data persistence for gifts.
+
+<img src="images/GiftClassDiagram.png" height = "650">
 
 **Component Interaction Flow:**
 1. Initialisation
@@ -138,6 +140,8 @@ The feature comprise several key components:
 5. Data Saving
 
     - Changes to gift selections are persisted back to the `GiftList.txt` file via `Storage`, ensuring user choices are saved across different sessions.
+
+<img src="images/GiftSequenceDiagram.png">
 
 #### Detailed Implementation
 
