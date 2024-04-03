@@ -122,7 +122,7 @@ Peek into Cupid's own gift collection!
 ...
 ```
 
-### Generate a randomised date idea: `idea`
+### [Bugged] Generate a randomised date idea: `idea`
 Generates out a randomised date idea, consisting of 1 restaurant and 1 activity from our curated collection. After receiving the suggestion, users have the option to accept or request for another idea.
 
 Example of usage: `idea`
@@ -148,6 +148,7 @@ Expected outcome:
 ```
 That's great! Enjoy your date!
 ```
+Note: Saving an idea to history does not work as of v2.0 and will be fixed in the next release.
 
 ### Generate a randomised gift suggestion: `gift`
 Generates a randomised gift idea. Each suggestion comes with a category tag `[Creative]`, `[Food]`, `[Accessory]`, etc to give users a sense of what type of gift it is.
@@ -209,6 +210,7 @@ Expected outcome:
 ```
 That's great! Enjoy your date!
 ```
+Note: Saving an itinerary to history does not work as of v2.0 and will be fixed in the next release.
 
 ### Generate a smart itinerary, based on your user profile: `smart`
 The smart command generates a personalised itinerary tailored to your preferences, including your favorite cuisine and preferred location. This feature takes into account the details you've provided to Duke to recommend a combination of food and activities that align with your tastes and interests.
@@ -323,7 +325,7 @@ Your journey of love and taste continues~
 ```
 
 
-### List out all entries from your past date history: `history`
+### [Bugged] List out all entries from your past date history: `history`
 Lists out all the previous restaurants and activites completed on previous dates. Whenever `yes` is inputted for generating an idea or itinerary, it is assumed that the user will follow that date plan and hence, the suggested locations will be saved in the history.
 
 Format: `history`
@@ -346,6 +348,7 @@ These are the restaurants you have marked:
 
 These are the gifts you've marked:
 ```
+Note: This feature does not work correctly as of v2.0 and will be fixed in the next release.
 
 ### Exit the program: `exit`
 Exits the program.
