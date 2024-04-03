@@ -213,11 +213,11 @@ That's great! Enjoy your date!
 ### Generate a smart itinerary, based on your user profile: `smart`
 The smart command generates a personalised itinerary tailored to your preferences, including your favorite cuisine and preferred location. This feature takes into account the details you've provided to Duke to recommend a combination of food and activities that align with your tastes and interests.
 
-Format: smart
+Format: `smart`
 
 Simply enter smart to let Duke create a custom itinerary for you. Ensure your user profile is updated with your current preferences for the best recommendations.
 
-Expected Outcome
+Expected Outcome:
 
 Upon executing the smart command, Flirt & Fork will display a curated itinerary that includes two food options and two activities. These suggestions are based on your default location and favourite cuisine, aiming to enhance your experience with personalized options.
 
@@ -227,7 +227,6 @@ If Flirt & Fork successfully generates an itinerary, you'll see something like t
 Here is a rough itinerary for your date: 
 We begin with lunch at Five Guys, followed by some fun at Museum of Ice Cream.
 We proceed to have dinner at Tolido's Expresso Nook, and finish the night at Haw Par Villa.
-
 ```
 
 In cases where your preferences are too unique or if an unexpected error occurs, Flirt & Fork will inform you that it was unable to generate a suitable itinerary, encouraging you to try again or adjust your profile preferences.
@@ -252,7 +251,9 @@ Example of usage:
 
 Expected outcome:
 ```
-
+Cupid's arrow strikes! This is now in your favourites. 
+[Food] East Coast BBQ
+You've collected 1 romantic treasures!
 ```
 
 
@@ -269,7 +270,9 @@ Example of usage:
 
 Expected outcome:
 ```
-
+Cupid's arrow strikes! This is now in your favourites. 
+[Activity] Paragliding
+You've collected 2 romantic treasures!
 ```
 
 ### Find an entry from your favourited list: `find`
@@ -282,11 +285,12 @@ Format: `find [keyword]`
 
 Example of usage: 
 `find thrifting`
-`find thrift shopping`
+`find BBQ`
 
 Expected outcome:
 ```
-
+Eureka! Your cupid's arrow hit the target! We found these matches for you:
+1. [Food] East Coast BBQ
 ```
 
 ### List out all entries in your favourited list: `favourites`
@@ -296,7 +300,9 @@ Format: `favourites`
 
 Expected outcome:
 ```
-
+Drumroll, please! Presenting the stars of your romantic sky: 
+1. [Food] East Coast BBQ
+2. [Activity] Paragliding
 ```
 
 ### Delete an entry from your favourited list: `delete`
@@ -310,18 +316,35 @@ Example of usage:
 
 Expected outcome:
 ```
-
+Poof! Sayonara~ This favourite has been removed: 
+[Activity] Paragliding
+Now you have 1 romantic treasures!
+Your journey of love and taste continues~
 ```
 
 
 ### List out all entries from your past date history: `history`
-Lists out all the previous restaurants and activites completed on previous dates.
+Lists out all the previous restaurants and activites completed on previous dates. Whenever `yes` is inputted for generating an idea or itinerary, it is assumed that the user will follow that date plan and hence, the suggested locations will be saved in the history.
 
 Format: `history`
 
 Expected outcome:
 ```
+These are the activities you have marked:
+1. Singapore River Cruise
+2. Katong Food Walk
+3. Changi Museum Visit
+4. Marina Bay Sands Casino
+5. Singapore Flyer Dining
 
+These are the restaurants you have marked:
+1. Missus
+2. Five Oars
+3. Knead To Eat
+4. Idaten Udon
+5. Watami Japanese Dining
+
+These are the gifts you've marked:
 ```
 
 ### Exit the program: `exit`
