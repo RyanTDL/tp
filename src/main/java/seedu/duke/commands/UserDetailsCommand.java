@@ -104,5 +104,7 @@ public class UserDetailsCommand extends Command {
         storage.saveUserDetails(userDetails);
 
         ui.showMessage("User details saved successfully!");
+        ui.showMessage("Curious about what you can do? Just type 'help' for a sprinkle of tips! ");
+        System.out.println(HORIZONTAL);
     }
 }
