@@ -88,16 +88,33 @@ Each step of the execute method interacts with the user to collect a specific pi
 The above sequence diagram depicts the interaction between UserDetailsCommand, the UI, and the Storage component, which highlights the flow of data collection and storage.
 
 
-### [Proposed] History Tracking feature
+### [Implemented] History Tracking feature
 
-#### Proposed Implementation
-The proposed History Tracking feature keeps a database of previously visited restaurants, activities and gifts. It extends the Command class with a new ```ViewHistoryCommand```. Additionally, it implements the following operation:
+#### Implementation
+
+The existing History Tracking feature keeps a database of previously visited restaurants, activities and gifts. It extends the Command class with a new ```ViewHistoryCommand```. Additionally, it implements the following operation:
 - ```execute(FavouritesList favourites, FoodList foods, ActivityList activities, Ui ui, Storage storage, UserDetails userDetails, GiftList gifts)``` — Displays a list of all past restaurants, activities and gifts based on the user's past history.
 
 These operations are detailed in the ```Parser``` class, where the ```parseCommand(String userInput, UserDetails userDetails)``` method is updated to return a ```ViewHistoryCommand``` when the `"history"` command is entered by the user.
 
-The ```GenerateGiftCommand```, ```GenerateIdeaCommand```, ```GenerateItineraryCommand``` and ```GenerateSmartItineraryCommand``` update the relevant txt files (GiftList.txt, ActivityList.txt, and FoodList.txt), toggling the "U" indicator, which represents uncomplete, to be "C", which represents complete. This is done by calling the markComplete() method under the ```Activity```/```Food```/```Gift``` class. Updating their status to be marked as completed ensures that they are not called in future
+Given below is an example usage scenario of how the History Tracking mechanism behaves at each step.
 
+Step 1. The user launches the application and executes the `idea`/`itinerary`/`smart`/`gift` command. The relevant command is parsed by the `parseCommand` method in the `Parser` class, which creates a `GenerateIdeaCommand`/ `GenerateItineraryCommand`/`GenerateSmartItineraryCommand`/`GenerateGiftCommand` instance
+
+Step 2. The `execute` method of the relevant instance is invoked. Based on the command, a random activity, dining option or gift is retrieved from `ActivityList`, `FoodList` or `GiftList` respectively, and is presented to the user
+
+Step 3. The user is not satisfied with the proposed option and inputs the `no` command. The loop in `execute` does not meet the exit condition and thus, generates another option using the same process as Step 2.
+
+Step 4. The user is satisfied with the proposed option and inputs the `yes` command. The loop in `execute` has met the exit condition and thus, the `run` method continues running allowing the user to input other commands.
+
+Step 5. Upon inputting the `yes` command, the system assumes that the user has decided to take up the proposed suggestion. The `markComplete` method of the relevant Food/Activity/Gift instance is invoked, updating the completion status of the instance from 'U'(Uncompleted) to 'C'(Completed). The `saveFood`/`saveActivity`/`saveGift` method of the `Storage` class is then invoked, which rewrites the relevant data stored in `FoodList.txt`/`ActivityList.txt`/`GiftList.txt`.
+
+Step 6. The user decides to look at past dates, and inputs the command `history`. This command is parsed by the `parseCommand` method in the `Parser` class, which creates a `ViewHistoryCommand` instance.
+
+Step 7. The `execute` method of the instance is invoked. The system iterates through each Activity instance in `ActivityList`, each Food instance in `FoodList`, and each Gift instance in `GiftList`, invoking the method `getCompletionStatus` each time. If the `getCompletionStatus` method returns the string `C`, the system registers the specific instance as having been completed and thus prints it out
+
+The following activity diagram summarises how the history database is displayed when a user inputs the command `history`:
+![View History Sequence Diagram](images/ViewHistoryCommandSequenceDiagram.png)
 
 ## Gift-related Features
 
