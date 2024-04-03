@@ -10,6 +10,7 @@ import java.io.InputStream;
 
 public class Storage {
     private static final String USER_DETAILS_FILE = "./data/UserDetails.txt";
+    private static final String FAVOURITES_DETAILS_FILE = "./data/FlirtFork.txt";
     private static final String FOOD_DETAILS_FILE = "./src/main/resources/FoodList.txt";
     private static final String ACTIVITIES_DETAILS_FILE = "./src/main/resources/ActivityList.txt";
     private static final String GIFTS_DETAILS_FILE = "./src/main/resources/GiftList.txt";
@@ -19,31 +20,29 @@ public class Storage {
         this.filePath = filePath;
     }
 
-    public ArrayList<Favourites> loadFavourites() throws FileNotFoundException {
-        ArrayList<Favourites> loadedFavourites = new ArrayList<>();
-        File file = new File(filePath);
-
+    public FavouritesList loadFavourites() throws FileNotFoundException {
         try {
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                Favourites favourites = Parser.parseFavourites(line);
-                if (favourites != null) {
+            ArrayList<Favourites> loadedFavourites = new ArrayList<>();
+            File file = new File(FAVOURITES_DETAILS_FILE);
+            if (file.exists()) {
+                Scanner scanner = new Scanner(file);
+                while (scanner.hasNextLine()) {
+                    String line = scanner.nextLine();
+                    Favourites favourites = new Favourites(line);
                     loadedFavourites.add(favourites);
                 }
+                scanner.close();
+                return new FavouritesList(loadedFavourites);
             }
-            scanner.close();
         } catch (FileNotFoundException e) {
             System.out.println("OOPS! No saved tasks found, starting with an empty list ~");
-            new File(file.getParent()).mkdirs();
         }
-
-        return loadedFavourites;
+        return new FavouritesList();
     }
 
     public void saveFavourites(ArrayList<Favourites> favourites) throws IOException {
         try {
-            File file = new File(filePath);
+            File file = new File(FAVOURITES_DETAILS_FILE);
             File parentDir = file.getParentFile();
 
             if (!parentDir.exists()) {
@@ -51,7 +50,7 @@ public class Storage {
             }
 
             FileWriter writer = new FileWriter(file);
-            for (Favourites favourite: favourites) {
+            for (Favourites favourite : favourites) {
                 writer.write(favourite.toFileFormat() + "\n");
             }
             writer.close();
@@ -115,10 +114,10 @@ public class Storage {
 
     public void saveFood(FoodList foods) {
         try (FileWriter writer = new FileWriter(FOOD_DETAILS_FILE)) {
-            for (int i=0; i<foods.size(); i++) {
+            for (int i = 0; i < foods.size(); i++) {
                 Food oneFood = foods.get(i);
-                writer.write(oneFood.description + " | " + oneFood.location + " | " + 
-                        oneFood.price + " | " + oneFood.cuisine + " | "  + oneFood.completionStatus + "\n");
+                writer.write(oneFood.description + " | " + oneFood.location + " | " +
+                        oneFood.price + " | " + oneFood.cuisine + " | " + oneFood.completionStatus + "\n");
             }
             writer.close();
         } catch (IOException e) {
@@ -145,9 +144,9 @@ public class Storage {
 
     public void saveActivity(ActivityList activities) {
         try (FileWriter writer = new FileWriter(ACTIVITIES_DETAILS_FILE)) {
-            for (int i=0; i<activities.size(); i++) {
+            for (int i = 0; i < activities.size(); i++) {
                 Activity oneActivity = activities.get(i);
-                writer.write(oneActivity.description + " | " + oneActivity.location + " | " + 
+                writer.write(oneActivity.description + " | " + oneActivity.location + " | " +
                         oneActivity.price + " | " + oneActivity.completionStatus + "\n");
             }
             writer.close();
@@ -175,7 +174,7 @@ public class Storage {
 
     public void saveGift(GiftList gifts) {
         try (FileWriter writer = new FileWriter(GIFTS_DETAILS_FILE)) {
-            for (int i=0; i<gifts.size(); i++) {
+            for (int i = 0; i < gifts.size(); i++) {
                 Gift oneGift = gifts.get(i);
                 writer.write(oneGift.description + " | " + oneGift.completionStatus + "\n");
             }

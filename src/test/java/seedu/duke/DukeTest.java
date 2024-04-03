@@ -36,7 +36,7 @@ class DukeTest {
     @Test
     public void testGenerateIdeaCommand() {
         try {
-            favourites = new FavouritesList(storage.loadFavourites());
+            favourites = storage.loadFavourites();
             foods = new FoodList(storage.loadFood());
             activities = new ActivityList(storage.loadActivity());
             userDetails = storage.loadUserDetails();
@@ -76,7 +76,7 @@ class DukeTest {
     @Test
     public void generateItineraryCommand_validInputs_success() {
         try {
-            favourites = new FavouritesList(storage.loadFavourites());
+            favourites = storage.loadFavourites();
             foods = new FoodList(storage.loadFood());
             activities = new ActivityList(storage.loadActivity());
         } catch (FileNotFoundException e) {
@@ -115,7 +115,7 @@ class DukeTest {
     @Test
     public void generateItineraryCommand_invalidInputs_errorMessagePrinted() {
         try {
-            favourites = new FavouritesList(storage.loadFavourites());
+            favourites = storage.loadFavourites();
             foods = new FoodList(storage.loadFood());
             activities = new ActivityList(storage.loadActivity());
         } catch (FileNotFoundException e) {
