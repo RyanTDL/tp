@@ -65,6 +65,10 @@ public class GenerateIdeaCommand extends Command {
                 idea.setActivity(activity);
                 System.out.println(idea);
                 System.out.println("Are you satisfied with the date idea? [Yes/No]");
+            } else if (userSatisfied.equalsIgnoreCase("stop")) {
+                System.out.println("Taking a break? That's okay! \n" +
+                        "Remember, great ideas need their own time to unwrap.");
+                break;
             } else {
                 ui.ideaSatisfiedErrorMessage();
                 logger.log(Level.WARNING, "input error");
