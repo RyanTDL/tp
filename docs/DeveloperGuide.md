@@ -116,7 +116,7 @@ Step 7. The `execute` method of the instance is invoked. The system iterates thr
 The following activity diagram summarises how the history database is displayed when a user inputs the command `history`:
 ![View History Sequence Diagram](images/ViewHistoryCommandSequenceDiagram.png)
 
-## Gift-related Features
+### [Implemented] Generate Random Gift Suggestion
 
 This feature enhances the user experience by offering access to a curated list of gift ideas and enabling the generation of random gift suggestions. 
 
@@ -130,6 +130,8 @@ The feature comprise several key components:
 - `ListOptionsCommands` Class: Provides functionality to list gifts among other options of food and activity.
 - `ViewHistoryCommand` Class: Displays a history of saved gift ideas.
 - `Storage` Class: Manages data persistence for gifts.
+
+<img src="images/GiftClassDiagram.png" height = "650">
 
 **Component Interaction Flow:**
 1. Initialisation
@@ -155,6 +157,8 @@ The feature comprise several key components:
 5. Data Saving
 
     - Changes to gift selections are persisted back to the `GiftList.txt` file via `Storage`, ensuring user choices are saved across different sessions.
+
+<img src="images/GiftSequenceDiagram.png">
 
 #### Detailed Implementation
 
