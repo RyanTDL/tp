@@ -113,11 +113,8 @@ Step 6. The user decides to look at past dates, and inputs the command `history`
 
 Step 7. The `execute` method of the instance is invoked. The system iterates through each Activity instance in `ActivityList`, each Food instance in `FoodList`, and each Gift instance in `GiftList`, invoking the method `getCompletionStatus` each time. If the `getCompletionStatus` method returns the string `C`, the system registers the specific instance as having been completed and thus prints it out
 
-
-The following activity diagram summarises how the history database is updated when a user inputs the respective commands:
-
 The following activity diagram summarises how the history database is displayed when a user inputs the command `history`:
-
+![View History Sequence Diagram](images/ViewHistoryCommandSequenceDiagram.png)
 
 ## Gift-related Features
 
