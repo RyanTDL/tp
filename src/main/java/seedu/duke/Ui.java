@@ -16,7 +16,7 @@ public class Ui {
         System.out.println(HORIZONTAL);
         System.out.println("Hungry for love? You've come to the right place.\n" +
                 "Welcome to " + BOT_NAME + " - where Cupid meets the chef!\n\n" +
-                "Send me 'help' if you're new!");
+                "If you ever feel lost, just type 'help' for a guiding star!");
         if (!anniversary.equals("N.A")) {
             System.out.println("\nRemember, your anniversary is on " + anniversary + " :)");
         }

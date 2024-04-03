@@ -9,7 +9,7 @@ participant "GiftList" as GL
 participant "Gift" as G
 participant "Storage" as S
 
-User -> UI : gift command
+User -> UI : gift
 UI -> P : parseCommand(userInput, userDetails)
 P -> GGC : new GenerateGiftCommand()
 activate GGC
