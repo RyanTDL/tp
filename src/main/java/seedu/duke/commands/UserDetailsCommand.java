@@ -39,7 +39,7 @@ public class UserDetailsCommand extends Command {
     public void execute(FavouritesList favouritesList, FoodList foodList,
                         ActivityList activityList, Ui ui, Storage storage, UserDetails userDetails, GiftList gifts) {
         ui.showMessage("Please enter your name:");
-        String name = ui.readCommand();
+        String name = ui.readName();
         ui.showMessage("Great! Hello there " + name + ", it's my pleasure to know you!"); 
         System.out.println(HORIZONTAL);
 
