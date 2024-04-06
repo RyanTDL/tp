@@ -78,7 +78,7 @@ public class Parser {
             }
         case "smart":
             if (!arguments.trim().isEmpty()) {
-                throw new FlirtForkEmptyException();
+                throw new FlirtForkException("To generate smart itinerary, please only send 'smart'.");
             }
             return new GenerateSmartItineraryCommand(userDetails);
         case "idea":
