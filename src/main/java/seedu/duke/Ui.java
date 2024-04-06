@@ -163,9 +163,33 @@ public class Ui {
             try {
                 String input = readCommand();
                 age = Integer.parseInt(input);
-                return input;
+                if (age <= 0) {
+                    showMessage("Age cannot be negative or zero. Please enter a valid age.");
+                } else if (age >= 120) {
+                    showMessage("I don't think you're older than the oldest person alive...re-enter your age!");
+                } else {
+                    return input; // Valid age
+                }
             } catch (NumberFormatException e) {
                 showMessage("Invalid input. Please enter a valid integer age.");
+            }
+        }
+    }
+
+    /**
+     * Reads and validates the user's name input, ensuring it's not empty and doesn't contain numbers.
+     *
+     * @return The user's validated name input as a String.
+     */
+    public String readName() {
+        while (true) {
+            String name = readCommand();
+            if (name.trim().isEmpty()) {
+                showMessage("Name cannot be empty. Please enter a valid name.");
+            } else if (name.matches(".*\\d+.*")) {
+                showMessage("Name cannot contain numbers. Please re-enter without numbers.");
+            } else {
+                return name;
             }
         }
     }
