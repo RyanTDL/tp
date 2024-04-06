@@ -63,6 +63,16 @@ public class Ui {
             "P: Pricey\n" +
             "S: Special Ocassions Only\n\n" +
 
+            "LEGEND (cuisines):\n" +
+            "W: Western\n" +
+            "F: Fusion\n" +
+            "J: Japanese\n" +
+            "C: Chinese\n" +
+            "T: Thai\n" +
+            "K: Korean\n" +
+            "I: Italian\n" +
+            "S: Spanish\n\n" +
+
             "LEGEND (locations):\n" +
             "E: East\n" +
             "W: West\n" +
