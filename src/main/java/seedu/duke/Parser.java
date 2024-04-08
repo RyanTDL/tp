@@ -50,8 +50,8 @@ public class Parser {
             return new AddActivityCommand(arguments);
         case "favourites":
             if (!arguments.trim().isEmpty()) {
-                throw new FlirtForkException("OOPS! The 'favourites' command does not require any additional arguments. \n"
-                        + HORIZONTAL);
+                throw new FlirtForkException("OOPS! The 'favourites' command does not require" +
+                        "any additional arguments. \n" + HORIZONTAL);
             }
             return new ListFavouritesCommand();
         case "delete":
