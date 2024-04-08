@@ -64,7 +64,7 @@ public class GenerateItineraryCommand extends Command {
                 System.out.println("We apologise! Perhaps you could try again?");
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("We could not generate a suitable itineray based on your inputs! Sorry!!");
+            System.out.println("We could not generate a suitable itinerary based on your inputs! Sorry!!");
             LOGGER.log(Level.SEVERE, "Invalid arguments given");
         }
     }
