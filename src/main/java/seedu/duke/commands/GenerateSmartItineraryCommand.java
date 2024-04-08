@@ -27,29 +27,40 @@ public class GenerateSmartItineraryCommand extends Command {
 
     /**
      * Creates a GenerateSmartItineraryCommand with specified user details.
-     * @param userDetails The details of the user including preferred location and cuisine.
+     * 
+     * @param userDetails The details of the user including preferred location and
+     *                    cuisine.
      */
     public GenerateSmartItineraryCommand(UserDetails userDetails) {
+        if (userDetails == null) {
+            LOGGER.log(Level.SEVERE, "User details are not provided at command creation.");
+            throw new IllegalArgumentException("User details are required at command creation.");
+        }
         this.preferredLocation = userDetails.getLocation();
         this.preferredCuisine = userDetails.getCuisine();
     }
 
     /**
-     * Executes the smart itinerary generation process. It selects food and activities
+     * Executes the smart itinerary generation process. It selects food and
+     * activities
      * based on the user's preferences and creates an itinerary. If the preferences
-     * are too unique or if any error occurs, it logs a severe error and informs the user.
-     * @param favourites The list of favourite items of the user.
-     * @param foods The list of available foods.
-     * @param activities The list of available activities.
-     * @param ui The user interface to interact with the user.
-     * @param storage The storage handler to save or load data.
+     * are too unique or if any error occurs, it logs a severe error and informs the
+     * user.
+     * 
+     * @param favourites  The list of favourite items of the user.
+     * @param foods       The list of available foods.
+     * @param activities  The list of available activities.
+     * @param ui          The user interface to interact with the user.
+     * @param storage     The storage handler to save or load data.
      * @param userDetails The details of the user, including preferences.
-     * @param gifts The list of gifts available for the user.
-     * @throws FlirtForkException If an error specific to the Flirt Fork application occurs.
+     * @param gifts       The list of gifts available for the user.
+     * @throws FlirtForkException If an error specific to the Flirt Fork application
+     *                            occurs.
      */
     @Override
-    public void execute(FavouritesList favourites, FoodList foods, ActivityList activities, Ui ui,
-                        Storage storage, UserDetails userDetails, GiftList gifts) throws FlirtForkException {
+    public void execute(FavouritesList favourites, FoodList foods, ActivityList activities, Ui ui, Storage storage,
+            UserDetails userDetails, GiftList gifts) throws FlirtForkException {
+
         Food food1;
         Food food2;
         Activity activity1;
@@ -73,7 +84,10 @@ public class GenerateSmartItineraryCommand extends Command {
             System.out.println(preferredLocation);
             System.out.println("You are too unique of an individual for smart itineraries! Sorry!!");
             LOGGER.log(Level.SEVERE, "Invalid arguments given");
+        } catch (FlirtForkException e) {
+            System.out.println("We could not generate a suitable itineray!"); 
+            LOGGER.log(Level.SEVERE, "Insufficient suitable locations in database");
         }
     }
-    
+
 }

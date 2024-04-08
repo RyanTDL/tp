@@ -16,7 +16,7 @@ public class Ui {
         System.out.println(HORIZONTAL);
         System.out.println("Hungry for love? You've come to the right place.\n" +
                 "Welcome to " + BOT_NAME + " - where Cupid meets the chef!\n\n" +
-                "Send me 'help' if you're new!");
+                "If you ever feel lost, just type 'help' for a guiding star!");
         if (!anniversary.equals("N.A")) {
             System.out.println("\nRemember, your anniversary is on " + anniversary + " :)");
         }
@@ -39,32 +39,22 @@ public class Ui {
 
     public void helpMessage() {
         System.out.println(
-            "To take a look at potential restaurants, activities, or gifts simply send me the following: \n" +
-            "'list'\n\n" +
-            "To let me know more about yourself, simply send me the following: \n" +
-            "'me'\n\n" +
-            "To generate a randomised date idea, simply send me the following: \n" +
-            "'idea'\n\n" +
-            "To generate a randomised gift idea, simply send me the following: \n" +
-            "'gift'\n\n" +
-            "To generate a suitable date itinerary based on your preferences, simply send me the following: \n" +
-            "'itinerary' [space] '(preferred location)' [space] '(preferred price)'\n\n" +
-            "To generate a smart itinerary, simply send me the following AFTER you have completed 'me': \n" +
-            "'smart'\n\n" +
-            "To add food to your favourites, simply send me the following: \n" +
-            "'food' [space] '(name of eatery)' [space] '(location)' [space] '(price)'\n\n" +
-            "To add an activity to your favourites, simply send me the following: \n" +
-            "'activity' [space] '(name of activity)'[space] '(location)' [space] '(price)'\n\n" +
-            "To find an entry from your favourites, simply send me the following: \n" +
-            "'find' [space] '(keyword)'\n\n" +
-            "To list out all your favourites, simply send me the following: \n" +
-            "'favourites'\n\n" +
-            "To delete an activity from your favourites, simply send me the following: \n" +
-            "'delete' [space] '(index of entry)'\n\n" +   
-            "To list out all your past date locations and restaurants, simply send me the following: \n" +
-            "'history'\n\n" +         
-            "To exit the program, simply send me the following: \n" +
-            "'exit'\n\n" +
+            "----------------------------------------- \n" +
+            "| Command to type | Function of feature | \n" +
+            "----------------------------------------- \n" +
+            "1. list: Take a look at potential restaurants, activities, or gifts \n\n" +
+            "2. me: Let me know more about yourself \n\n" +
+            "3. idea: Generate a randomised date idea \n\n" +
+            "4. itinerary LOCATION PRICE: Generate a suitable date itinerary based on your preferences \n\n" +
+            "5. smart: Generate a smart itinerary, based on your user profile \n\n" +
+            "6. gift: Generate a randomised gift idea \n\n" +
+            "7. food NAME_OF_EATERY LOCATION PRICE CUISINE: Add a restaurant to your favourites \n\n" +
+            "8. activity NAME_OF_ACTIVITY LOCATION PRICE: Add an activity to your favourites \n\n" +
+            "9. favourites: List out all your favourites \n\n" +
+            "10. delete INDEX_OF_ENTRY: Delete an entry from your favourites \n\n" +
+            "11. find KEYWORD: Find an entry from your favourites, based off keyword \n\n" +
+            "12. history: List out all your past date locations and restaurants \n\n" +
+            "13. exit: Exit the program \n\n" +
 
             "LEGEND (prices):\n" +
             "C: Cheap\n" +
@@ -72,6 +62,16 @@ public class Ui {
             "A: Affordable\n" +
             "P: Pricey\n" +
             "S: Special Ocassions Only\n\n" +
+
+            "LEGEND (cuisines):\n" +
+            "W: Western\n" +
+            "F: Fusion\n" +
+            "J: Japanese\n" +
+            "C: Chinese\n" +
+            "T: Thai\n" +
+            "K: Korean\n" +
+            "I: Italian\n" +
+            "S: Spanish\n\n" +
 
             "LEGEND (locations):\n" +
             "E: East\n" +
@@ -139,5 +139,147 @@ public class Ui {
 
     public void showMessage(String message) {
         System.out.println(message);
+    }
+
+    /**
+     * Reads and validates the user's location input.
+     *
+     * @return The user's validated location input (E, W, C, S, or NE).
+     */
+    public String readUserLocation() {
+        String input = readCommand();
+        boolean isValid;
+
+        isValid = input.equals("E") || input.equals("W") || input.equals("C")
+                || input.equals("S") || input.equals("NE");
+
+        while (!isValid) {
+            showMessage("Invalid location, please enter E, W, C, S or NE.");
+            input = readCommand();
+            isValid = input.equals("E") || input.equals("W") || input.equals("C")
+                    || input.equals("S") || input.equals("NE");
+        }
+        return input;
+    }
+
+    /**
+     * Reads and validates the user's age input.
+     *
+     * @return The user's validated age input as a String.
+     */
+    public String readAge() {
+        int age;
+        while (true) {
+            try {
+                String input = readCommand();
+                age = Integer.parseInt(input);
+                if (age <= 0) {
+                    showMessage("Age cannot be negative or zero. Please enter a valid age.");
+                } else if (age >= 120) {
+                    showMessage("I don't think you're older than the oldest person alive...re-enter your age!");
+                } else {
+                    return input; // Valid age
+                }
+            } catch (NumberFormatException e) {
+                showMessage("Invalid input. Please enter a valid integer age.");
+            }
+        }
+    }
+
+    /**
+     * Reads and validates the user's name input, ensuring it's not empty and doesn't contain numbers.
+     *
+     * @return The user's validated name input as a String.
+     */
+    public String readName() {
+        while (true) {
+            String name = readCommand();
+            if (name.trim().isEmpty()) {
+                showMessage("Name cannot be empty. Please enter a valid name.");
+            } else if (name.matches(".*\\d+.*")) {
+                showMessage("Name cannot contain numbers. Please re-enter without numbers.");
+            } else {
+                return name;
+            }
+        }
+    }
+
+    /**
+     * Reads and validates the user's cuisine preference input.
+     *
+     * @return The user's validated cuisine preference input (W, F, J, C, T, K, I, or S).
+     */
+    public String readUserCuisine() {
+        String input = readCommand();
+        boolean isValid;
+
+        isValid = input.equals("W") || input.equals("F") || input.equals("J") || input.equals("C")
+                || input.equals("T") ||input.equals("K") || input.equals("I") || input.equals("S");
+
+        while (!isValid) {
+            showMessage("Please enter your preferences in this format.\n");
+            showMessage("W: Western");
+            showMessage("F: Fusion");
+            showMessage("J: Japanese");
+            showMessage("C: Chinese");
+            showMessage("T: Thai");
+            showMessage("K: Korean");
+            showMessage("I: Italian");
+            showMessage("S: Spanish");
+            input = readCommand();
+            isValid = input.equals("W") || input.equals("F") || input.equals("J") || input.equals("C")
+                    || input.equals("T") ||input.equals("K") || input.equals("I") || input.equals("S");
+        }
+        return input;
+    }
+
+    /**
+     * Reads and validates the user's relationship status input.
+     *
+     * @return The user's validated relationship status input (M, R, F, D, S, or X).
+     */
+    public String readUserStatus() {
+        String input = readCommand();
+        boolean isValid;
+
+        isValid = input.equals("M") || input.equals("R") || input.equals("F")
+                || input.equals("D") || input.equals("S") ||input.equals("X");
+
+        while(!isValid) {
+            showMessage("Please enter your status in this format.\n");
+            showMessage("Enter 'M' if you are Married");
+            showMessage("Enter 'R' if you are in a serious relationship");
+            showMessage("Enter 'F' if you are having a fling");
+            showMessage("Enter 'D' if you are dating/testing the waters");
+            showMessage("Enter 'S' if you are single and ready to mingle");
+            showMessage("Enter 'X' if you are single and only looking to hangout with friends");
+            input = readCommand();
+            isValid = input.equals("M") || input.equals("R") || input.equals("F")
+                    || input.equals("D") || input.equals("S") ||input.equals("X");
+        }
+        return input;
+    }
+
+    /**
+     * Reads and validates the user's gender input.
+     *
+     * @return The user's validated gender input (Male, Female, or Other).
+     */
+    public String readUserGender() {
+        String input = readCommand();
+        boolean isValid;
+
+        isValid = input.equals("Male") || input.equals("Female") || input.equals("Other");
+
+        while(!isValid) {
+            showMessage("Please enter your gender in this format.\n");
+            showMessage("'Male' if you are a male");
+            showMessage("'Female' if you are a female");
+            showMessage("'Other' if its none of the above");
+
+            input = readCommand();
+            isValid = input.equals("Male") || input.equals("Female") || input.equals("Other");
+        }
+        return input;
     }
 }

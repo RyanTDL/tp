@@ -3,6 +3,8 @@ package seedu.duke;
 import java.util.ArrayList;
 import java.util.Random;
 
+import seedu.duke.exceptions.FlirtForkException;
+
 public class FoodList {
     private ArrayList<Food> foods;
 
@@ -32,7 +34,7 @@ public class FoodList {
         return randomFood;
     }
 
-    public Food getFilteredFood(String preferredLocation, String preferredPrice) {
+    public Food getFilteredFood(String preferredLocation, String preferredPrice) throws FlirtForkException{
         ArrayList<Food> filteredFoods = new ArrayList<>();
         for (Food eachFood : foods) {
             if (eachFood.location.equals(preferredLocation) && 
@@ -41,12 +43,16 @@ public class FoodList {
             }
         }
         
-        Random random = new Random();
-        int filteredFoodIndex = random.nextInt(filteredFoods.size());
-        return filteredFoods.get(filteredFoodIndex);
+        if (filteredFoods.size()<=1) {
+            throw new FlirtForkException("Not enough food options");
+        } else {
+            Random random = new Random();
+            int filteredFoodIndex = random.nextInt(filteredFoods.size());
+            return filteredFoods.get(filteredFoodIndex);
+        }
     }
 
-    public Food getCustomisedFood(String preferredLocation, String preferredCuisine) {
+    public Food getCustomisedFood(String preferredLocation, String preferredCuisine) throws FlirtForkException{
         ArrayList<Food> filteredFoods = new ArrayList<>();
         for (Food eachFood : foods) {
             if (eachFood.location.equals(preferredLocation) && 
@@ -55,9 +61,13 @@ public class FoodList {
             }
         }
         
-        Random random = new Random();
-        int filteredFoodIndex = random.nextInt(filteredFoods.size());
-        return filteredFoods.get(filteredFoodIndex);
+        if (filteredFoods.size()<=1) {
+            throw new FlirtForkException("Not enough food options");
+        } else {
+            Random random = new Random();
+            int filteredFoodIndex = random.nextInt(filteredFoods.size());
+            return filteredFoods.get(filteredFoodIndex);
+        }
     }
 }
 

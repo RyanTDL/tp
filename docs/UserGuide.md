@@ -10,9 +10,9 @@ Our application generates creative, enjoyable date itineraries that fit within y
 ## Quick Start
 
 1. Ensure you have Java `11` or above installed in your Computer.
-2. Download the latest version of `Duke` from [here](http://link.to/duke).
+2. Download the latest version of `Flirt and Fork` from [here](http://link.to/FlirtandFork).
 3. Copy the file to the folder you want to use as the _home folder_
-4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar Duke.jar` command to run the bot. The GUI should appear in a few seconds.
+4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar Flirt_and_Fork.jar` command to run the bot. The GUI should appear in a few seconds.
 5. Type the command in the command box and press Enter to execute it.
 6. Refer to the [Features](#Features) section below for an overview of all valid commands.
 
@@ -58,7 +58,7 @@ Refer to the [Usage](#Usage) section below for details of each command.
 ## Usage
 
 ### Display all possible commands: `help`
-Lists out all possible commands used to interact with Duke.
+Lists out all possible commands used to interact with Flirt and Fork.
 
 Example of usage: `help`
 
@@ -66,8 +66,10 @@ Expected outcome:
 ```
 I know you are excited to Flirt & Fork :) Here's how: 
 
-To take a look at potential restaurants, activities, or gifts simply send me the following: 
-'list'
+----------------------------------------- 
+| Command to type | Function of feature | 
+----------------------------------------- 
+1. list: Take a look at potential restaurants, activities, or gifts 
 
 ...
 ```
@@ -120,7 +122,7 @@ Peek into Cupid's own gift collection!
 ...
 ```
 
-### Generate a randomised date idea: `idea`
+### [Bugged] Generate a randomised date idea: `idea`
 Generates out a randomised date idea, consisting of 1 restaurant and 1 activity from our curated collection. After receiving the suggestion, users have the option to accept or request for another idea.
 
 Example of usage: `idea`
@@ -146,6 +148,7 @@ Expected outcome:
 ```
 That's great! Enjoy your date!
 ```
+Note: Saving an idea to history does not work as of v2.0 and will be fixed in the next release.
 
 ### Generate a randomised gift suggestion: `gift`
 Generates a randomised gift idea. Each suggestion comes with a category tag `[Creative]`, `[Food]`, `[Accessory]`, etc to give users a sense of what type of gift it is.
@@ -207,39 +210,59 @@ Expected outcome:
 ```
 That's great! Enjoy your date!
 ```
+Note: Saving an itinerary to history does not work as of v2.0 and will be fixed in the next release.
 
 ### Generate a smart itinerary, based on your user profile: `smart`
-Generates out a smart itinerary, based off the user information given to Duke
+The smart command generates a personalised itinerary tailored to your preferences, including your favorite cuisine and preferred location. This feature takes into account the details you've provided to Flirt and Fork to recommend a combination of food and activities that align with your tastes and interests.
 
 Format: `smart`
 
-Expected outcome:
-```
+Simply enter smart to let Flirt and Fork create a custom itinerary for you. Ensure your user profile is updated with your current preferences for the best recommendations.
+
+Expected Outcome:
+
+Upon executing the smart command, Flirt & Fork will display a curated itinerary that includes two food options and two activities. These suggestions are based on your default location and favourite cuisine, aiming to enhance your experience with personalized options.
+
+If Flirt & Fork successfully generates an itinerary, you'll see something like this:
 
 ```
+Here is a rough itinerary for your date: 
+We begin with lunch at Five Guys, followed by some fun at Museum of Ice Cream.
+We proceed to have dinner at Tolido's Expresso Nook, and finish the night at Haw Par Villa.
+```
+
+In cases where your preferences are too unique or if an unexpected error occurs, Flirt & Fork will inform you that it was unable to generate a suitable itinerary, encouraging you to try again or adjust your profile preferences.
+
+Notes:
+
+- The itinerary suggestions are based on the current database of foods and activities within Flirt & Fork. For the best experience, make sure your user details are up to date.
+- If Flirt & Fork encounters difficulty in generating an itinerary due to overly unique preferences or other issues, you will receive a message encouraging you to adjust your preferences or try again.
+By using the smart command, you can discover new and exciting ways to enjoy your day, tailored specifically to what you love.
 
 
 ### Add a restaurant to your favourites: `food`
 Adds a new restaurant to your favourited list.
 
-Format: `food (name of eatery) (location) (price)`
+Format: `food [name of eatery] [location] [price] [cuisine]`
 
 * The `location` and `price` inputted must be inside the legend. 
 
 Example of usage: 
-`food East Coast BBQ NE B`
-`food Omakase C S`
+`food East Coast BBQ NE B J`
+`food Omakase C S J`
 
 Expected outcome:
 ```
-
+Cupid's arrow strikes! This is now in your favourites. 
+[Food] East Coast BBQ
+You've collected 1 romantic treasures!
 ```
 
 
 ### Add an activity to your favourites: `activity`
 Adds a new activity to your favourited list.
 
-Format: `activity (name of activity) (location) (price)`
+Format: `activity [name of activity] [location] [price]`
 
 * The `location` and `price` inputted must be inside the legend. 
 
@@ -249,24 +272,27 @@ Example of usage:
 
 Expected outcome:
 ```
-
+Cupid's arrow strikes! This is now in your favourites. 
+[Activity] Paragliding
+You've collected 2 romantic treasures!
 ```
 
 ### Find an entry from your favourited list: `find`
 Finds relevant entries from your favourited list, based on the keyword inputted.
 
-Format: `find (keyword)`
+Format: `find [keyword]`
 
 * The `keyword` is case-sensitive. `Japanese` will not yield the same result as `japanese`. 
 * The `keyword` can contain multiple words.
 
 Example of usage: 
 `find thrifting`
-`find thrift shopping`
+`find BBQ`
 
 Expected outcome:
 ```
-
+Eureka! Your cupid's arrow hit the target! We found these matches for you:
+1. [Food] East Coast BBQ
 ```
 
 ### List out all entries in your favourited list: `favourites`
@@ -276,7 +302,9 @@ Format: `favourites`
 
 Expected outcome:
 ```
-
+Drumroll, please! Presenting the stars of your romantic sky: 
+1. [Food] East Coast BBQ
+2. [Activity] Paragliding
 ```
 
 ### Delete an entry from your favourited list: `delete`
@@ -290,19 +318,37 @@ Example of usage:
 
 Expected outcome:
 ```
-
+Poof! Sayonara~ This favourite has been removed: 
+[Activity] Paragliding
+Now you have 1 romantic treasures!
+Your journey of love and taste continues~
 ```
 
 
-### List out all entries from your past date history: `history`
-Lists out all the previous restaurants and activites completed on previous dates.
+### [Bugged] List out all entries from your past date history: `history`
+Lists out all the previous restaurants and activites completed on previous dates. Whenever `yes` is inputted for generating an idea or itinerary, it is assumed that the user will follow that date plan and hence, the suggested locations will be saved in the history.
 
 Format: `history`
 
 Expected outcome:
 ```
+These are the activities you have marked:
+1. Singapore River Cruise
+2. Katong Food Walk
+3. Changi Museum Visit
+4. Marina Bay Sands Casino
+5. Singapore Flyer Dining
 
+These are the restaurants you have marked:
+1. Missus
+2. Five Oars
+3. Knead To Eat
+4. Idaten Udon
+5. Watami Japanese Dining
+
+These are the gifts you've marked:
 ```
+Note: This feature does not work correctly as of v2.0 and will be fixed in the next release.
 
 ### Exit the program: `exit`
 Exits the program.
@@ -311,6 +357,8 @@ Format: `exit`
 
 Expected outcome:
 ```
+Love, like a good meal, is all about timing.
+Keep your love simmering and your fork ready, see you at the next course!
 
 ```
 

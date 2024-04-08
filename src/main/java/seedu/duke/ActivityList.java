@@ -3,6 +3,8 @@ package seedu.duke;
 import java.util.ArrayList;
 import java.util.Random;
 
+import seedu.duke.exceptions.FlirtForkException;
+
 public class ActivityList {
     private ArrayList<Activity> activities;
 
@@ -32,7 +34,7 @@ public class ActivityList {
         return randomActivity;
     }
 
-    public Activity getFilteredActivity(String preferredLocation, String preferredPrice) {
+    public Activity getFilteredActivity(String preferredLocation, String preferredPrice) throws FlirtForkException {
         ArrayList<Activity> filteredActivities = new ArrayList<>();
         for (Activity eachActivity : activities) {
             if (eachActivity.location.equals(preferredLocation) && 
@@ -40,8 +42,14 @@ public class ActivityList {
                 filteredActivities.add(eachActivity);
             }
         }
-        Random random = new Random();
-        int filteredActivityIndex = random.nextInt(filteredActivities.size());
-        return filteredActivities.get(filteredActivityIndex);
+
+        if (filteredActivities.size()<=1) {
+            throw new FlirtForkException("Not enough activity options");
+        } else {
+            Random random = new Random();
+            int filteredActivityIndex = random.nextInt(filteredActivities.size());
+            return filteredActivities.get(filteredActivityIndex);
+        }
+
     }
 }

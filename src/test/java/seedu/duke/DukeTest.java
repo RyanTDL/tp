@@ -3,6 +3,8 @@ package seedu.duke;
 import org.junit.jupiter.api.Test;
 import seedu.duke.commands.GenerateIdeaCommand;
 import seedu.duke.commands.GenerateItineraryCommand;
+import seedu.duke.commands.GenerateSmartItineraryCommand;
+import seedu.duke.commands.HelpCommand;
 import seedu.duke.exceptions.FlirtForkException;
 import java.util.NoSuchElementException;
 
@@ -13,6 +15,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class DukeTest {
@@ -32,14 +36,14 @@ class DukeTest {
     @Test
     public void testGenerateIdeaCommand() {
         try {
-            favourites = new FavouritesList(storage.loadFavourites());
+            favourites = storage.loadFavourites();
             foods = new FoodList(storage.loadFood());
             activities = new ActivityList(storage.loadActivity());
             userDetails = storage.loadUserDetails();
         } catch (FileNotFoundException e) {
             ui.errorMessage("File not found. Starting with an empty task list :)");
             favourites = new FavouritesList(new ArrayList<>());
-        } 
+        }
         GenerateIdeaCommand generateIdeaCommand = new GenerateIdeaCommand();
 
         // Backup original system
@@ -63,8 +67,6 @@ class DukeTest {
             assertTrue(output.contains("You can do"));
             assertTrue(output.contains("and have a nice meal at"));
             assertTrue(output.length() > 36);
-        } catch (FlirtForkException e) {
-            ui.errorMessage(e.getMessage());
         } finally {
             System.setIn(sysInBackup);
             System.setOut(sysOutBackup);
@@ -74,7 +76,7 @@ class DukeTest {
     @Test
     public void generateItineraryCommand_validInputs_success() {
         try {
-            favourites = new FavouritesList(storage.loadFavourites());
+            favourites = storage.loadFavourites();
             foods = new FoodList(storage.loadFood());
             activities = new ActivityList(storage.loadActivity());
         } catch (FileNotFoundException e) {
@@ -113,7 +115,7 @@ class DukeTest {
     @Test
     public void generateItineraryCommand_invalidInputs_errorMessagePrinted() {
         try {
-            favourites = new FavouritesList(storage.loadFavourites());
+            favourites = storage.loadFavourites();
             foods = new FoodList(storage.loadFood());
             activities = new ActivityList(storage.loadActivity());
         } catch (FileNotFoundException e) {
@@ -127,10 +129,82 @@ class DukeTest {
             System.setOut(printStream);
             generateItineraryCommand.execute(favourites, foods, activities, ui, storage, userDetails, gifts);
             String output = outputStream.toString();
-            assertTrue(output.contains("We could not generate a suitable itineray based on your inputs! Sorry!!"));
+            assertTrue(output.contains("We could not generate a suitable itinerary based on your inputs! Sorry!!"));
             System.setOut(System.out);
         } catch (FlirtForkException e) {
             ui.errorMessage(e.getMessage());
         }
     }
+
+    @Test
+    public void helpCommand_uiIsNull_throwsFlirtForkException() {
+        // Arrange
+        HelpCommand helpCommand = new HelpCommand();
+        Ui ui = null; // Simulating the UI being null to trigger the error condition.
+
+        // Act and Assert
+        FlirtForkException thrown = assertThrows(FlirtForkException.class, () -> {
+            helpCommand.execute(null, null, null, ui, null, null, null);
+        }, "UI component must not be null.");
+
+        assertTrue(thrown.getMessage().contains("UI component must not be null."));
+    }
+
+    @Test
+    void userDetailsSettingInvalidAgeThrowsException() {
+        UserDetails userDetails = new UserDetails();
+        Exception exceptionNegative = assertThrows(IllegalArgumentException.class, () -> {
+            userDetails.setAge("-1");
+        });
+        assertEquals("Age cannot be negative.", exceptionNegative.getMessage());
+
+        Exception exceptionNotInteger = assertThrows(IllegalArgumentException.class, () -> {
+            userDetails.setAge("twenty");
+        });
+        assertEquals("Age must be a valid integer.", exceptionNotInteger.getMessage());
+    }
+
+    @Test
+    void userDetailsSettingValidAgeUpdatesValue() {
+        UserDetails userDetails = new UserDetails();
+        String validAge = "25";
+        userDetails.setAge(validAge);
+        assertEquals(validAge, userDetails.getAge());
+    }
+
+    @Test
+    void userDetailsSettingInvalidGenderThrowsException() {
+        UserDetails userDetails = new UserDetails();
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            userDetails.setGender("Alien");
+        });
+        assertEquals("Gender must be 'Male', 'Female', or 'Other'.", exception.getMessage());
+    }
+
+    @Test
+    void userDetailsSettingValidGenderUpdatesValue() {
+        UserDetails userDetails = new UserDetails();
+        String validGender = "Male";
+        userDetails.setGender(validGender);
+        assertEquals(validGender, userDetails.getGender());
+
+        validGender = "Female";
+        userDetails.setGender(validGender);
+        assertEquals(validGender, userDetails.getGender());
+
+        validGender = "Other";
+        userDetails.setGender(validGender);
+        assertEquals(validGender, userDetails.getGender());
+    }
+
+    @Test
+    public void generateSmartItineraryCommand_nullUserDetails_throwsException() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            new GenerateSmartItineraryCommand(null);
+        });
+        assertTrue(exception.getMessage().contains("User details are required"));
+    }
+    
+
+
 }

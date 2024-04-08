@@ -39,17 +39,17 @@ public class UserDetailsCommand extends Command {
     public void execute(FavouritesList favouritesList, FoodList foodList,
                         ActivityList activityList, Ui ui, Storage storage, UserDetails userDetails, GiftList gifts) {
         ui.showMessage("Please enter your name:");
-        String name = ui.readCommand();
+        String name = ui.readName();
         ui.showMessage("Great! Hello there " + name + ", it's my pleasure to know you!"); 
         System.out.println(HORIZONTAL);
 
         ui.showMessage("Please enter your age:");
-        String age = ui.readCommand();
+        String age = ui.readAge();
         ui.showMessage("Wow, you're " + age + " years young! This might be handy information.");
         System.out.println(HORIZONTAL);
 
-        ui.showMessage("Please enter your gender:");
-        String gender = ui.readCommand();
+        ui.showMessage("Please enter your gender(Male/Female/Other):");
+        String gender = ui.readUserGender();
         ui.showMessage("I see you're a " + gender + "!");
         System.out.println(HORIZONTAL);
 
@@ -59,7 +59,7 @@ public class UserDetailsCommand extends Command {
         ui.showMessage("C: Central");
         ui.showMessage("S: South");
         ui.showMessage("NE: NorthEast");
-        String location = ui.readCommand();
+        String location = ui.readUserLocation();
         ui.showMessage("Thanks! Don't worry, I won't let the rest know where you stay ;)!");
         System.out.println(HORIZONTAL);
 
@@ -72,7 +72,7 @@ public class UserDetailsCommand extends Command {
         ui.showMessage("K: Korean");
         ui.showMessage("I: Italian");
         ui.showMessage("S: Spanish");
-        String cuisine = ui.readCommand();
+        String cuisine = ui.readUserCuisine();
         ui.showMessage("Thanks, this will be useful...");
         System.out.println(HORIZONTAL);
 
@@ -83,7 +83,7 @@ public class UserDetailsCommand extends Command {
         ui.showMessage("Enter 'D' if you are dating/testing the waters");
         ui.showMessage("Enter 'S' if you are single and ready to mingle");
         ui.showMessage("Enter 'X' if you are single and only looking to hangout with friends");
-        String status = ui.readCommand();
+        String status = ui.readUserStatus();
         ui.showMessage("Thanks for letting me know your relationship status! :)");
         System.out.println(HORIZONTAL);
 
@@ -104,5 +104,7 @@ public class UserDetailsCommand extends Command {
         storage.saveUserDetails(userDetails);
 
         ui.showMessage("User details saved successfully!");
+        ui.showMessage("Curious about what you can do? Just type 'help' for a sprinkle of tips! ");
+        System.out.println(HORIZONTAL);
     }
 }

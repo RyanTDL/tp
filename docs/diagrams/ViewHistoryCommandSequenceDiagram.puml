@@ -1,0 +1,34 @@
+actor User as User
+
+User -> Ui : history
+Ui -> ViewHistoryCommand: ViewHistoryCommand()
+
+ViewHistoryCommand -> ActivityList
+    loop activities.size()
+        ActivityList -> Activity : get()
+        Activity -> Activity : getCompletionStatus()
+
+        alt getCompletionStatus().equals("C")
+            Activity -> User : print()
+        end
+    end
+
+ViewHistoryCommand -> FoodList
+    loop foods.size()
+        FoodList -> Food : get()
+        Food -> Food : getCompletionStatus()
+
+        alt getCompletionStatus().equals("C")
+            Food -> User : print()
+        end
+    end
+
+ViewHistoryCommand -> GiftList
+    loop gifts.size()
+        GiftList -> Gift : get()
+        Gift -> Gift : getCompletionStatus()
+
+        alt getCompletionStatus().equals("C")
+            Gift -> User : print()
+        end
+    end

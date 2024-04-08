@@ -9,6 +9,14 @@ public class Idea {
         this.activity = activity;
     }
 
+    public void setFood(Food food) {
+        this.food = food;
+    }
+
+    public void setActivity(Activity activity) {
+        this.activity = activity;
+    }
+
     @Override
     public String toString() {
         return "You can do " + activity + " and have a nice meal at " + food;

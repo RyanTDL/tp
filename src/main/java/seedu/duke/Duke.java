@@ -32,7 +32,7 @@ public class Duke {
         ui = new Ui();
         storage = new Storage(filePath);
         try {
-            favourites = new FavouritesList(storage.loadFavourites());
+            favourites = storage.loadFavourites();
             foods = new FoodList(storage.loadFood());
             activities = new ActivityList(storage.loadActivity());
             userDetails = storage.loadUserDetails();

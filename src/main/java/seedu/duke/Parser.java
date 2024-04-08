@@ -71,11 +71,14 @@ public class Parser {
         case "itinerary":
             if (arguments.trim().isEmpty()) {
                 throw new FlirtForkEmptyException();
+            } else if (arguments.split(" ").length!=2) {
+                throw new FlirtForkException("Please follow the format: 'itinerary LOCATION PRICE'");
+            } else {
+                return new GenerateItineraryCommand(arguments);
             }
-            return new GenerateItineraryCommand(arguments);
         case "smart":
             if (!arguments.trim().isEmpty()) {
-                throw new FlirtForkEmptyException();
+                throw new FlirtForkException("To generate smart itinerary, please only send 'smart'.");
             }
             return new GenerateSmartItineraryCommand(userDetails);
         case "idea":
@@ -83,6 +86,9 @@ public class Parser {
         case "gift":
             return new GenerateGiftCommand();
         case "exit":
+            if (!arguments.trim().isEmpty()) {
+                throw new FlirtForkException("If you wish to exit, please only send 'exit'. \n" + HORIZONTAL);
+            }
             return new ExitCommand();
         case "help":
             return new HelpCommand();

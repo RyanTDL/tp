@@ -2,9 +2,12 @@ package seedu.duke;
 
 /**
  * Represents the user's personal details within the application.
- * This class stores information such as the user's name, age, gender, relationship status,
- * location, favorite cuisine, and anniversary date if applicable. It provides getters and
- * setters for each field, allowing for encapsulated access and modification of these details.
+ * This class stores information such as the user's name, age, gender,
+ * relationship status,
+ * location, favorite cuisine, and anniversary date if applicable. It provides
+ * getters and
+ * setters for each field, allowing for encapsulated access and modification of
+ * these details.
  */
 public class UserDetails {
     private String name;
@@ -17,7 +20,8 @@ public class UserDetails {
 
     /**
      * Constructs a new UserDetails instance with default values for all fields.
-     * Default values are placeholder strings indicating that the details have not been set.
+     * Default values are placeholder strings indicating that the details have not
+     * been set.
      */
     public UserDetails() {
         this.name = "NOT SET";
@@ -32,16 +36,16 @@ public class UserDetails {
     /**
      * Constructs a new UserDetails instance with specified values for all fields.
      *
-     * @param name The user's name.
-     * @param age The user's age.
-     * @param gender The user's gender.
-     * @param status The user's relationship status.
-     * @param location The user's preferred location.
-     * @param cuisine The user's favorite cuisine.
+     * @param name        The user's name.
+     * @param age         The user's age.
+     * @param gender      The user's gender.
+     * @param status      The user's relationship status.
+     * @param location    The user's preferred location.
+     * @param cuisine     The user's favorite cuisine.
      * @param anniversary The user's anniversary date, if applicable.
-     */    
+     */
     public UserDetails(String name, String age, String gender, String status, String location,
-                       String cuisine, String anniversary) {
+            String cuisine, String anniversary) {
         this.name = name;
         this.age = age;
         this.gender = gender;
@@ -66,6 +70,10 @@ public class UserDetails {
      * @param name The new name of the user.
      */
     public void setName(String name) {
+        if (name == null) {
+            throw new IllegalArgumentException("Name cannot be null.");
+        }
+        ;
         this.name = name;
     }
 
@@ -102,6 +110,13 @@ public class UserDetails {
      * @param age The age of the user.
      */
     public void setAge(String age) {
+        try {
+            if (Integer.parseInt(age) < 0) {
+                throw new IllegalArgumentException("Age cannot be negative.");
+            }
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("Age must be a valid integer.");
+        }
         this.age = age;
     }
 
@@ -120,6 +135,9 @@ public class UserDetails {
      * @param gender The gender of the user.
      */
     public void setGender(String gender) {
+        if (!(gender.equals("Male") || gender.equals("Female") || gender.equals("Other"))) {
+            throw new IllegalArgumentException("Gender must be 'Male', 'Female', or 'Other'.");
+        }
         this.gender = gender;
     }
 
@@ -174,7 +192,7 @@ public class UserDetails {
      * @param anniversary The anniversary date of the user.
      */
     public void setAnniversary(String anniversary) {
-        this.anniversary =anniversary;
+        this.anniversary = anniversary;
     }
 
     /**
