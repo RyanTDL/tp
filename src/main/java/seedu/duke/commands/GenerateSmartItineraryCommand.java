@@ -86,7 +86,7 @@ public class GenerateSmartItineraryCommand extends Command {
             LOGGER.log(Level.SEVERE, "Invalid arguments given");
         } catch (FlirtForkException e) {
             System.out.println("I could not generate a suitable itinerary!"); 
-            System.out.println("I'm not smart enough for your default preferences, try the 'itinerary' command instead!"); 
+            System.out.println("I'm not smart enough for your default preferences, try 'itinerary' command instead!"); 
         }
     }
 
