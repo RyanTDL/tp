@@ -34,6 +34,7 @@ public class Parser {
         assert userDetails != null : "Input should not be empty";
 
         String commandType = userInput.split(" ")[0];
+
         String arguments = userInput.contains(" ") ? userInput.substring(userInput.indexOf(" ") + 1) : "";
 
         switch (commandType) {
@@ -48,6 +49,10 @@ public class Parser {
             }
             return new AddActivityCommand(arguments);
         case "favourites":
+            if (!arguments.trim().isEmpty()) {
+                throw new FlirtForkException("OOPS! The 'favourites' command does not require" +
+                        "any additional arguments. \n" + HORIZONTAL);
+            }
             return new ListFavouritesCommand();
         case "delete":
             try {
@@ -82,8 +87,14 @@ public class Parser {
             }
             return new GenerateSmartItineraryCommand(userDetails);
         case "idea":
+            if (!arguments.trim().isEmpty()) {
+                throw new FlirtForkException("To generate date ideas, please only send 'idea'.");
+            }
             return new GenerateIdeaCommand();
         case "gift":
+            if (!arguments.trim().isEmpty()) {
+                throw new FlirtForkException("To generate gift suggestions, please only send 'gift'.");
+            }
             return new GenerateGiftCommand();
         case "exit":
             if (!arguments.trim().isEmpty()) {
@@ -91,12 +102,24 @@ public class Parser {
             }
             return new ExitCommand();
         case "help":
+            if (!arguments.trim().isEmpty()) {
+                throw new FlirtForkException("Just 'help' is enough :) \n" + HORIZONTAL);
+            }
             return new HelpCommand();
         case "me":
-            return new UserDetailsCommand(); 
+            if (!arguments.trim().isEmpty()) {
+                throw new FlirtForkException("Don't be ambitious! Just 'me' is enough! \n" + HORIZONTAL);
+            }
+            return new UserDetailsCommand();
         case "history":
+            if (!arguments.trim().isEmpty()) {
+                throw new FlirtForkException("Okay, just type 'history' as it is to view your past. \n" + HORIZONTAL);
+            }
             return new ViewHistoryCommand();
         case "list":
+            if (!arguments.trim().isEmpty()) {
+                throw new FlirtForkException("Only 'list' is required to view the list! \n" + HORIZONTAL);
+            }
             Ui.listCommand();
             Scanner scanner = new Scanner(System.in);
             String optionType = scanner.nextLine().toLowerCase();
@@ -142,4 +165,7 @@ public class Parser {
         gift = new Gift(parts[0], parts[1]);
         return gift;
     }
+
 }
+
+

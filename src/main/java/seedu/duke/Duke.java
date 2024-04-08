@@ -7,6 +7,10 @@ import seedu.duke.exceptions.FlirtForkException;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
+/**
+ * The main class for the FlirtFork application.
+ * Duke initializes the application and runs the main loop.
+ */
 public class Duke {
     private static final String FILE_PATH = "./data/FlirtFork.txt";
 
@@ -19,6 +23,11 @@ public class Duke {
     private UserDetails userDetails;
     private GiftList gifts;
 
+    /**
+     * Constructor for Duke class.
+     *
+     * @param filePath The file path to store data.
+     */
     public Duke(String filePath) {
         ui = new Ui();
         storage = new Storage(filePath);
