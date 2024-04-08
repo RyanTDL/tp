@@ -74,3 +74,5 @@ Poulet | ACC | P | W | U
 Gochi-so Shokudo | ACC | S | J | U
 Ichiban Sushi | ACC | S | J | U
 Watami Japanese Dining | ACC | S | J | U
+The West Wing | W | P | W | U
+YC Dining and Bar | W | P | W | U
