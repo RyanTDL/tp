@@ -19,6 +19,9 @@ public class ExitCommand extends Command {
 
         try {
             storage.saveFavourites(favourites.getFavourites());
+            storage.saveActivity(activities);
+            storage.saveFood(foods);
+            storage.saveGift(gifts);
             ui.exitMessage();
         } catch (IOException e) {
             ui.errorMessage("Yikes! Our love potion spilled and couldn't save your data! " + e.getMessage());

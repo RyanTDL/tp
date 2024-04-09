@@ -1,0 +1,309 @@
+25 Degrees | C | C | W | U
+49 Seats | C | C | W | U
+888 Mookata | C | C | T | U
+Paddy's Patties | C | C | W | U
+Urban Dumpling | C | C | C | U
+Bangkok Street | C | C | T | U
+Seoul Bites | C | C | K | U
+Rome's Delight | C | C | I | U
+Madrid Tapas | C | C | S | U
+Miso Good Ramen | C | B | J | U
+Curry In A Hurry | C | B | I | U
+Spicy Sichuan | C | B | C | U
+Tom Yum Goong | C | B | T | U
+Nasi Padang | C | B | F | U
+The American Diner | C | B | W | U
+90 Minutes | C | B | K | U
+A9 Noodles and Dumplings | C | B | C | U
+Aburi Kaisen Don Keisuke | C | B | J | U
+Bistro Belle | C | A | F | U
+Sushi Samba | C | A | J | U
+Kimchi Palace | C | A | K | U
+Napoli Nights | C | A | I | U
+Chiang Mai Kitchen | C | A | T | U
+Beijing Bites | C | A | C | U
+Five Guys | C | A | W | U
+Hantol | C | A | K | U
+Swee Choon | C | A | C  | U
+Osteria Mozza | C | P | I | U
+Sashimi House | C | P | J | U
+Tapas y Vino | C | P | S | U
+Gourmet Burger Kitchen | C | P | W | U
+Bangkok High | C | P | T | U
+Seoul Fine Dining | C | P | K | U
+Wano Niku | C | P | J | U
+Super Thai Mookata | C | P | T | U
+Cicheti | C | P | I | U
+La Trattoria | C | S | I | U
+Nobu Deluxe | C | S | J | U
+The Royal Thai | C | S | T | U
+French Riviera | C | S | F | U
+Emperor's Feast | C | S | C | U
+Chateau Gourmet | C | S | W | U
+Ikura Japanese | C | S | J | U
+R.K Eating House | C | S | I | U
+Tolido's Expresso Nook | C | S | W | U
+East End Eatery | E | C | W | U
+Wok This Way | E | C | C | U
+Pad Thai Corner | E | C | T | U
+Kim's Kimchi | E | C | K | U
+Little Italy | E | C | I | U
+Tapas Town | E | C | S | U
+886 Bistro | E | C | C | U
+Al Jasra | E | C | I | U
+Breakfast Grill | E | C | W | U
+Noodle Nirvana | E | B | J | U
+Curry Corner | E | B | I | U
+Spicy Dragon | E | B | C | U
+Thai Terrace | E | B | T | U
+East-West Fusion | E | B | F | U
+Classic Diner | E | B | W | U
+Charlie's Corner | E | B | W | U
+E&D Co | E | B | W | U
+Ha-Jun | E | B | K | U
+East Side Bistro | E | A | F | U
+Sushi East | E | A | J | U
+Kimchi Kitchen | E | A | K | U
+Pizzeria Etna | E | A | I | U
+Thai Garden | E | A | T | U
+Sichuan Spot | E | A | C | U
+Missus | E | A | W | U
+Mr Yakiniku | E | A | J | U
+Five Oars | E | A | W | U
+Italian Indulgence | E | P | I | U
+Sushi Spectacular | E | P | J | U
+Spanish Fiesta | E | P | S | U
+Gourmet Grille | E | P | W | U
+Thai Elite | E | P | T | U
+Korean Kuisine | E | P | K | U
+Knead To Eat | E | P | W | U
+Craze Kitchen | E | P | I | U
+Neptune | E | P | I | U
+La Dolce Vita | E | S | I | U
+Japonais Elite | E | S | J | U
+Thai Treasures | E | S | T | U
+Fusion Fine Dining | E | S | F | U
+Chinese Emperor | E | S | C | U
+West End Wonder | E | S | W | U
+Supernova | E | S | W | U
+The Sushi Bar | E | S | J | U
+The Basil Inn | E | S | T | U
+Westside Wraps | W | C | W | U
+Chuan Chuan | W | C | C | U
+Noodle Boat | W | C | T | U
+Seoul Food | W | C | K | U
+Pizza Piazza | W | C | I | U
+Tapas on the Terrace | W | C | S | U
+49 Seats | W | C | W | U
+888 Mookata | W | C | T | U
+Ramen Road | W | B | J | U
+Spaghetti Junction | W | B | I | U
+Dragon Noodle House | W | B | C | U
+Tasty Thai | W | B | T | U
+Fusion Feast | W | B | F | U
+Westside Diner | W | B | W | U
+West Garden Bistro | W | A | F | U
+Sashimi Spot | W | A | J | U
+Kimchi Corner | W | A | K | U
+Trattoria West | W | A | I | U
+Thai Spice | W | A | T | U
+Sichuan House | W | A | C | U
+West End Italiano | W | P | I | U
+Sushi Select | W | P | J | U
+Spanish Square | W | P | S | U
+Gourmet Burger Bistro | W | P | W | U
+Thai Elegance | W | P | T | U
+Korean Cuisine Palace | W | P | K | U
+Italian Eleganza | W | S | I | U
+Japanese Fine Dining | W | S | J | U
+Royal Thai Cuisine | W | S | T | U
+Westside Gourmet | W | S | F | U
+Emperor's Choice | W | S | C | U
+Prime Grill | W | S | W | U
+Southern Bites | S | C | W | U
+Little China | S | C | C | U
+Thai Quick | S | C | T | U
+Seoul Street | S | C | K | U
+Italiano Rapido | S | C | I | U
+Spanish Snacks | S | C | S | U
+46 Mittsu | S | C | W | U
+Abundance | S | C | C | U
+Hwang Shi | S | C | C | U
+Southside Ramen | S | B | J | U
+Mama Mia's | S | B | I | U
+Dragon Delights | S | B | C | U
+Thai Corner | S | B | T | U
+Fusion Foods | S | B | F | U
+Southern Diner | S | B | W | U
+Gyunion | S | B | J | U
+Gyu San | S | B | J | U
+Hamburg Steak | S | B | J | U
+Southern Charm Bistro | S | A | F | U
+Sushi South | S | A | J | U
+Kimchi Kitchen South | S | A | K | U
+Italian Bites | S | A | I | U
+Thai Bistro | S | A | T | U
+Szechuan South | S | A | C | U
+Hantoi | S | A | K | U
+Burger Labo | S | A | W | U
+Old Habits Cafe | S | A | W | U
+South End Italian | S | P | I | U
+Sushi Scene | S | P | J | U
+Southern Spain | S | P | S | U
+Gourmet Southern Grill | S | P | W | U
+Thai Fine Dining | S | P | T | U
+Southern Korean Delights | S | P | K | U
+Publico | S | P | I | U
+Pura Barsa | S | P | S | U
+Marcy's | S | P | I | U
+Italian Excellence | S | S | I | U
+Sushi Extravaganza | S | S | J | U
+Thai Royal Court | S | S | T | U
+Southern Fusion | S | S | F | U
+Chinese Imperial | S | S | C | U
+Southside Steakhouse | S | S | W | U
+Lau Pa Sat | S | S | F | U
+Potato Head | S | S | W | U
+Northeast Nibbles | NE | C | W | U
+Dragon's Den | NE | C | C | U
+Thai Express | NE | C | T | U
+Kim's Korean | NE | C | K | U
+Quick Italiano | NE | C | I | U
+Spanish Snack Shack | NE | C | S | U
+Fuel X | NE | C | W | U
+Samwitch | NE | C | W | U
+Breakfast Club | NE | C | W | U
+Ramen Retreat | NE | B | J | U
+Italian Fast Feast | NE | B | I | U
+China Bowl | NE | B | C | U
+Thai Taste | NE | B | T | U
+Northeast Fusion | NE | B | F | U
+Northeast Diner | NE | B | W | U
+Whisk and Paddle | NE | B | W | U
+Tend Bistro | NE | B | J | U
+Dai Lou | NE | B | C | U
+NE Bistro | NE | A | F | U
+Sushi Spot | NE | A | J | U
+Korean Kitchen | NE | A | K | U
+NE Italian | NE | A | I | U
+Thai Terrace | NE | A | T | U
+Sichuan | NE | A | C | U
+Riang | NE | A | W | U
+Ishiro | NE | A | J | U
+Folk Yard | NE | A | W | U
+Italian Indulgence | NE | P | I | U
+Sushi Sensation | NE | P | J | U
+Spanish Serenade | NE | P | S | U
+Gourmet Grill | NE | P | W | U
+Thai Delight | NE | P | T | U
+Korean Kuisine | NE | P | K | U
+Tie Fun Wan | NE | P | C | U
+Gusta Sourdough Pizza Co | NE | P | I | U
+Curry Otoko Donburi | NE | P | J | U
+Italian Elite | NE | S | I | U
+Japanese Journey | NE | S | J | U
+Thai Royal | NE | S | T | U
+NE Gourmet Fusion | NE | S | F | U
+Chinese Imperial | NE | S | C | U
+NE Steakhouse | NE | S | W | U
+Shabu-GO | NE | S | J | U
+Idaten Udon | NE | S | J | U
+Moments | NE | S | W | U
+Accessible Eats | ACC | C | W | U
+Panda Express | ACC | C | C | U
+Thai Quick Bites | ACC | C | T | U
+Kim's Kitchenette | ACC | C | K | U
+Fast Italian | ACC | C | I | U
+Spanish Street Food | ACC | C | S | U
+Aburi-En | ACC | C | J | U
+Genki Sushi | ACC | C | J | U
+Makisan | ACC | C | J | U
+Ramen Ready | ACC | B | J | U
+Italian Express | ACC | B | I | U
+China Chow | ACC | B | C | U
+Thai Treats | ACC | B | T | U
+Fusion Fast | ACC | B | F | U
+Accessible Diner | ACC | B | W | U
+Lenu | ACC | B | C | U
+A&W | ACC | B | W | C
+Monster Curry | ACC | B | J | U
+All-around Bistro | ACC | A | F | U
+Sushi Stop | ACC | A | J | U
+Quick Korean | ACC | A | K | U
+Easy Italian | ACC | A | I | U
+Thai Table | ACC | A | T | U
+Sichuan Station | ACC | A | C | U
+Pepperlunch | ACC | A | J | U
+Crystal Jade | C | P | C | C
+Shi Li Fang | ACC | A | C | U
+Soup Spoon | ACC | A | W | U
+Italian Impressions | ACC | P | I | U
+Sushi Supreme | ACC | P | J | U
+Spanish Splendor | ACC | P | S | U
+Gourmet Galore | ACC | P | W | U
+Thai Top Table | ACC | P | T | U
+Korean Cuisine Classics | ACC | P | K | U
+Green Dot | ACC | P | W | U
+Hai Di Lao | ACC | P | C | U
+Poulet | ACC | P | W | U
+Gochi-so Shokudo | ACC | S | J | U
+Ichiban Sushi | ACC | S | J | U
+Watami Japanese Dining | ACC | S | J | U
+The West Wing | W | P | W | U
+YC Dining and Bar | W | P | W | U
+Curry House | ACC | C | I | U
+Ocean's Catch | NE | B | S | U
+Pasta Pronto | W | A | I | U
+Spicy Sichuan | E | B | C | U
+Luxury Sushi | S | P | J | U
+World Fusion | ACC | A | F | U
+Burger Joint | ACC | B | W | U
+Noodle House | NE | A | C | U
+Pizza Place | S | B | I | U
+Steak Heaven | W | P | W | U
+Tapas Bar | ACC | A | S | U
+BBQ Smokehouse | C | A | W | U
+Dim Sum Corner | NE | B | C | U
+Gelato Spot | ACC | B | I | U
+Ramen Retreat | ACC | A | J | U
+Tea House | E | C | C | U
+Tortilla Tavern | W | C | S | U
+Bamboo Basket | E | C | C | U
+Roma Pizzeria | S | B | I | U
+Tropical Fusion | NE | B | F | U
+East Sushi Stop | NE | A | J | U
+Mediterranean Mosaic | C | P | F | U
+Nordic Bites | W | A | W | U
+Southern Spice | S | B | I | U
+Pan-Asian Diner | C | C | F | U
+Mountain Kimchi | W | B | K | U
+Baguette & Brie | S | P | W | U
+Dragon Noodle House | NE | A | C | U
+Urban Tandoori | C | A | I | U
+Paella Pavilion | W | P | S | U
+Curry in a Hurry | E | C | I | U
+Tempura Towers | S | B | J | U
+Pasta Port | NE | C | I | U
+Goulash Garden | C | A | W | U
+Bulgogi BBQ | ACC | B | K | U
+Saffron Lounge | W | S | I | U
+Tapas Tienda | NE | P | S | U
+Zen Zen Sushi | ACC | S | J | U
+Oodles of Noodles | E | A | C | U
+Valentino | C | P | I | U
+Kimchi Kingdom | NE | A | K | U
+FOC Sentosa | E | B | S | U
+Tim Ho Wan | ACC | C | C | U
+Tex-Mex Grill | NE | B | W | U
+Dumpling Darlings | W | C | C | U
+Lemongrass Lane | C | A | T | U
+Ichiban Boshi | E | P | J | U
+Flamenco Flavors | NE | P | S | U
+Din Tai Fung | W | P | C | U
+Tori-Q | W | A | J | U
+Grill and Greens | C | C | W | U
+Empanada Esquina | E | A | S | U
+Beauty in the Pot | ACC | S | C | U
+Italian Extravaganza | ACC | S | I | U
+Sushi Spectacle | ACC | S | J | U
+Thai Royal Banquet | ACC | S | T | U

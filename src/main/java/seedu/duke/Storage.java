@@ -11,9 +11,9 @@ import java.io.InputStream;
 public class Storage {
     private static final String USER_DETAILS_FILE = "./data/UserDetails.txt";
     private static final String FAVOURITES_DETAILS_FILE = "./data/FlirtFork.txt";
-    private static final String FOOD_DETAILS_FILE = "./src/main/resources/FoodList.txt";
-    private static final String ACTIVITIES_DETAILS_FILE = "./src/main/resources/ActivityList.txt";
-    private static final String GIFTS_DETAILS_FILE = "./src/main/resources/GiftList.txt";
+    private static final String FOOD_DETAILS_FILE = "./data/FoodList.txt";
+    private static final String ACTIVITIES_DETAILS_FILE = "./data/ActivityList.txt";
+    private static final String GIFTS_DETAILS_FILE = "./data/GiftList.txt";
     private String filePath;
 
     public Storage(String filePath) {
