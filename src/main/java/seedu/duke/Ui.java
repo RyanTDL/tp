@@ -45,11 +45,11 @@ public class Ui {
             "1. list: Take a look at potential restaurants, activities, or gifts \n\n" +
             "2. me: Let me know more about yourself \n\n" +
             "3. idea: Generate a randomised date idea \n\n" +
-            "4. itinerary LOCATION PRICE: Generate a suitable date itinerary based on your preferences \n\n" +
+            "4. itinerary LOCATION, PRICE: Generate a suitable date itinerary based on your preferences \n\n" +
             "5. smart: Generate a smart itinerary, based on your user profile \n\n" +
             "6. gift: Generate a randomised gift idea \n\n" +
-            "7. food NAME_OF_EATERY LOCATION PRICE CUISINE: Add a restaurant to your favourites \n\n" +
-            "8. activity NAME_OF_ACTIVITY LOCATION PRICE: Add an activity to your favourites \n\n" +
+            "7. food NAME_OF_EATERY, LOCATION, PRICE, CUISINE: Add a restaurant to your favourites \n\n" +
+            "8. activity NAME_OF_ACTIVITY, LOCATION, PRICE: Add an activity to your favourites \n\n" +
             "9. favourites: List out all your favourites \n\n" +
             "10. delete INDEX_OF_ENTRY: Delete an entry from your favourites \n\n" +
             "11. find KEYWORD: Find an entry from your favourites, based off keyword \n\n" +
