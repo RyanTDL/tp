@@ -12,8 +12,6 @@ import seedu.duke.Storage;
 import seedu.duke.Ui;
 import seedu.duke.UserDetails;
 import seedu.duke.exceptions.FlirtForkException;
-import java.util.logging.Logger;
-import java.util.logging.Level;
 
 public class GenerateItineraryCommand extends Command {
     private String description;
