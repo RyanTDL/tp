@@ -18,7 +18,6 @@ import seedu.duke.UserDetails;
 import seedu.duke.exceptions.FlirtForkException;
 
 public class GenerateItineraryCommand extends Command {
-    private static final Logger LOGGER = Logger.getLogger(GenerateItineraryCommand.class.getName());
     private String description;
 
     public GenerateItineraryCommand(String description){
@@ -77,19 +76,20 @@ public class GenerateItineraryCommand extends Command {
                 storage.saveFood(foods);
                 storage.saveActivity(activities);
                 return;
-            } else {
+            } else if (userSatisfied.equals("no")) {
                 System.out.println("We apologise! Perhaps you could try again?");
+            } else {
+                System.out.println("Sorry, I did not understand that command! Stopping itinerary generation...");
             }
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Hmm... you may have entered the wrong number of fields. How about you try again?");
             System.out.println("Follow this format: 'itinerary LOCATION, PRICE'");
         } catch (IllegalArgumentException e) {
             System.out.println("We could not generate a suitable itinerary based on your inputs! Sorry!!");
-            LOGGER.log(Level.SEVERE, "Invalid arguments given");
         } catch (FlirtForkException e) {
-            System.out.println("We could not generate a suitable itinerary based on your inputs! Sorry!!"); 
+            System.out.println("Hmm.. it seems we ran out of suitable ideas based on your current budget/location!");
             System.out.println("Perhaps you could try a different location or budget?");
-            LOGGER.log(Level.SEVERE, "Insufficient suitable locations in database");
+            System.out.println("Else, feel free to add more food/activities to our database using the 'food'/'activity' command!");
         }
     }
 }
