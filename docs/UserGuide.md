@@ -231,12 +231,17 @@ We begin with lunch at Five Guys, followed by some fun at Museum of Ice Cream.
 We proceed to have dinner at Tolido's Expresso Nook, and finish the night at Haw Par Villa.
 ```
 
-In cases where your preferences are too unique or if an unexpected error occurs, Flirt & Fork will inform you that it was unable to generate a suitable itinerary, encouraging you to try again or adjust your profile preferences.
+In cases where your preferences are too unique or if an unexpected error occurs, Flirt & Fork will inform you that it was unable to generate a suitable itinerary, encouraging you to try again or adjust your profile preferences:
+
+```
+I could not generate a suitable itinerary based on your personal details!
+I'm not smart enough for your default preferences, try 'itinerary' command instead!
+```
 
 Notes:
 
 - The itinerary suggestions are based on the current database of foods and activities within Flirt & Fork. For the best experience, make sure your user details are up to date.
-- If Flirt & Fork encounters difficulty in generating an itinerary due to overly unique preferences or other issues, you will receive a message encouraging you to adjust your preferences or try again.
+- If Flirt & Fork encounters difficulty in generating an itinerary due to overly unique preferences or other issues, you will receive a message encouraging you to adjust your preferences or try another command.
 By using the smart command, you can discover new and exciting ways to enjoy your day, tailored specifically to what you love.
 
 
