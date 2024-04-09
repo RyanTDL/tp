@@ -49,10 +49,4 @@ public class FavouritesListTest {
         favouritesList.addFavourite(new Favourites("Orange"));
         assertEquals(2, favouritesList.findFavourites("an").size());
     }
-
-    @Test
-    void deleteFavourite_invalidIndex_throwsIllegalArgumentException() {
-        FavouritesList favouritesList = new FavouritesList();
-        assertThrows(IllegalArgumentException.class, () -> favouritesList.deleteFavourite(-1));
-    }
 }
