@@ -10,9 +10,9 @@ Our application generates creative, enjoyable date itineraries that fit within y
 ## Quick Start
 
 1. Ensure you have Java `11` or above installed in your Computer.
-2. Download the latest version of `Duke` from [here](http://link.to/duke).
+2. Download the latest version of `Flirt and Fork` from [here](http://link.to/FlirtandFork).
 3. Copy the file to the folder you want to use as the _home folder_
-4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar Duke.jar` command to run the bot. The GUI should appear in a few seconds.
+4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar Flirt_and_Fork.jar` command to run the bot. The GUI should appear in a few seconds.
 5. Type the command in the command box and press Enter to execute it.
 6. Refer to the [Features](#Features) section below for an overview of all valid commands.
 
@@ -58,7 +58,7 @@ Refer to the [Usage](#Usage) section below for details of each command.
 ## Usage
 
 ### Display all possible commands: `help`
-Lists out all possible commands used to interact with Duke.
+Lists out all possible commands used to interact with Flirt and Fork.
 
 Example of usage: `help`
 
@@ -213,11 +213,11 @@ That's great! Enjoy your date!
 Note: Saving an itinerary to history does not work as of v2.0 and will be fixed in the next release.
 
 ### Generate a smart itinerary, based on your user profile: `smart`
-The smart command generates a personalised itinerary tailored to your preferences, including your favorite cuisine and preferred location. This feature takes into account the details you've provided to Duke to recommend a combination of food and activities that align with your tastes and interests.
+The smart command generates a personalised itinerary tailored to your preferences, including your favorite cuisine and preferred location. This feature takes into account the details you've provided to Flirt and Fork to recommend a combination of food and activities that align with your tastes and interests.
 
 Format: `smart`
 
-Simply enter smart to let Duke create a custom itinerary for you. Ensure your user profile is updated with your current preferences for the best recommendations.
+Simply enter smart to let Flirt and Fork create a custom itinerary for you. Ensure your user profile is updated with your current preferences for the best recommendations.
 
 Expected Outcome:
 
