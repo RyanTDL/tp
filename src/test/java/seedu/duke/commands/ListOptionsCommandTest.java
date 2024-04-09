@@ -9,6 +9,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 class ListOptionsCommandTest {
 
@@ -28,9 +29,14 @@ class ListOptionsCommandTest {
         PrintStream printStream = new PrintStream(outputStream);
         System.setOut(printStream);
 
-        ListOptionsCommand listOptionsCommand = new ListOptionsCommand(optionType);
-
-        String output = outputStream.toString();
-        assertEquals(output.trim(), "Invalid option! Please choose 'food', 'activities' or 'gifts'.");
+        try {
+            ListOptionsCommand listOptionsCommand = new ListOptionsCommand(optionType);
+            fail("Expected an IllegalArgumentException to be thrown");
+        } catch (IllegalArgumentException e) {
+            String output = outputStream.toString();
+            assertEquals(output.trim(), "Invalid option! Please choose 'food', 'activities' or 'gifts'.");
+        } catch (Exception e) {
+            fail("Unexpected exception: " + e.getMessage());
+        }
     }
 }
