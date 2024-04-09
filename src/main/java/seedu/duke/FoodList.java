@@ -24,6 +24,10 @@ public class FoodList {
         return foods.get(i);
     }
 
+    public void add(Food newFood) {
+        foods.add(newFood);
+    }
+
     public Food getRandomFood() {
         Food randomFood;
         do {

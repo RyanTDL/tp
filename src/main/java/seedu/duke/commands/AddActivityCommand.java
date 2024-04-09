@@ -41,11 +41,17 @@ public class AddActivityCommand extends Command {
                 System.out.println("Invalid location/format given! Perhaps you could try again?");
                 System.out.println("Please type in the command 'help' to view our Legend for reference");            
             } else {
-                Activity activity = new Activity("[Activity] " + inputtedDescription, 
-                        inputtedLocation, inputtedPrice, "U");
-                favourites.addFavourite(activity);
-                System.out.println("Cupid's arrow strikes! This is now in your favourites. \n" + activity);
+                Activity newActivity = new Activity(inputtedDescription, inputtedLocation, inputtedPrice, "U");
+
+                // Add to favourites database
+                favourites.addFavourite(newActivity);
+                System.out.println("Cupid's arrow strikes! This is now in your favourites. \n" + newActivity);
                 ui.showFavourite("You've collected " + favourites.getFavourites().size() + " romantic treasures!");
+
+                // Add to activity database
+                activities.add(newActivity);
+                storage.saveActivity(activities);
+
             }
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Hmm... you may have entered the wrong number of fields. How about you try again?");

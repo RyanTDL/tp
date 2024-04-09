@@ -20,6 +20,10 @@ public class ActivityList {
         return activities.get(i);
     }
 
+    public void add(Activity newActivity) {
+        activities.add(newActivity);
+    }
+
     public int size() {
         return activities.size();
     }
