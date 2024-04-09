@@ -13,7 +13,7 @@ public class Storage {
     private static final String FAVOURITES_DETAILS_FILE = "./data/Favourites.txt";
     private static final String FOOD_DETAILS_FILE = "./data/FoodList.txt";
     private static final String ACTIVITIES_DETAILS_FILE = "./data/ActivityList.txt";
-    private static final String GIFTS_DETAILS_FILE = "./src/main/resources/GiftList.txt";
+    private static final String GIFTS_DETAILS_FILE = "./data/GiftList.txt";
     private String filePath;
 
     public Storage(String filePath) {
@@ -202,23 +202,47 @@ public class Storage {
     }
 
     public ArrayList<Gift> loadGift() throws FileNotFoundException {
-        ArrayList<Gift> loadedGift = new ArrayList<>();
-        InputStream is = getClass().getClassLoader().getResourceAsStream("GiftList.txt");
-        if (is == null) {
-            throw new FileNotFoundException("Gift list file not found");
-        }
-        try (Scanner scanner = new Scanner(is)) {
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
+        ArrayList<Gift> loadedGifts = new ArrayList<>();
+        File file = new File(GIFTS_DETAILS_FILE);
+        Scanner scanner1 = new Scanner(file);
+        // If file already exist
+        if (scanner1.hasNextLine()) {
+            while (scanner1.hasNextLine()) {
+                String line = scanner1.nextLine();
                 // Parse the line into an Activity object and add it to the list
-                loadedGift.add(Parser.parseGift(line));
+                loadedGifts.add(Parser.parseGift(line));
+            }
+            scanner1.close();
+        // If file does not exist, aka the first time JAR file is loaded
+        } else {
+            scanner1.close();
+            InputStream is = getClass().getClassLoader().getResourceAsStream("GiftList.txt");
+            if (is == null) {
+                throw new FileNotFoundException("Gift list file not found");
+            }
+            try (Scanner scanner2 = new Scanner(is)) {
+                while (scanner2.hasNextLine()) {
+                    String line = scanner2.nextLine();
+                    // Parse the line into a Food object and add it to the list
+                    loadedGifts.add(Parser.parseGift(line));
+                }
             }
         }
-        return loadedGift;
+        return loadedGifts;
     }
 
     public void saveGift(GiftList gifts) {
-        try (FileWriter writer = new FileWriter(GIFTS_DETAILS_FILE)) {
+
+
+        try {
+            File file = new File(GIFTS_DETAILS_FILE);
+            File parentDir = file.getParentFile();
+
+            if (!parentDir.exists()) {
+                parentDir.mkdirs();
+            }
+
+            FileWriter writer = new FileWriter(file);
             for (int i = 0; i < gifts.size(); i++) {
                 Gift oneGift = gifts.get(i);
                 writer.write(oneGift.description + " | " + oneGift.completionStatus + "\n");

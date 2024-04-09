@@ -12,16 +12,11 @@ import seedu.duke.Storage;
 import seedu.duke.Ui;
 import seedu.duke.UserDetails;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  * Represents a command to generate a date idea for the user based on a random combination of food and activity.
  * The user can choose whether they are satisfied with the idea or not.
  */
 public class GenerateIdeaCommand extends Command {
-
-    private static Logger logger = Logger.getLogger("IdeaLogger");
 
     /**
      * Generates a date idea consisting of a random food item and a random activity.
@@ -71,7 +66,6 @@ public class GenerateIdeaCommand extends Command {
                 break;
             } else {
                 ui.ideaSatisfiedErrorMessage();
-                logger.log(Level.WARNING, "input error");
             }
         }
     }

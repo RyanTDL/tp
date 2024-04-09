@@ -1,8 +1,6 @@
 package seedu.duke.commands;
 
 import java.util.Arrays;
-import java.util.logging.Logger;
-import java.util.logging.Level;
 
 import seedu.duke.Activity;
 import seedu.duke.ActivityList;
@@ -89,7 +87,7 @@ public class GenerateItineraryCommand extends Command {
         } catch (FlirtForkException e) {
             System.out.println("Hmm.. it seems we ran out of suitable ideas based on your current budget/location!");
             System.out.println("Perhaps you could try a different location or budget?");
-            System.out.println("Else, feel free to add more food/activities to our database using the 'food'/'activity' command!");
+            System.out.println("Feel free to add to our database using the 'food'/'activity' command!");
         }
     }
 }
