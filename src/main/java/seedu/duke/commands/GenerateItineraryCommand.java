@@ -17,7 +17,6 @@ import seedu.duke.exceptions.FlirtForkException;
 public class GenerateItineraryCommand extends Command {
     private String description;
 
-
     public GenerateItineraryCommand(String description){
         this.description = description;
     }
@@ -49,7 +48,7 @@ public class GenerateItineraryCommand extends Command {
                 System.out.println("Please type in the command 'help' to view our Legend for reference");
                 return;            
             }
-            
+
             food1 = foods.getFilteredFood(preferredLocation, preferredPrice);
             activity1 = activities.getFilteredActivity(preferredLocation, preferredPrice);
             // Ensure activity1 and activity2 are different
@@ -74,8 +73,10 @@ public class GenerateItineraryCommand extends Command {
                 storage.saveFood(foods);
                 storage.saveActivity(activities);
                 return;
-            } else {
+            } else if (userSatisfied.equals("no")) {
                 System.out.println("We apologise! Perhaps you could try again?");
+            } else {
+                System.out.println("Sorry, I did not understand that command! Stopping itinerary generation...");
             }
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Hmm... you may have entered the wrong number of fields. How about you try again?");
@@ -83,8 +84,9 @@ public class GenerateItineraryCommand extends Command {
         } catch (IllegalArgumentException e) {
             System.out.println("We could not generate a suitable itinerary based on your inputs! Sorry!!");
         } catch (FlirtForkException e) {
-            System.out.println("We could not generate a suitable itinerary based on your inputs! Sorry!!"); 
+            System.out.println("Hmm.. we ran out of suitable ideas based on your current budget/location!");  
             System.out.println("Perhaps you could try a different location or budget?");
+            System.out.println("Feel free to add more to our database using the 'food'/'activity' command!");
         }
     }
 }
