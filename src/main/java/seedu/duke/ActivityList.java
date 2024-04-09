@@ -56,4 +56,23 @@ public class ActivityList {
         }
 
     }
+
+    public Activity getCustomisedActivity(String userLocation) throws FlirtForkException {
+        ArrayList<Activity> filteredActivities = new ArrayList<>();
+        for (Activity eachActivity : activities) {
+            if (eachActivity.location.equals(userLocation) && 
+                    eachActivity.completionStatus.equals("U")) {
+                filteredActivities.add(eachActivity);
+            }
+        }
+
+        if (filteredActivities.size()<=1) {
+            throw new FlirtForkException("Not enough activity options");
+        } else {
+            Random random = new Random();
+            int filteredActivityIndex = random.nextInt(filteredActivities.size());
+            return filteredActivities.get(filteredActivityIndex);
+        }
+
+    }
 }

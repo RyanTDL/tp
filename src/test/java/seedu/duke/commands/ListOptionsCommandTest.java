@@ -32,5 +32,6 @@ class ListOptionsCommandTest {
 
         String output = outputStream.toString();
         assertEquals(output.trim(), "Invalid option! Please choose 'food', 'activities' or 'gifts'.");
+
     }
 }
