@@ -63,9 +63,10 @@ Aburi-En | ACC | C | J | U
 Genki Sushi | ACC | C | J | U
 Makisan | ACC | C | J | U
 Lenu | ACC | B | C | U
-A&W | ACC | B | W | U
+A&W | ACC | B | W | C
 Monster Curry | ACC | B | J | U
 Pepperlunch | ACC | A | J | U
+Crystal Jade | C | P | C | C
 Shi Li Fang | ACC | A | C | U
 Soup Spoon | ACC | A | W | U
 Green Dot | ACC | P | W | U
@@ -76,3 +77,56 @@ Ichiban Sushi | ACC | S | J | U
 Watami Japanese Dining | ACC | S | J | U
 The West Wing | W | P | W | U
 YC Dining and Bar | W | P | W | U
+Curry House | ACC | C | I | U
+Ocean's Catch | NE | B | S | U
+Pasta Pronto | W | A | I | U
+Spicy Sichuan | E | B | C | U
+Luxury Sushi | S | P | J | U
+World Fusion | ACC | A | F | U
+Burger Joint | ACC | B | W | U
+Noodle House | NE | A | C | U
+Pizza Place | S | B | I | U
+Steak Heaven | W | P | W | U
+Tapas Bar | ACC | A | S | U
+BBQ Smokehouse | C | A | W | U
+Dim Sum Corner | NE | B | C | U
+Gelato Spot | ACC | B | I | U
+Ramen Retreat | ACC | A | J | U
+Tea House | E | C | C | U
+Tortilla Tavern | W | C | S | U
+Bamboo Basket | E | C | C | U
+Roma Pizzeria | S | B | I | U
+Tropical Fusion | NE | B | F | U
+East Sushi Stop | NE | A | J | U
+Mediterranean Mosaic | C | P | F | U
+Nordic Bites | W | A | W | U
+Southern Spice | S | B | I | U
+Pan-Asian Diner | C | C | F | U
+Mountain Kimchi | W | B | K | U
+Baguette & Brie | S | P | W | U
+Dragon Noodle House | NE | A | C | U
+Urban Tandoori | C | A | I | U
+Paella Pavilion | W | P | S | U
+Curry in a Hurry | E | C | I | U
+Tempura Towers | S | B | J | U
+Pasta Port | NE | C | I | U
+Goulash Garden | C | A | W | U
+Bulgogi BBQ | ACC | B | K | U
+Saffron Lounge | W | S | I | U
+Tapas Tienda | NE | P | S | U
+Zen Zen Sushi | ACC | S | J | U
+Oodles of Noodles | E | A | C | U
+Valentino | C | P | I | U
+Kimchi Kingdom | NE | A | K | U
+FOC Sentosa | E | B | S | U
+Tim Ho Wan | ACC | C | C | U
+Tex-Mex Grill | NE | B | W | U
+Dumpling Darlings | W | C | C | U
+Lemongrass Lane | C | A | T | U
+Ichiban Boshi | E | P | J | U
+Flamenco Flavors | NE | P | S | U
+Din Tai Fung | W | P | C | U
+Tori-Q | W | A | J | U
+Grill and Greens | C | C | W | U
+Empanada Esquina | E | A | S | U
+Beauty in the Pot | ACC | S | C | U
