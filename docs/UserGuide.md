@@ -182,11 +182,11 @@ This gift is about to make a love story even sweeter.
 Generates out a date itinerary, consisting of 2 restaurants and 2 activities from our curated collection.
 The itinerary selected will be based off the user's indicated location and budget.
 
-Format: `itinerary [preferred_location] [preferred_price]`
+Format: `itinerary [preferred_location], [preferred_price]`
 
 > Note: The `preferred location` and `preferred price` must be within the [legend](#Legend).  
 
-Example of usage: `itinerary E A`
+Example of usage: `itinerary E, A`
 
 Expected outcome:
 ```
@@ -243,13 +243,15 @@ By using the smart command, you can discover new and exciting ways to enjoy your
 ### Add a restaurant to your favourites: `food`
 Adds a new restaurant to your favourited list.
 
-Format: `food [name of eatery] [location] [price] [cuisine]`
+Format: `food [name of eatery], [location], [price], [cuisine]`
 
-* The `location` and `price` inputted must be inside the legend. 
+> Note: The `location` and `price` must be within the [legend](#Legend).  
+> Ensure the formatting is strictly followed, including the spacing. 
+> For example, `food Omakase, C, S, J` will be registered, whereas `food Omakase,C,S,J` will result in an error.
 
 Example of usage: 
-`food East Coast BBQ NE B J`
-`food Omakase C S J`
+`food East Coast BBQ, NE, B, J`
+`food Omakase, C, S, J`
 
 Expected outcome:
 ```
@@ -262,13 +264,15 @@ You've collected 1 romantic treasures!
 ### Add an activity to your favourites: `activity`
 Adds a new activity to your favourited list.
 
-Format: `activity [name of activity] [location] [price]`
+Format: `activity [name of activity], [location], [price]`
 
-* The `location` and `price` inputted must be inside the legend. 
+> Note: The `location` and `price` must be within the [legend](#Legend).  
+> Ensure the formatting is strictly followed, including the spacing. 
+> For example, `activity Paragliding, C, S` will be registered, whereas `activity Paragliding,C,S` will result in an error.
 
 Example of usage: 
-`activity Paragliding C S`
-`activity Bungee Jumping at Sentose S P`
+`activity Paragliding, C, S`
+`activity Bungee Jumping at Sentose, S, P`
 
 Expected outcome:
 ```

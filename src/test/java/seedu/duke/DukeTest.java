@@ -129,7 +129,7 @@ class DukeTest {
             System.setOut(printStream);
             generateItineraryCommand.execute(favourites, foods, activities, ui, storage, userDetails, gifts);
             String output = outputStream.toString();
-            assertTrue(output.contains("We could not generate a suitable itinerary based on your inputs! Sorry!!"));
+            assertTrue(output.contains("Follow this format: 'itinerary LOCATION, PRICE'"));
             System.setOut(System.out);
         } catch (FlirtForkException e) {
             ui.errorMessage(e.getMessage());

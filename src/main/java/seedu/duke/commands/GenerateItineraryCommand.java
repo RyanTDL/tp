@@ -1,5 +1,6 @@
 package seedu.duke.commands;
 
+import java.util.Arrays;
 import seedu.duke.Activity;
 import seedu.duke.ActivityList;
 import seedu.duke.Command;
@@ -12,18 +13,13 @@ import seedu.duke.Storage;
 import seedu.duke.Ui;
 import seedu.duke.UserDetails;
 import seedu.duke.exceptions.FlirtForkException;
-import java.util.logging.Logger;
-import java.util.logging.Level;
 
 public class GenerateItineraryCommand extends Command {
-    private static final Logger LOGGER = Logger.getLogger(GenerateItineraryCommand.class.getName());
-    private String preferredLocation;
-    private String preferredPrice;
+    private String description;
+
 
     public GenerateItineraryCommand(String description){
-        String[] splitDescription = description.split(" ");
-        this.preferredLocation = splitDescription[0];
-        this.preferredPrice = splitDescription[1];
+        this.description = description;
     }
 
     @Override
@@ -35,7 +31,25 @@ public class GenerateItineraryCommand extends Command {
         Activity activity1;
         Activity activity2;
 
+        String[] prices = {"C", "B", "A", "P", "S"};
+        String[] locations = {"E", "W", "C", "S", "NE", "ACC"};
+
         try {
+            String[] splitDescription = description.split(", ");
+            String preferredLocation = splitDescription[0];
+            String preferredPrice = splitDescription[1];            
+
+            // Verify whether price/location entered correctly
+            if (!Arrays.asList(prices).contains(preferredPrice)){
+                System.out.println("Invalid price/format given! Perhaps you could try again?");
+                System.out.println("Please type in the command 'help' to view our Legend for reference");
+                return;
+            } else if (!Arrays.asList(locations).contains(preferredLocation)) {
+                System.out.println("Invalid location/format given! Perhaps you could try again?");
+                System.out.println("Please type in the command 'help' to view our Legend for reference");
+                return;            
+            }
+            
             food1 = foods.getFilteredFood(preferredLocation, preferredPrice);
             activity1 = activities.getFilteredActivity(preferredLocation, preferredPrice);
             // Ensure activity1 and activity2 are different
@@ -63,14 +77,14 @@ public class GenerateItineraryCommand extends Command {
             } else {
                 System.out.println("We apologise! Perhaps you could try again?");
             }
-
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Hmm... you may have entered the wrong number of fields. How about you try again?");
+            System.out.println("Follow this format: 'itinerary LOCATION, PRICE'");
         } catch (IllegalArgumentException e) {
             System.out.println("We could not generate a suitable itinerary based on your inputs! Sorry!!");
-            LOGGER.log(Level.SEVERE, "Invalid arguments given");
         } catch (FlirtForkException e) {
             System.out.println("We could not generate a suitable itinerary based on your inputs! Sorry!!"); 
             System.out.println("Perhaps you could try a different location or budget?");
-            LOGGER.log(Level.SEVERE, "Insufficient suitable locations in database");
         }
     }
 }

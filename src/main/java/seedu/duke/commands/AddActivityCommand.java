@@ -26,32 +26,34 @@ public class AddActivityCommand extends Command {
 
         String[] prices = {"C", "B", "A", "P", "S"};
         String[] locations = {"E", "W", "C", "S", "NE", "ACC"};
-        String[] inputCommands = description.split(" ");
-        // To deal with descriptions with multiple spaces: "Bistro C C W" versus "Bistro Bar C C W"
+        String[] inputCommands = description.split(", ");
         try {
-            String inputtedDescription = String.join(" ", 
-                                        Arrays.copyOfRange(inputCommands, 0, inputCommands.length - 2));
-            String inputtedLocation = inputCommands[inputCommands.length-2];
-            String inputtedPrice = inputCommands[inputCommands.length-1];
+            String inputtedDescription = inputCommands[0];
+            String inputtedLocation = inputCommands[1];
+            String inputtedPrice = inputCommands[2];
 
-            // Used to verify correct number of inputs
-            if (inputtedLocation.length()>3 || inputtedPrice.length()!=1) {
-                System.out.println("Invalid inputs entered");
-                System.out.println("Please follow the format: 'activity NAME_OF_ACTIVITY LOCATION PRICE'");
-            } else if (!Arrays.asList(prices).contains(inputtedPrice) || 
-                    !Arrays.asList(locations).contains(inputtedLocation)){
-                System.out.println("Invalid price/location given");
+            // Used to verify correct inputs
+            if (!Arrays.asList(prices).contains(inputtedPrice)){
+                System.out.println("Invalid price/format given! Perhaps you could try again?");
                 System.out.println("Please type in the command 'help' to view our Legend for reference");
+            } else if (!Arrays.asList(locations).contains(inputtedLocation)) {
+                System.out.println("Invalid location/format given! Perhaps you could try again?");
+                System.out.println("Please type in the command 'help' to view our Legend for reference");   
             } else {
-                Activity activity = new Activity("[Activity] " + inputtedDescription, 
-                        inputtedLocation, inputtedPrice, "U");
-                favourites.addFavourite(activity);
-                System.out.println("Cupid's arrow strikes! This is now in your favourites. \n" + activity);
+                Activity newActivity = new Activity(inputtedDescription, inputtedLocation, inputtedPrice, "U");
+
+                // Add to favourites database
+                favourites.addFavourite(newActivity);
+                System.out.println("Cupid's arrow strikes! This is now in your favourites. \n" + newActivity);
                 ui.showFavourite("You've collected " + favourites.getFavourites().size() + " romantic treasures!");
+
+                // Add to activity database
+                activities.add(newActivity);
+                storage.saveActivity(activities);
             }
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Invalid inputs entered");
-            System.out.println("Please follow the format: 'activity NAME_OF_ACTIVITY LOCATION PRICE'");
+            System.out.println("Hmm... you may have entered the wrong number of fields. How about you try again?");
+            System.out.println("Follow this format: 'activity NAME, LOCATION, PRICE'");
         }
     }
 }
