@@ -10,10 +10,10 @@ import java.io.InputStream;
 
 public class Storage {
     private static final String USER_DETAILS_FILE = "./data/UserDetails.txt";
-    private static final String FAVOURITES_DETAILS_FILE = "./data/FlirtFork.txt";
-    private static final String FOOD_DETAILS_FILE = "./src/main/resources/FoodList.txt";
-    private static final String ACTIVITIES_DETAILS_FILE = "./src/main/resources/ActivityList.txt";
-    private static final String GIFTS_DETAILS_FILE = "./src/main/resources/GiftList.txt";
+    private static final String FAVOURITES_DETAILS_FILE = "./data/Favourites.txt";
+    private static final String FOOD_DETAILS_FILE = "./data/FoodList.txt";
+    private static final String ACTIVITIES_DETAILS_FILE = "./data/ActivityList.txt";
+    private static final String GIFTS_DETAILS_FILE = "./data/GiftList.txt";
     private String filePath;
 
     public Storage(String filePath) {
@@ -97,7 +97,25 @@ public class Storage {
     }
 
     public ArrayList<Food> loadFood() throws FileNotFoundException {
-        ArrayList<Food> loadedFood = new ArrayList<>();
+        ArrayList<Food> loadedFoods = new ArrayList<>();
+        try {
+            File file = new File(FOOD_DETAILS_FILE);
+            if (file.exists()) {
+                Scanner scanner = new Scanner(file);
+                while (scanner.hasNextLine()) {
+                    String line = scanner.nextLine();
+                    loadedFoods.add(Parser.parseFood(line));
+                }
+                scanner.close();
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("OOPS! No saved tasks found, starting with an empty list ~");
+        }
+        return loadedFoods;
+    }
+
+    public ArrayList<Food> loadFoodFirstTime() throws FileNotFoundException {
+        ArrayList<Food> loadedFoods = new ArrayList<>();
         InputStream is = getClass().getClassLoader().getResourceAsStream("FoodList.txt");
         if (is == null) {
             throw new FileNotFoundException("Food list file not found");
@@ -106,10 +124,10 @@ public class Storage {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 // Parse the line into a Food object and add it to the list
-                loadedFood.add(Parser.parseFood(line));
+                loadedFoods.add(Parser.parseFood(line));
             }
         }
-        return loadedFood;
+        return loadedFoods;
     }
 
     public void saveFood(FoodList foods) {
@@ -126,8 +144,8 @@ public class Storage {
         }
     }
 
-    public ArrayList<Activity> loadActivity() throws FileNotFoundException {
-        ArrayList<Activity> loadedActivity = new ArrayList<>();
+    public ArrayList<Activity> loadActivityFirstTime() throws FileNotFoundException {
+        ArrayList<Activity> loadedActivities = new ArrayList<>();
         InputStream is = getClass().getClassLoader().getResourceAsStream("ActivityList.txt");
         if (is == null) {
             throw new FileNotFoundException("Activity list file not found");
@@ -136,10 +154,28 @@ public class Storage {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 // Parse the line into an Activity object and add it to the list
-                loadedActivity.add(Parser.parseActivity(line));
+                loadedActivities.add(Parser.parseActivity(line));
             }
         }
-        return loadedActivity;
+        return loadedActivities;
+    }
+
+    public ArrayList<Activity> loadActivity() throws FileNotFoundException {
+        ArrayList<Activity> loadedActivities = new ArrayList<>();
+        try {
+            File file = new File(ACTIVITIES_DETAILS_FILE);
+            if (file.exists()) {
+                Scanner scanner = new Scanner(file);
+                while (scanner.hasNextLine()) {
+                    String line = scanner.nextLine();
+                    loadedActivities.add(Parser.parseActivity(line));
+                }
+                scanner.close();
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("OOPS! No saved tasks found, starting with an empty list ~");
+        }
+        return loadedActivities;
     }
 
     public void saveActivity(ActivityList activities) {
@@ -156,7 +192,7 @@ public class Storage {
         }
     }
 
-    public ArrayList<Gift> loadGift() throws FileNotFoundException {
+    public ArrayList<Gift> loadGiftFirstTime() throws FileNotFoundException {
         ArrayList<Gift> loadedGift = new ArrayList<>();
         InputStream is = getClass().getClassLoader().getResourceAsStream("GiftList.txt");
         if (is == null) {
@@ -172,6 +208,24 @@ public class Storage {
         return loadedGift;
     }
 
+    public ArrayList<Gift> loadGift() throws FileNotFoundException {
+        ArrayList<Gift> loadGifts = new ArrayList<>();
+        try {
+            File file = new File(GIFTS_DETAILS_FILE);
+            if (file.exists()) {
+                Scanner scanner = new Scanner(file);
+                while (scanner.hasNextLine()) {
+                    String line = scanner.nextLine();
+                    loadGifts.add(Parser.parseGift(line));
+                }
+                scanner.close();
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("OOPS! No saved tasks found, starting with an empty list ~");
+        }
+        return loadGifts;
+    }
+    
     public void saveGift(GiftList gifts) {
         try (FileWriter writer = new FileWriter(GIFTS_DETAILS_FILE)) {
             for (int i = 0; i < gifts.size(); i++) {
