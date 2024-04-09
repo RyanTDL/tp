@@ -18,7 +18,7 @@
 [Creative] Books based on their interest and needs (novel, sci-fi, travel) | U
 [Creative] Memory jar filled with notes and memories throughout the year | U
 [Creative] Personalised pens engraved with the recipient's name or initials | U
-[Creative] Concert tickets for a favourite band or artist perform live | U
+[Creative] Concert tickets for a favourite band or artist perform live | C
 [Creative] Mini projector for movie lovers | U
 [Food] Homemade dinner, consider making their favourite dish | U
 [Food] Artisan chocolates, flavours or a brand your partner loves | U
@@ -40,7 +40,7 @@
 [Flower] Orchids: Love, beauty, strength, deep enduring passion | U
 [Flower] Lilies: White - sense of purity, red - fervent passion | U
 [Flower] Sunflowers: Adoration, loyalty, longevity | U
-[Flower] Daisies: Innocence and cheerfulness, representing new beginnings or a love that is playful and bright! | U
+[Flower] Daisies: Innocence and cheerfulness, representing new beginnings or a love that is playful and bright! | C
 [Flower] Carnations: Red - admiration and deep love, white - pure love and good luck | U
 [Flower] Gardenias: Sweet fragrance, symbol of secret love or joy | U
 [Flower] Lilacs: Light purple - first love, beginnings of love | U

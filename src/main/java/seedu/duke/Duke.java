@@ -33,10 +33,17 @@ public class Duke {
         storage = new Storage(filePath);
         try {
             favourites = storage.loadFavourites();
-            foods = new FoodList(storage.loadFood());
-            activities = new ActivityList(storage.loadActivity());
             userDetails = storage.loadUserDetails();
-            gifts = new GiftList(storage.loadGift());
+
+            if (userDetails.getName().equals("NOT SET")) {
+                foods = new FoodList(storage.loadFoodFirstTime());
+                activities = new ActivityList(storage.loadActivityFirstTime());
+                gifts = new GiftList(storage.loadGiftFirstTime());
+            } else {
+                foods = new FoodList(storage.loadFood());
+                activities = new ActivityList(storage.loadActivity());
+                gifts = new GiftList(storage.loadGift());                
+            }
         } catch (FileNotFoundException e) {
             ui.errorMessage("File not found. Starting with an empty task list :)");
             favourites = new FavouritesList(new ArrayList<>());
