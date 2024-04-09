@@ -16,7 +16,7 @@ Universal Studios Singapore | C | P | U
 Singapore Zoo Night Safari | C | P | U
 Marina Bay Sands SkyPark | C | P | U
 Marina Bay Sands Skypark Observation Deck | C | S | U
-Marina Bay Sands Infinity Pool | C | S | U
+Marina Bay Sands Infinity Pool | C | S | C
 ArtScience Museum | C | S | U
 Marina Bay Sands Shopping | C | S | U
 Gardens by the Bay | C | S | U
@@ -112,7 +112,7 @@ Coney Island Park Glamping | NE | A | U
 Jewel Changi Airport Canopy Park | NE | P | U
 Hai Bin Prawning | NE | P | U
 Changi Experience Studio | NE | P | U
-Marina Bay Sands SkyPark | NE | P | U
+Marina Bay Sands SkyPark | NE | P | C
 Jewel Changi Airport Canopy Park | NE | P | U
 Marina Bay Sands Skypark Observation Deck | NE | S | U
 Marina Bay Sands Shopping | NE | S | U
