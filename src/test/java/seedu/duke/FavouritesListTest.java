@@ -51,8 +51,8 @@ public class FavouritesListTest {
     }
 
     @Test
-    void deleteFavourite_invalidIndex_throwsIndexOutOfBoundsException() {
+    void deleteFavourite_invalidIndex_throwsIllegalArgumentException() {
         FavouritesList favouritesList = new FavouritesList();
-        assertThrows(IndexOutOfBoundsException.class, () -> favouritesList.deleteFavourite(-1));
+        assertThrows(IllegalArgumentException.class, () -> favouritesList.deleteFavourite(-1));
     }
 }
