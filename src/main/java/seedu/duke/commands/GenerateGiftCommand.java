@@ -28,12 +28,13 @@ public class GenerateGiftCommand extends Command {
                 System.out.println("This gift is about to make a love story even sweeter.");
                 gift.markComplete();
                 break;
-            } else if (userSatisfied.equals("stop")) {
-                System.out.println("Taking a break? That's okay! \n" +
+            } else if (userSatisfied.equals("no")) {
+                System.out.println("Not satisfied? That's okay! \n" +
                         "Remember, great ideas need their own time to unwrap.");
                 break;
             } else {
-                System.out.println("No worries, love's journey has many paths. Let's try another! ");
+                System.out.println("Unrecognised command... Gift generation stopping... ");
+                break;
             }
         } while (true);
 

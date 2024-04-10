@@ -17,14 +17,10 @@ import seedu.duke.commands.ViewHistoryCommand;
 import seedu.duke.exceptions.FlirtForkEmptyException;
 import seedu.duke.exceptions.FlirtForkException;
 
-import java.util.logging.Logger;
-import java.util.logging.Level;
-
 import java.util.Scanner;
 
 public class Parser {
     private static final String HORIZONTAL = "____________________________________________________________";
-    private static Logger logger = Logger.getLogger("ParserLogger");
 
     public static Command parseCommand(String userInput, UserDetails userDetails) throws FlirtForkException {
         if (userInput.trim().isEmpty()) {
@@ -50,7 +46,7 @@ public class Parser {
             return new AddActivityCommand(arguments);
         case "favourites":
             if (!arguments.trim().isEmpty()) {
-                throw new FlirtForkException("OOPS! The 'favourites' command does not require" +
+                throw new FlirtForkException("OOPS! The 'favourites' command does not require " +
                         "any additional arguments. \n" + HORIZONTAL);
             }
             return new ListFavouritesCommand();
@@ -58,13 +54,11 @@ public class Parser {
             try {
                 int index = Integer.parseInt(arguments) - 1;
                 if (index < 0) {
-                    logger.log(Level.WARNING, "Index less than zero");
                     throw new FlirtForkException("OOPS! Index must be greater than 0! \n" +
                             HORIZONTAL);
                 }
                 return new DeleteFavouritesCommand(index);
             } catch (NumberFormatException e) {
-                logger.log(Level.WARNING, "Index invalid format");
                 throw new FlirtForkException("OOPS! Invalid format, " +
                         "please specify task index correctly! \n" + HORIZONTAL);
             }
@@ -77,7 +71,7 @@ public class Parser {
             if (arguments.trim().isEmpty()) {
                 throw new FlirtForkEmptyException();
             } else if (arguments.split(" ").length!=2) {
-                throw new FlirtForkException("Please follow the format: 'itinerary LOCATION PRICE'");
+                throw new FlirtForkException("Please follow the format: 'itinerary LOCATION, PRICE'");
             } else {
                 return new GenerateItineraryCommand(arguments);
             }
