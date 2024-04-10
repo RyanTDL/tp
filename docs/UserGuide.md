@@ -400,28 +400,28 @@ Locations:
 
 ## FAQ
 
-**Q: What is 'Flirt and Fork' and how does it help with planning dates?**
+**Q: What is 'Flirt and Fork' and how does it help with planning dates?**  
 A: 'Flirt and Fork' is a personalized date planning application that generates creative and enjoyable date itineraries tailored to your budget and location. It simplifies the process of coming up with date ideas by providing suggestions for dining, activities, and gifts based on your preferences.
 
-**Q: Do I need any specific software to run 'Flirt and Fork'?**
+**Q: Do I need any specific software to run 'Flirt and Fork'?**  
 A: Yes, you will need to have Java 11 or above installed on your computer to run 'Flirt and Fork'.
 
-**Q: How do I start using 'Flirt and Fork' after installation?**
+**Q: How do I start using 'Flirt and Fork' after installation?**  
 A: After downloading and running the .jar file, you can begin by typing commands into the command box. For a complete list of commands, you can type 'help' or refer to the Features and Usage sections of this guide.
 
-**Q: Can I save my favorite restaurants and activities for future reference?**
+**Q: Can I save my favorite restaurants and activities for future reference?**  
 A: Absolutely. You can add your favorite dining spots and activities to a favorites list with the 'food' and 'activity' commands. You can also find, list, and delete these favorites as needed.
 
-**Q: Is it possible to modify or delete entries from my favorites list?**
+**Q: Is it possible to modify or delete entries from my favorites list?**  
 A: Yes, you can delete any entry from your favorites list using the 'delete' command followed by the index number of the entry you wish to remove.
 
-**Q: How can I view a history of my past date plans?**
+**Q: How can I view a history of my past date plans?**  
 A: You can view all your past marked date restaurants, activities, and gift ideas by using the 'history' command (for suggestions from 'idea', 'itinerary', or 'smart' commands). This feature is perfect for reminiscing or re-visiting successful date ideas.
 
-**Q: Will my data be saved if I close the application?**
+**Q: Will my data be saved if I close the application?**  
 A: Yes, when you use the 'exit' command, 'Flirt and Fork' will automatically save your current data, ensuring that your preferences and favorites are preserved for your next session.
 
-**Q: How can I ensure the best experience with 'Flirt and Fork'?**
+**Q: How can I ensure the best experience with 'Flirt and Fork'?**  
 A: Keep your user details updated and regularly add to your favorites list! Ensure that your location and price inputs align with the provided legend for accurate itinerary generation.
 
 ## Command Summary
