@@ -151,7 +151,7 @@ That's great! Enjoy your date!
 Note: Saving an idea to history does not work as of v2.0 and will be fixed in the next release.
 
 ### Generate a randomised gift suggestion: `gift`
-Generates a randomised gift idea. Each suggestion comes with a category tag `[Creative]`, `[Food]`, `[Accessory]`, etc to give users a sense of what type of gift it is.
+Generates a randomised gift idea. Each suggestion comes with a category tag `[Creative]`, `[Food]`, `[Accessory]`, etc. to give users a sense of what type of gift it is.
 
 Example of usage: `gift`
 
@@ -240,13 +240,13 @@ I'm not smart enough for your default preferences, try 'itinerary' command inste
 
 Notes:
 
-- The itinerary suggestions are based on the current database of foods and activities within Flirt & Fork. For the best experience, make sure your user details are up to date.
+- The itinerary suggestions are based on the current database of foods and activities within Flirt & Fork. For the best experience, make sure your user details are up-to-date.
 - If Flirt & Fork encounters difficulty in generating an itinerary due to overly unique preferences or other issues, you will receive a message encouraging you to adjust your preferences or try another command.
 By using the smart command, you can discover new and exciting ways to enjoy your day, tailored specifically to what you love.
 
 
 ### Add a restaurant to your favourites: `food`
-Adds a new restaurant to your favourited list.
+Adds a new restaurant to your favourites list.
 
 Format: `food [name of eatery], [location], [price], [cuisine]`
 
@@ -267,7 +267,7 @@ You've collected 1 romantic treasures!
 
 
 ### Add an activity to your favourites: `activity`
-Adds a new activity to your favourited list.
+Adds a new activity to your favourites list.
 
 Format: `activity [name of activity], [location], [price]`
 
@@ -286,8 +286,8 @@ Cupid's arrow strikes! This is now in your favourites.
 You've collected 2 romantic treasures!
 ```
 
-### Find an entry from your favourited list: `find`
-Finds relevant entries from your favourited list, based on the keyword inputted.
+### Find an entry from your favourites list: `find`
+Finds relevant entries from your favourites list, based on the keyword inputted.
 
 Format: `find [keyword]`
 
@@ -304,8 +304,8 @@ Eureka! Your cupid's arrow hit the target! We found these matches for you:
 1. [Food] East Coast BBQ
 ```
 
-### List out all entries in your favourited list: `favourites`
-Lists out all the entries within your favourited list.
+### List out all entries in your favourites list: `favourites`
+Lists out all the entries within your favourites list.
 
 Format: `favourites`
 
@@ -316,8 +316,8 @@ Drumroll, please! Presenting the stars of your romantic sky:
 2. [Activity] Paragliding
 ```
 
-### Delete an entry from your favourited list: `delete`
-Deletes an entry from your favourited list, based on the entry index inputted.
+### Delete an entry from your favourites list: `delete`
+Deletes an entry from your favourites list, based on the entry index inputted.
 
 Format: `delete [index of entry]`
 
@@ -335,7 +335,7 @@ Your journey of love and taste continues~
 
 
 ### [Bugged] List out all entries from your past date history: `history`
-Lists out all the previous restaurants and activites completed on previous dates. Whenever `yes` is inputted for generating an idea or itinerary, it is assumed that the user will follow that date plan and hence, the suggested locations will be saved in the history.
+Lists out all the previous restaurants and activities completed on previous dates. Whenever `yes` is inputted for generating an idea or itinerary, it is assumed that the user will follow that date plan and hence, the suggested locations will be saved in the history.
 
 Format: `history`
 
@@ -377,7 +377,7 @@ Prices:
 * B: Budget
 * A: Affordable
 * P: Pricey
-* S: Special Ocassions Only
+* S: Special Occasions Only
 
 Cuisines:
 * W: Western
