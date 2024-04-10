@@ -77,23 +77,23 @@ public class Storage {
     }
 
     public UserDetails loadUserDetails() {
-        try {
-            File file = new File(USER_DETAILS_FILE);
-            if (file.exists()) {
-                Scanner scanner = new Scanner(file);
-                if (scanner.hasNextLine()) {
-                    String line = scanner.nextLine();
-                    String[] details = line.split(" \\| ");
-                    scanner.close();
-                    return new UserDetails(details[0], details[1], details[2], details[3], details[4],
-                            details[5], details[6]);
-                }
-                scanner.close();
-            }
-        } catch (FileNotFoundException e) {
+        File file = new File(USER_DETAILS_FILE);
+        if (!file.exists()) {
             System.out.println("OOPS! No saved user details found.");
+            return new UserDetails();
         }
-        return new UserDetails();
+        
+        try (Scanner scanner = new Scanner(file)) {
+            if (!scanner.hasNextLine()) {
+                return new UserDetails();
+            }
+            String line = scanner.nextLine();
+            String[] details = line.split(" \\| ");
+            return new UserDetails(details[0], details[1], details[2], details[3], details[4], details[5], details[6]);
+        } catch (FileNotFoundException e) {
+            System.out.println("OOPS! An error occurred while loading user details.");
+            return new UserDetails();
+        }
     }
 
     public ArrayList<Food> loadFood() throws FileNotFoundException {

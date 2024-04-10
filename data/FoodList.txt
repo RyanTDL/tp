@@ -1,12 +1,12 @@
-25 Degrees | C | C | W | C
+25 Degrees | C | C | W | U
 49 Seats | C | C | W | U
-888 Mookata | C | C | T | C
+888 Mookata | C | C | T | U
 Paddy's Patties | C | C | W | U
 Urban Dumpling | C | C | C | U
 Bangkok Street | C | C | T | U
 Seoul Bites | C | C | K | U
 Rome's Delight | C | C | I | U
-Madrid Tapas | C | C | S | C
+Madrid Tapas | C | C | S | U
 Miso Good Ramen | C | B | J | U
 Curry In A Hurry | C | B | I | U
 Spicy Sichuan | C | B | C | U
@@ -301,10 +301,9 @@ Ichiban Boshi | E | P | J | U
 Flamenco Flavors | NE | P | S | U
 Din Tai Fung | W | P | C | U
 Tori-Q | W | A | J | U
-Grill and Greens | C | C | W | C
+Grill and Greens | C | C | W | U
 Empanada Esquina | E | A | S | U
 Beauty in the Pot | ACC | S | C | U
 Italian Extravaganza | ACC | S | I | U
 Sushi Spectacle | ACC | S | J | U
 Thai Royal Banquet | ACC | S | T | U
-CUT by Wolfgang | ACC | S | W | U

@@ -15,7 +15,7 @@ public class SmartItinerary {
 
     @Override
     public String toString() {
-        return "Here is a smart itinerary for your date (the afternoon is planned around your preferences!): \n" + 
+        return "Here is a smart itinerary for your date (the afternoon is planned around your base preferences!): \n" + 
                 "We begin with lunch at " + food1 + ", followed by some fun at " + activity1 + ".\n" +
                 "We proceed to have dinner at " + food2 + ", and finish the night at " + activity2 + ".\n";
     }

@@ -1,12 +1,12 @@
-Botanic Garden Tours | C | C | C
+Botanic Garden Tours | C | C | U
 Gardens by the Bay | C | C | U
-Kampong Glam Cultural Exploration | C | C | C
+Kampong Glam Cultural Exploration | C | C | U
 Little India Heritage Walk | C | C | U
 Bugis Street Market | C | C | U
-Esplanade Free Concerts | C | C | C
+Esplanade Free Concerts | C | C | U
 National Library Visits | C | C | U
 St Andrew's Cathedral Tour | C | C | U
-Singapore River Walk | C | C | C
+Singapore River Walk | C | C | U
 Clarke Quay Nightlife | C | B | U
 Bras Basah Complex Art Galleries | C | B | U
 National Museum of Singapore Visit | C | B | U
