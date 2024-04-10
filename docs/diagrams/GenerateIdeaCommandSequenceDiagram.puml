@@ -1,7 +1,14 @@
 @startuml
 'https://plantuml.com/sequence-diagram
+hide footbox
 
 actor User as User
+participant ":Ui" as Ui
+participant ":GenerateIdeaCommand" as GenerateIdeaCommand
+participant ":FoodList" as FoodList
+participant ":ActivityList" as ActivityList
+participant ":Idea" as Idea
+participant ":Storage" as Storage
 
 User -> Ui: idea
 Ui -> GenerateIdeaCommand: GenerateIdeaCommand()
@@ -29,8 +36,10 @@ end
 User -> GenerateIdeaCommand: yes
 activate GenerateIdeaCommand
 GenerateIdeaCommand -> Storage: saveFood(foods)
+Storage --> GenerateIdeaCommand
 activate Storage
 GenerateIdeaCommand -> Storage: saveActivity(activities)
+Storage --> GenerateIdeaCommand
 GenerateIdeaCommand --> User: print(doneMessage)
 deactivate Storage
 deactivate GenerateIdeaCommand
