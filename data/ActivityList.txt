@@ -46,7 +46,7 @@ Private Helicopter Tour over Singapore | C | S | U
 Exclusive Ritz-Carlton Spa Day | C | S | U
 MBS Skypark Infinity Pool Access | C | S | U
 Marina Bay Sands Skypark Observation Deck | C | S | U
-Marina Bay Sands Infinity Pool | C | S | U
+Marina Bay Sands Infinity Pool | C | S | C
 ArtScience Museum | C | S | U
 Marina Bay Sands Shopping | C | S | U
 Gardens by the Bay | C | S | U
@@ -256,7 +256,7 @@ Coney Island Luxury Glamping | NE | P | U
 Sengkang Sports Complex Private Pool Booking | NE | P | U
 Hai Bin Prawning | NE | P | U
 Changi Experience Studio | NE | P | U
-Marina Bay Sands SkyPark | NE | P | U
+Marina Bay Sands SkyPark | NE | P | C
 Jewel Changi Airport Canopy Park | NE | P | U
 Marina Bay Sands Skypark Observation Deck | NE | S | U
 Yacht Party at Punggol Marina | NE | S | U

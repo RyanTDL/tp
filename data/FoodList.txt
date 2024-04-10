@@ -225,7 +225,7 @@ Thai Treats | ACC | B | T | U
 Fusion Fast | ACC | B | F | U
 Accessible Diner | ACC | B | W | U
 Lenu | ACC | B | C | U
-A&W | ACC | B | W | U
+A&W | ACC | B | W | C
 Monster Curry | ACC | B | J | U
 All-around Bistro | ACC | A | F | U
 Sushi Stop | ACC | A | J | U
@@ -234,7 +234,7 @@ Easy Italian | ACC | A | I | U
 Thai Table | ACC | A | T | U
 Sichuan Station | ACC | A | C | U
 Pepperlunch | ACC | A | J | U
-Crystal Jade | C | P | C | U
+Crystal Jade | C | P | C | C
 Shi Li Fang | ACC | A | C | U
 Soup Spoon | ACC | A | W | U
 Italian Impressions | ACC | P | I | U
