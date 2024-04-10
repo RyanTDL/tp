@@ -319,7 +319,7 @@ Drumroll, please! Presenting the stars of your romantic sky:
 ### Delete an entry from your favourited list: `delete`
 Deletes an entry from your favourited list, based on the entry index inputted.
 
-Format: `delete (index of entry)`
+Format: `delete [index of entry]`
 
 Example of usage: 
 `delete 2`
@@ -430,12 +430,12 @@ A: Keep your user details updated and regularly add to your favorites list! Ensu
 * List out all restaurants or activities: `list`
 * Update your personal information: `me`
 * Generate a randomised date idea: `idea`
-* Generate a date itinerary, based on preferred location and budget: `itinerary (preferred location) (preferred price)`
+* Generate a date itinerary, based on preferred location and budget: `itinerary [preferred_location], [preferred_price]`
 * Generate a smart date itinerary, based on your user profile: `smart`
-* Add a restaurant to your favourites: `food (name of eatery) (location) (price)`
-* Add an activity to your favourites: `activity (name of activity) (location) (price)`
-* Find an entry from your favourited list: `find (keyword)`
-* List out all entries in your favourited list: `favourites`
-* Delete an entry from your favourited list: `delete (index of entry)`
+* Add a restaurant to your favourites: `food [name of eatery], [location], [price]`
+* Add an activity to your favourites: `activity [name of activity], [location], [price]`
+* Find an entry from your favourites list: `find [keyword]`
+* List out all entries in your favourites list: `favourites`
+* Delete an entry from your favourites list: `delete [index of entry]`
 * List out all entries from your past date history: `history`
 * Exit the program: `exit`
