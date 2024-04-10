@@ -182,11 +182,11 @@ This gift is about to make a love story even sweeter.
 Generates out a date itinerary, consisting of 2 restaurants and 2 activities from our curated collection.
 The itinerary selected will be based off the user's indicated location and budget.
 
-Format: `itinerary [preferred_location] [preferred_price]`
+Format: `itinerary [preferred_location], [preferred_price]`
 
 > Note: The `preferred location` and `preferred price` must be within the [legend](#Legend).  
 
-Example of usage: `itinerary E A`
+Example of usage: `itinerary E, A`
 
 Expected outcome:
 ```
@@ -221,35 +221,42 @@ Simply enter smart to let Flirt and Fork create a custom itinerary for you. Ensu
 
 Expected Outcome:
 
-Upon executing the smart command, Flirt & Fork will display a curated itinerary that includes two food options and two activities. These suggestions are based on your default location and favourite cuisine, aiming to enhance your experience with personalized options.
+Upon executing the smart command, Flirt & Fork will display a curated itinerary that includes two food options and two activities. The suggestions for the afternoon (lunch + afternoon activity) are specifically tailored to your default location and favourite cuisine, aiming to enhance your experience with personalized options.
 
 If Flirt & Fork successfully generates an itinerary, you'll see something like this:
 
 ```
-Here is a rough itinerary for your date: 
+Here is a smart itinerary for your date (the afternoon is planned around your base preferences!): 
 We begin with lunch at Five Guys, followed by some fun at Museum of Ice Cream.
 We proceed to have dinner at Tolido's Expresso Nook, and finish the night at Haw Par Villa.
 ```
 
-In cases where your preferences are too unique or if an unexpected error occurs, Flirt & Fork will inform you that it was unable to generate a suitable itinerary, encouraging you to try again or adjust your profile preferences.
+In cases where your preferences are too unique or if an unexpected error occurs, Flirt & Fork will inform you that it was unable to generate a suitable itinerary, encouraging you to try again or adjust your profile preferences:
+
+```
+I could not generate a suitable itinerary based on your personal details!
+I'm not smart enough for your default preferences, try 'itinerary' command instead!
+```
 
 Notes:
 
 - The itinerary suggestions are based on the current database of foods and activities within Flirt & Fork. For the best experience, make sure your user details are up to date.
-- If Flirt & Fork encounters difficulty in generating an itinerary due to overly unique preferences or other issues, you will receive a message encouraging you to adjust your preferences or try again.
+- If Flirt & Fork encounters difficulty in generating an itinerary due to overly unique preferences or other issues, you will receive a message encouraging you to adjust your preferences or try another command.
 By using the smart command, you can discover new and exciting ways to enjoy your day, tailored specifically to what you love.
 
 
 ### Add a restaurant to your favourites: `food`
 Adds a new restaurant to your favourited list.
 
-Format: `food [name of eatery] [location] [price] [cuisine]`
+Format: `food [name of eatery], [location], [price], [cuisine]`
 
-* The `location` and `price` inputted must be inside the legend. 
+> Note: The `location` and `price` must be within the [legend](#Legend).  
+> Ensure the formatting is strictly followed, including the spacing. 
+> For example, `food Omakase, C, S, J` will be registered, whereas `food Omakase,C,S,J` will result in an error.
 
 Example of usage: 
-`food East Coast BBQ NE B J`
-`food Omakase C S J`
+`food East Coast BBQ, NE, B, J`
+`food Omakase, C, S, J`
 
 Expected outcome:
 ```
@@ -262,13 +269,15 @@ You've collected 1 romantic treasures!
 ### Add an activity to your favourites: `activity`
 Adds a new activity to your favourited list.
 
-Format: `activity [name of activity] [location] [price]`
+Format: `activity [name of activity], [location], [price]`
 
-* The `location` and `price` inputted must be inside the legend. 
+> Note: The `location` and `price` must be within the [legend](#Legend).  
+> Ensure the formatting is strictly followed, including the spacing. 
+> For example, `activity Paragliding, C, S` will be registered, whereas `activity Paragliding,C,S` will result in an error.
 
 Example of usage: 
-`activity Paragliding C S`
-`activity Bungee Jumping at Sentose S P`
+`activity Paragliding, C, S`
+`activity Bungee Jumping at Sentose, S, P`
 
 Expected outcome:
 ```
@@ -370,6 +379,16 @@ Prices:
 * P: Pricey
 * S: Special Ocassions Only
 
+Cuisines:
+* W: Western
+* F: Fusion
+* J: Japanese
+* C: Chinese
+* T: Thai
+* K: Korean
+* I: Italian
+* S: Spanish
+
 Locations:
 * E: East
 * W: West
@@ -381,8 +400,29 @@ Locations:
 
 ## FAQ
 
-**Q**:
-**A**: 
+**Q: What is 'Flirt and Fork' and how does it help with planning dates?**  
+A: 'Flirt and Fork' is a personalized date planning application that generates creative and enjoyable date itineraries tailored to your budget and location. It simplifies the process of coming up with date ideas by providing suggestions for dining, activities, and gifts based on your preferences.
+
+**Q: Do I need any specific software to run 'Flirt and Fork'?**  
+A: Yes, you will need to have Java 11 or above installed on your computer to run 'Flirt and Fork'.
+
+**Q: How do I start using 'Flirt and Fork' after installation?**  
+A: After downloading and running the .jar file, you can begin by typing commands into the command box. For a complete list of commands, you can type 'help' or refer to the Features and Usage sections of this guide.
+
+**Q: Can I save my favorite restaurants and activities for future reference?**  
+A: Absolutely. You can add your favorite dining spots and activities to a favorites list with the 'food' and 'activity' commands. You can also find, list, and delete these favorites as needed.
+
+**Q: Is it possible to modify or delete entries from my favorites list?**  
+A: Yes, you can delete any entry from your favorites list using the 'delete' command followed by the index number of the entry you wish to remove.
+
+**Q: How can I view a history of my past date plans?**  
+A: You can view all your past marked date restaurants, activities, and gift ideas by using the 'history' command (for suggestions from 'idea', 'itinerary', or 'smart' commands). This feature is perfect for reminiscing or re-visiting successful date ideas.
+
+**Q: Will my data be saved if I close the application?**  
+A: Yes, when you use the 'exit' command, 'Flirt and Fork' will automatically save your current data, ensuring that your preferences and favorites are preserved for your next session.
+
+**Q: How can I ensure the best experience with 'Flirt and Fork'?**  
+A: Keep your user details updated and regularly add to your favorites list! Ensure that your location and price inputs align with the provided legend for accurate itinerary generation.
 
 ## Command Summary
 
