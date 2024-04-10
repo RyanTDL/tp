@@ -283,4 +283,40 @@ public class Ui {
         }
         return input;
     }
+
+    /**
+     * Reads and validates the user's anniversary date input.
+     * The date must be in this format: dd/mm/yyyy
+     *
+     * @return The user's validated anniversary date input (String).
+     */
+    public String readAnniversaryDate() {
+        String input = readCommand();
+
+        while (!isValidDateFormat(input)) {
+            showMessage("Invalid date format. Please enter the date in 'dd/mm/yyyy' format.");
+            input = readCommand();
+        }
+        return input;
+    }
+
+    /**
+     * Checks if the given input string represents a valid date in the format 'dd/mm/yyyy'.
+     *
+     * @param input The input string to be validated as a date.
+     * @return true if the input string represents a valid date, false otherwise.
+     */
+    private boolean isValidDateFormat(String input) {
+        if (input.matches("\\d{2}/\\d{2}/\\d{4}")) {
+            String[] parts = input.split("/");
+            int day = Integer.parseInt(parts[0]);
+            int month = Integer.parseInt(parts[1]);
+            int year = Integer.parseInt(parts[2]);
+
+            if (month >= 1 && month <= 12 && day >= 1 && day <= 31 && year >= 1000 && year <= 9999) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

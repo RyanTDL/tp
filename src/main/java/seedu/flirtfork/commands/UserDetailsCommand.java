@@ -89,8 +89,8 @@ public class UserDetailsCommand extends Command {
 
         if (status.equals("M") || status.equals("R") || status.equals("D")) {
             String anniversary;
-            ui.showMessage("Lucky you! Please enter your anniversary:");
-            anniversary = ui.readCommand();
+            ui.showMessage("Lucky you! Please enter your anniversary in 'dd/mm/yyyy' format:");
+            anniversary = ui.readAnniversaryDate();
             userDetails.setAnniversary(anniversary);
         }
 
