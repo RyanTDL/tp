@@ -12,8 +12,6 @@ import seedu.duke.Storage;
 import seedu.duke.Ui;
 import seedu.duke.UserDetails;
 import seedu.duke.exceptions.FlirtForkException;
-import java.util.logging.Logger;
-import java.util.logging.Level;
 
 /**
  * Represents a command to generate a smart itinerary based on user preferences.
@@ -21,7 +19,6 @@ import java.util.logging.Level;
  * a personalized itinerary that includes food and activities.
  */
 public class GenerateSmartItineraryCommand extends Command {
-    private static final Logger LOGGER = Logger.getLogger(GenerateItineraryCommand.class.getName());
     private String preferredLocation;
     private String preferredCuisine;
 
@@ -33,7 +30,6 @@ public class GenerateSmartItineraryCommand extends Command {
      */
     public GenerateSmartItineraryCommand(UserDetails userDetails) {
         if (userDetails == null) {
-            LOGGER.log(Level.SEVERE, "User details are not provided at command creation.");
             throw new IllegalArgumentException("User details are required at command creation.");
         }
         this.preferredLocation = userDetails.getLocation();
@@ -106,7 +102,6 @@ public class GenerateSmartItineraryCommand extends Command {
             System.out.println(preferredCuisine);
             System.out.println(preferredLocation);
             System.out.println("You are too unique of an individual for smart itineraries! Sorry!!");
-            LOGGER.log(Level.SEVERE, "Invalid arguments given");
         } catch (FlirtForkException e) {
             System.out.println("I could not generate a suitable itinerary based on your personal details!");
             System.out.println("I'm not smart enough for your default preferences, try 'itinerary' command instead!");

@@ -41,7 +41,8 @@ public class GenerateIdeaCommand extends Command {
         Activity activity = activities.getRandomActivity();
         Idea idea = new Idea(food, activity);
         System.out.println(idea);
-        System.out.println("Are you satisfied with the date idea? [Yes/No]");
+        System.out.println("-> Are you satisfied with the date idea? [Yes/No]");
+        System.out.println("-> Else, feel free to stop idea generation using the command 'cancel'");
 
         while (true) {
             userSatisfied = ui.readCommand().toLowerCase();
@@ -59,8 +60,9 @@ public class GenerateIdeaCommand extends Command {
                 idea.setFood(food);
                 idea.setActivity(activity);
                 System.out.println(idea);
-                System.out.println("Are you satisfied with the date idea? [Yes/No]");
-            } else if (userSatisfied.equalsIgnoreCase("stop")) {
+                System.out.println("-> Are you satisfied with the date idea? [Yes/No]");
+                System.out.println("-> Else, feel free to stop idea generation using the command 'cancel'");
+            } else if (userSatisfied.equalsIgnoreCase("cancel")) {
                 System.out.println("Taking a break? That's okay! \n" +
                         "Remember, great ideas need their own time to unwrap.");
                 break;
