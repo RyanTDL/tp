@@ -26,6 +26,7 @@ public class AddFoodCommand extends Command {
                             
         String[] prices = {"C", "B", "A", "P", "S"};
         String[] locations = {"E", "W", "C", "S", "NE", "ACC"};
+        String[] cuisines = {"W", "F", "J", "C", "T", "K", "I", "S"};
         String[] inputCommands = description.split(", ");
         // To deal with descriptions with multiple spaces: "Bistro C C W" versus "Bistro Bar C C W"
         try {
@@ -40,7 +41,10 @@ public class AddFoodCommand extends Command {
                 System.out.println("Please type in the command 'help' to view our Legend for reference");
             } else if (!Arrays.asList(locations).contains(inputtedLocation)) {
                 System.out.println("Invalid location/format given! Perhaps you could try again?");
-                System.out.println("Please type in the command 'help' to view our Legend for reference");   
+                System.out.println("Please type in the command 'help' to view our Legend for reference");  
+            } else if (!Arrays.asList(cuisines).contains(inputtedCuisine)) {
+                System.out.println("Invalid cuisine/format given! Perhaps you could try again?");
+                System.out.println("Please type in the command 'help' to view our Legend for reference"); 
             } else {
                 Food newFood = new Food(inputtedDescription, inputtedLocation, inputtedPrice, inputtedCuisine, "U");
 

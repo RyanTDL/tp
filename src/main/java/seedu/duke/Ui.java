@@ -129,6 +129,7 @@ public class Ui {
         System.out.println("1. List out delicious dining options (type 'food')");
         System.out.println("2. Discover exciting activities to do together (type 'activities')");
         System.out.println("3. Unwrap joy with our curated list of gifts that'll make hearts flutter! (type 'gifts')");
+        System.out.println("4. Changed you mind? Feel free to cancel this command! (type 'cancel')");
         System.out.println("What's your pleasure?");
     }
 
@@ -272,7 +273,7 @@ public class Ui {
         isValid = input.equals("Male") || input.equals("Female") || input.equals("Other");
 
         while(!isValid) {
-            showMessage("Please enter your gender in this format.\n");
+            showMessage("Please enter your gender in this format strictly. Please adhere to the capitalisation\n");
             showMessage("'Male' if you are a male");
             showMessage("'Female' if you are a female");
             showMessage("'Other' if its none of the above");
