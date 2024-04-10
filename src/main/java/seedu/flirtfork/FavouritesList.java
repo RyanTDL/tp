@@ -46,8 +46,11 @@ public class FavouritesList {
 
     public ArrayList<Favourites> findFavourites(String keyword) {
         ArrayList<Favourites> matchingSaves = new ArrayList<>();
+
         for(Favourites favourite: favourites) {
-            if(favourite.getDescription().contains(keyword)) {
+            String description = favourite.getDescription();
+            int categoryEndIndex = description.indexOf("]") + 1;
+            if (description.substring(categoryEndIndex).contains(keyword)) {
                 matchingSaves.add(favourite);
             }
         }
