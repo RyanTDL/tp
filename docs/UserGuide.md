@@ -69,6 +69,7 @@ Please enter your name:
 ```
 
 - Expected outcome after inputting name as `Cupid`:
+
 ```
 Great! Hello there Cupid, it's my pleasure to know you!
 ____________________________________________________________
@@ -76,6 +77,7 @@ Please enter your age:
 ```
 
 - Expected outcome after inputting age as `22`:
+
 ```
 Wow, you're 22 years young! This might be handy information.
 ____________________________________________________________
@@ -83,6 +85,7 @@ Please enter your gender(Male/Female/Other):
 ```
 
 - Expected outcome after inputting gender as `Male`:
+
 ```
 I see you're a Male!
 ____________________________________________________________
@@ -96,6 +99,7 @@ NE: NorthEast
 ```
 
 - Expected outcome after inputting location as `NE`:
+
 ```
 Thanks! Don't worry, I won't let the rest know where you stay ;)!
 ____________________________________________________________
@@ -112,6 +116,7 @@ S: Spanish
 ```
 
 - Expected outcome after inputting cuisine as `W`:
+
 ```
 Thanks, this will be useful...
 ____________________________________________________________
@@ -126,6 +131,7 @@ Enter 'X' if you are single and only looking to hangout with friends
 ```
 
 - Expected outcome after inputting relationship status as `R`:
+
 ```
 Thanks for letting me know your relationship status! :)
 ____________________________________________________________
@@ -133,11 +139,13 @@ Lucky you! Please enter your anniversary in 'dd/mm/yyyy' format:
 ```
 
 - Expected outcome after inputting anniversary date as `14/02/2024`:
+
 ```
 User details saved successfully!
 Curious about what you can do? Just type 'help' for a sprinkle of tips! 
 ____________________________________________________________
 ```
+
 Note: Anniversary option only shows up if `M`, `R` or `D` are set as the relationship status.
 
 ### Display all possible commands: `help`
