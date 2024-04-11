@@ -3,8 +3,11 @@ package seedu.flirtfork;
 public class Gift extends Favourites {
 
     protected String completionStatus;
-    public Gift(String name, String completionStatus) {
+    protected String gender; // M, F, U, any
+
+    public Gift(String name, String gender, String completionStatus) {
         super(name);
+        this.gender = gender;
         this.completionStatus = completionStatus;
     }
 
@@ -20,5 +23,7 @@ public class Gift extends Favourites {
     public String getCompletionStatus() {
         return completionStatus;
     }
+
+    public String getGender() { return gender; }
 
 }
