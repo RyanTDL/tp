@@ -57,6 +57,97 @@ Refer to the [Usage](#Usage) section below for details of each command.
 
 ## Usage
 
+### Put in your personal details: `me`
+Takes in personal details like cuisine preferences, location and anniversary date if applicable to personalise the user experience. It is also automatically run on first start-up and has to be completed before using the app. Entering `me` subsequently provide the option to update user deatils.
+
+Example of usage: `me`
+
+Expected outcome:
+
+```
+Please enter your name:
+```
+
+- Expected outcome after inputting name as `Cupid`:
+
+```
+Great! Hello there Cupid, it's my pleasure to know you!
+____________________________________________________________
+Please enter your age:
+```
+
+- Expected outcome after inputting age as `22`:
+
+```
+Wow, you're 22 years young! This might be handy information.
+____________________________________________________________
+Please enter your gender(Male/Female/Other):
+```
+
+- Expected outcome after inputting gender as `Male`:
+
+```
+I see you're a Male!
+____________________________________________________________
+Where do you stay?
+
+E: East
+W: West
+C: Central
+S: South
+NE: NorthEast
+```
+
+- Expected outcome after inputting location as `NE`:
+
+```
+Thanks! Don't worry, I won't let the rest know where you stay ;)!
+____________________________________________________________
+What is your favourite cuisine?
+
+W: Western
+F: Fusion
+J: Japanese
+C: Chinese
+T: Thai
+K: Korean
+I: Italian
+S: Spanish
+```
+
+- Expected outcome after inputting cuisine as `W`:
+
+```
+Thanks, this will be useful...
+____________________________________________________________
+Please enter your relationship status:
+
+Enter 'M' if you are Married
+Enter 'R' if you are in a serious relationship
+Enter 'F' if you are having a fling
+Enter 'D' if you are dating/testing the waters
+Enter 'S' if you are single and ready to mingle
+Enter 'X' if you are single and only looking to hangout with friends
+```
+
+- Expected outcome after inputting relationship status as `R`:
+
+```
+Thanks for letting me know your relationship status! :)
+____________________________________________________________
+Lucky you! Please enter your anniversary in 'dd/mm/yyyy' format:
+```
+
+- Expected outcome after inputting anniversary date as `14/02/2024`:
+
+```
+User details saved successfully!
+Curious about what you can do? Just type 'help' for a sprinkle of tips! 
+____________________________________________________________
+```
+
+Note: Anniversary option only shows up if `M`, `R` or `D` are set as the relationship status.
+
 ### Display all possible commands: `help`
 Lists out all possible commands used to interact with Flirt and Fork.
 
@@ -73,7 +164,6 @@ I know you are excited to Flirt & Fork :) Here's how:
 
 ...
 ```
-
 
 ### Discovering Options: `list`
 Lists out all the restaurants, activities, or gifts within the curated collection.

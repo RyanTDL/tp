@@ -234,7 +234,11 @@ In today's fast-paced world, maintaining a healthy and exciting relationship can
 
 ## Non-Functional Requirements
 
-{Give non-functional requirements}
+1. **Performance Requirements**: The application should have a rapid response time, aiming to generate personalized date ideas within a few seconds after the user inputs their preferences.
+
+2. **Usability Requirements**: Despite being a command-line interface, the app should offer a user-friendly experience. Instructions should be clear and input errors should be handled gracefully, offering suggestions for correction. 
+
+3. **Security Requirements**: User data, including their preferences, location, and budget, should be securely handled. 
 
 ## Glossary
 
