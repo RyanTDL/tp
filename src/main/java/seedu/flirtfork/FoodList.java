@@ -73,6 +73,19 @@ public class FoodList {
             return filteredFoods.get(filteredFoodIndex);
         }
     }
+
+
+    public  ArrayList<Food> findFood(String keyword) {
+        ArrayList<Food> matchingFoods = new ArrayList<>();
+
+        for(Food food : foods) {
+            String description = food.getDescription();
+            if (description.contains(keyword)) {
+                matchingFoods.add(food);
+            }
+        }
+        return matchingFoods;
+    }
 }
 
 
