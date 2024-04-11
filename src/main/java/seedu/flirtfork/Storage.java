@@ -1,5 +1,7 @@
 package seedu.flirtfork;
 
+import seedu.flirtfork.exceptions.FlirtForkException;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -202,7 +204,11 @@ public class Storage {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 // Parse the line into an Activity object and add it to the list
-                loadedGift.add(Parser.parseGift(line));
+                try {
+                    loadedGift.add(Parser.parseGift(line));
+                } catch (FlirtForkException e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
         return loadedGift;
@@ -216,7 +222,11 @@ public class Storage {
                 Scanner scanner = new Scanner(file);
                 while (scanner.hasNextLine()) {
                     String line = scanner.nextLine();
-                    loadGifts.add(Parser.parseGift(line));
+                    try {
+                        loadGifts.add(Parser.parseGift(line));
+                    } catch (FlirtForkException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
                 scanner.close();
             }
@@ -230,7 +240,8 @@ public class Storage {
         try (FileWriter writer = new FileWriter(GIFTS_DETAILS_FILE)) {
             for (int i = 0; i < gifts.size(); i++) {
                 Gift oneGift = gifts.get(i);
-                writer.write(oneGift.description + " | " + oneGift.completionStatus + "\n");
+                writer.write(oneGift.description + " | " + oneGift.getGender() +
+                        " | " + oneGift.completionStatus + "\n");
             }
             writer.close();
         } catch (IOException e) {
