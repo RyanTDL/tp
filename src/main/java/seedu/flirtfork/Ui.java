@@ -111,6 +111,17 @@ public class Ui {
         }
     }
 
+    public void showMatchingFoods(ArrayList<Food> matchingFoods) {
+        if (matchingFoods.isEmpty()) {
+            System.out.println("No food found this time:( Let's try another clue?");
+        } else {
+            System.out.println("Eureka! Your cupid's arrow hit the target! We found these matches for you:");
+            for (int i = 0; i < matchingFoods.size(); i++) {
+                System.out.println((i + 1) + ". " + matchingFoods.get(i));
+            }
+        }
+    }
+
     public static void listFood() {
         System.out.println("HMMMM Let's see what food is theree: ");
     }

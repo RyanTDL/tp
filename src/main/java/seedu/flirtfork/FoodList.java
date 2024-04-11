@@ -80,7 +80,7 @@ public class FoodList {
 
         for(Food food : foods) {
             String description = food.getDescription();
-            if (description.contains(keyword)) {
+            if (description.contains(keyword)) { //need to make sure the search is not case-sensitive
                 matchingFoods.add(food);
             }
         }
