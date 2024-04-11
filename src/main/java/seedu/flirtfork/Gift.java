@@ -24,6 +24,7 @@ public class Gift extends Favourites {
         return completionStatus;
     }
 
-    public String getGender() { return gender; }
-
+    public String getGender() {
+        return gender;
+    }
 }
