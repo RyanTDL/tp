@@ -140,11 +140,15 @@ public class Parser {
                     break;
                 default:
                     throw new FlirtForkException("Invalid argument for gift command! \n" +
-                            "Please specify only one of 'male', 'female', or 'unisex'.");
+                            "For a random gift, type 'gift'. \n" +
+                            "For a more gender-specific randomisation, type only one of 'gift male', " +
+                            "'gift female', or 'gift unisex'.");
                 }
             } else {
                 throw new FlirtForkException("Too many arguments for gift command! \n" +
-                        "Please specify only one of 'male', 'female', or 'unisex'.");
+                        "For a random gift, type 'gift'. \n" +
+                        "For a more gender-specific randomisation, type only one of 'gift male', " +
+                        "'gift female', or 'gift unisex'.");
             }
         }
 

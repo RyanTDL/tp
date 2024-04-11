@@ -54,3 +54,31 @@
 [Flower] Anthuriums: Long-term love and happiness | U | U
 [Flower] Amaryllis: Given as a recognition of someone's beauty and loveliness | U | U
 [Flower] Ranunculus: Use to convey charm and attractiveness (wonderful gift to say "I am dazzled by your charms") | U | U
+[Beauty] Skincare products | F | U
+[Fashion] Stylish handbag | F | U
+[Accessory] Versatile silk scarf featuring a unique design or pattern | F | U
+[Scent] Artisanal Candle Collection | U | U
+[Food] A box of gourmet chocolates with a variety of flavors | U | U
+[Music] Vinyl Record Player | U | U
+[Entertainment] Netflix subscription | U | U
+[Beauty] Makeup palette | F | U
+[Scent] Perfume sampler set: A selection of mini fragrances | U | U
+[Tech] Wireless earbuds for music, podcasts, or calls on the go | U | U
+[Wellness] Yoga mat and accessories | F | U
+[Wellness] Fitness tracker to monitor fitness journey | U | U
+[Creative] Watercolour paint set with papers and brushes | U | U
+[Wellness] Bathrobe and slippers set | U | U
+[Wellness] Therapeutic massage chair | U | U
+[Wellness] Adjustable dumbbell set for home workouts | M | U
+[Wellness] Comfortable running shoes | U | U
+[Entertainment] Quality headphones or earbuds for music and gaming | M | U
+[Entertainment] Sporting event tickets | M | U
+[Entertainment] Concert tickets for their favourite band or artist | U | U
+[Beauty] Electric shavers or beard trimmers | M | U
+[Wellness] Fitness gear such as workout equipment or clothing | M | U
+[Entertainment] Collectible models such as cars, planes, or figures related to their interests | M | U
+[Creative] Art or prints especially if they are fans of specific genres or artists | U | U
+[Entertainment] Virtual reality (VR) gaming set for an immersive gaming experience | M | U
+[Creative] 3D Printer for the hobbyist or DIY enthusiasts | M | U
+[Entertainment] Language learning software subscription | U | U
+[Accessory] DIY mechanical keyboard or custom keycaps that match the recipient's style or interests | U | U
