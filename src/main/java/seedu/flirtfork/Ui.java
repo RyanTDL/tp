@@ -135,7 +135,7 @@ public class Ui {
 
     public void ideaSatisfiedErrorMessage() {
         System.out.println("Sorry, I didn't quite understand that :(");
-        System.out.println("Please enter either yes/no or cancel the generation process");
+        System.out.println("Please enter either yes or no or cancel the generation process");
     }
 
     public void showMessage(String message) {

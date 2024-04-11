@@ -85,7 +85,6 @@ public class Parser {
             }
             return new GenerateIdeaCommand();
         case "gift":
-
             return parseGiftCommand(arguments);
         case "exit":
             if (!arguments.trim().isEmpty()) {
@@ -122,28 +121,34 @@ public class Parser {
     }
 
     private static Command parseGiftCommand(String arguments) throws FlirtForkException {
-        String[] argsSplit = arguments.split("\\s+");
-        String giftGender = "any";
+        String giftGender = "any"; // Default to any gender
 
-        if (argsSplit.length == 1) {
-            switch (argsSplit[0].toLowerCase()) {
-            case "male":
-                giftGender = "M";
-                break;
-            case "female":
-                giftGender = "F";
-                break;
-            case "unisex":
-                giftGender = "U";
-                break;
-            default:
-                throw new FlirtForkException("Invalid argument for gift command! \n" +
+        if (!arguments.trim().isEmpty()) {
+            String[] argsSplit = arguments.trim().split("\\s+");
+
+            if (argsSplit.length == 1) {
+                String genderArg = argsSplit[0].toLowerCase();
+                switch (genderArg) {
+                case "male":
+                    giftGender = "M";
+                    break;
+                case "female":
+                    giftGender = "F";
+                    break;
+                case "unisex":
+                    giftGender = "U";
+                    break;
+                default:
+                    throw new FlirtForkException("Invalid argument for gift command! \n" +
+                            "Please specify only one of 'male', 'female', or 'unisex'.");
+                }
+            } else {
+                throw new FlirtForkException("Too many arguments for gift command! \n" +
                         "Please specify only one of 'male', 'female', or 'unisex'.");
             }
-        } else if (argsSplit.length > 1) {
-            throw new FlirtForkException("Too many arguments for gift command! \n" +
-                    "Please specify only one of 'male', 'female', or 'unisex'.");
         }
+
+        // giftGender remains "any"
         return new GenerateGiftCommand(giftGender);
     }
 

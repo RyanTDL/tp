@@ -240,8 +240,8 @@ public class Storage {
         try (FileWriter writer = new FileWriter(GIFTS_DETAILS_FILE)) {
             for (int i = 0; i < gifts.size(); i++) {
                 Gift oneGift = gifts.get(i);
-                writer.write(oneGift.description + " | " + oneGift.completionStatus +
-                        " | " + oneGift.getGender() + "\n");
+                writer.write(oneGift.description + " | " + oneGift.getGender() +
+                        " | " + oneGift.completionStatus + "\n");
             }
             writer.close();
         } catch (IOException e) {

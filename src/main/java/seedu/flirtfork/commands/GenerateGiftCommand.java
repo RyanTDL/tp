@@ -31,16 +31,14 @@ public class GenerateGiftCommand extends Command {
         System.out.println(HORIZONTAL);
 
         do {
-
             userSatisfied = ui.readCommand().toLowerCase();
             if (userSatisfied.equals("yes")) {
                 System.out.println("This gift is about to make a love story even sweeter.");
                 gift.markComplete();
                 break;
             } else if (userSatisfied.equals("no")) {
-                System.out.println("Not satisfied? That's okay! \n" +
-                        "Regenerating a new gift idea...");
-                gifts.getRandomGift(this.gender);
+                System.out.println("Regenerating a new gift idea...");
+                gift = gifts.getRandomGift(this.gender);
                 System.out.println(gift);
                 System.out.println("-> Satisfied with the gift suggestion? [Yes/No]");
                 System.out.println("-> Else, feel free to stop idea generation using the command 'cancel'");

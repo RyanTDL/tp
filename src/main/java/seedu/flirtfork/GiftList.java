@@ -23,7 +23,7 @@ public class GiftList {
 
     public Gift getRandomGift(String gender) {
         List<Gift> filteredGifts = gifts.stream()
-                .filter(g -> (g.getGender().equalsIgnoreCase(gender) || gender.equalsIgnoreCase("any"))
+                .filter(g -> (gender.equals("any") || g.getGender().equalsIgnoreCase(gender))
                         && !g.getCompletionStatus().equals("C"))
                 .collect(Collectors.toList());
 
