@@ -1,7 +1,9 @@
 package seedu.flirtfork;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class GiftList {
 
@@ -19,13 +21,17 @@ public class GiftList {
         return gifts.get(i);
     }
 
-    public Gift getRandomGift() {
-        Gift randomGift;
-        do {
-            Random random = new Random();
-            int giftIndex = random.nextInt(gifts.size());
-            randomGift = gifts.get(giftIndex);
-        } while (randomGift.completionStatus.equals("C"));
-        return randomGift;
+    public Gift getRandomGift(String gender) {
+        List<Gift> filteredGifts = gifts.stream()
+                .filter(g -> (g.getGender().equalsIgnoreCase(gender) || gender.equalsIgnoreCase("any"))
+                        && !g.getCompletionStatus().equals("C"))
+                .collect(Collectors.toList());
+
+        if (filteredGifts.isEmpty()) {
+            return null;
+        }
+
+        Random random = new Random();
+        return filteredGifts.get(random.nextInt(filteredGifts.size()));
     }
 }

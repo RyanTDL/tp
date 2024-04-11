@@ -30,7 +30,6 @@ public class Parser {
         assert userDetails != null : "Input should not be empty";
 
         String commandType = userInput.split(" ")[0];
-
         String arguments = userInput.contains(" ") ? userInput.substring(userInput.indexOf(" ") + 1) : "";
 
         switch (commandType) {
@@ -86,10 +85,8 @@ public class Parser {
             }
             return new GenerateIdeaCommand();
         case "gift":
-            if (!arguments.trim().isEmpty()) {
-                throw new FlirtForkException("To generate gift suggestions, please only send 'gift'.");
-            }
-            return new GenerateGiftCommand();
+
+            return parseGiftCommand(arguments);
         case "exit":
             if (!arguments.trim().isEmpty()) {
                 throw new FlirtForkException("If you wish to exit, please only send 'exit'. \n" + HORIZONTAL);
@@ -124,6 +121,32 @@ public class Parser {
         }
     }
 
+    private static Command parseGiftCommand(String arguments) throws FlirtForkException {
+        String[] argsSplit = arguments.split("\\s+");
+        String giftGender = "any";
+
+        if (argsSplit.length == 1) {
+            switch (argsSplit[0].toLowerCase()) {
+            case "male":
+                giftGender = "M";
+                break;
+            case "female":
+                giftGender = "F";
+                break;
+            case "unisex":
+                giftGender = "U";
+                break;
+            default:
+                throw new FlirtForkException("Invalid argument for gift command! \n" +
+                        "Please specify only one of 'male', 'female', or 'unisex'.");
+            }
+        } else if (argsSplit.length > 1) {
+            throw new FlirtForkException("Too many arguments for gift command! \n" +
+                    "Please specify only one of 'male', 'female', or 'unisex'.");
+        }
+        return new GenerateGiftCommand(giftGender);
+    }
+
     public static Favourites parseFavourites(String line) {
         String[] parts = line.split(" \\| ");
         Favourites favourite = null;
@@ -153,10 +176,13 @@ public class Parser {
         return activity;
     }
 
-    public static Gift parseGift(String line) {
+    public static Gift parseGift(String line) throws FlirtForkException {
         String[] parts = line.split(" \\| ");
-        Gift gift;
-        gift = new Gift(parts[0], parts[1]);
+        if (parts.length < 3) {
+            throw new FlirtForkException("Gift data is incomplete. " +
+                    "Each line must include a description, completion status, and gender marker.");
+        }
+        Gift gift = new Gift(parts[0], parts[1], parts[2]);
         return gift;
     }
 
