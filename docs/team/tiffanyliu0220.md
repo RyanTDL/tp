@@ -11,26 +11,28 @@ An overview of my code contributions can be found [here](https://nus-cs2113-ay23
 Given below are my contributions to the project enhancements
 
 - **New Feature**: Displaying the Overall Food List
-    - What it does: Displays the 
+    - What it does: Displays the overall food list that we have stored in the database
+    - Justification: 
+    - Highlights:
+    - Credits:
+
+- **New Feature**: Displaying the Overall Activity List
+    - What it does: Displays the overall activity list that we have stored in the database
     - Justification: 
     - Highlights:
     - Credits:
 
 - **New Feature**: 
-    - What it does: 
-    - Justification: 
-    - Highlights:
-    - Credits:
-
-- **New Feature**: T
 
 ## Documentation
 - Contributions to the User Guide
-  -
-    -
+  - corrected spelling and grammatical errors in the UG
+  - ensured that the terminologies used were consistent
+  
 - Contributions to the Developer Guide
-  -
-    -
+  - summarised the features and classes we have implemented in the Glossary 
+  - added in instructions for user manual testing
+  
 
 ## Contributions to team-based tasks
 - 
