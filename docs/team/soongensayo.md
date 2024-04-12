@@ -1,4 +1,4 @@
-# Project Portfolio Page (PPP)
+# Project Portfolio Page (PPP): soongensayo
 
 ## Overview
 *Flirt Fork* is an innovative application designed to create smart itineraries for individuals based on personal preferences and data-driven insights. The application is built to streamline the process of planning outings and events by providing curated suggestions that can be tailored to user profiles.
@@ -14,13 +14,15 @@ You can find my code contributions in the [tP Code Dashboard](https://nus-cs2113
 - **HelpCommand**: Crafted a comprehensive help command to assist users in navigating through the application with ease.
 
 ### Contributions to the User Guide (UG)
-- Authored the section on `UserDetailsCommand`, providing users with instructions on how to set up their profiles.
-- Documented the usage of `SmartItinerary`, guiding users on how to get personalized itinerary suggestions.
+- Authored the section on the `me` command, providing users with instructions on how to set up their profiles.
+- Authored the section on the `help` command.
+- Authored the "Legend" section and the "FAQ" section.
+- Documented the usage of the `smart` command, guiding users on how to get personalized itinerary suggestions.
 
 ### Contributions to the Developer Guide (DG)
 - Described the `UserDetailsCommand` and its interaction with the system to capture user information.
-- Elaborated on the implementation of `SmartItinerary`, detailing the algorithm and the logic behind the feature.
-- Added UML diagrams to visualize the flow and structure of `SmartItinerary`.
+- Elaborated on the implementation of `smart` (smart itinerary generation command), detailing the algorithm and the logic behind the feature.
+- Added UML diagrams to visualize the flow and structure of `smart` (smart itinerary generation command).
 
 ### Contributions to Team-based Tasks
 - Proposed App Idea and provided the initial working database for Flirt and Fork.
