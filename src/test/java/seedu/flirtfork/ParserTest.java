@@ -92,12 +92,12 @@ class ParserTest {
     @Test
     void parseCommand_findOptionsCommandInput_expectFindOptionsCommand() {
         try {
-            Command result = Parser.parseCommand("favourites", userDetails);
+            Command result = Parser.parseCommand("find", userDetails);
 
             assertTrue(result instanceof FindOptionsCommand,
-                    "Expected FindOptionsCommand for 'favourites' input.");
+                    "Expected FindOptionsCommand for 'find' input.");
         } catch (FlirtForkException e) {
-            fail("Exception should not be thrown for valid 'favourites' input.");
+            fail("Exception should not be thrown for valid 'find' input.");
         }
     }
 }
