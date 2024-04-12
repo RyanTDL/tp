@@ -1,7 +1,6 @@
 /*
 package seedu.flirtfork.commands;
 
-
 import seedu.flirtfork.ActivityList;
 import seedu.flirtfork.Command;
 import seedu.flirtfork.Favourites;

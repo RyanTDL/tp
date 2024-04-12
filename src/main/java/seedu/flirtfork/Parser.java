@@ -1,6 +1,21 @@
 package seedu.flirtfork;
 
-import seedu.flirtfork.commands.*;
+
+import seedu.flirtfork.commands.AddActivityCommand;
+import seedu.flirtfork.commands.AddFoodCommand;
+import seedu.flirtfork.commands.DeleteFavouritesCommand;
+import seedu.flirtfork.commands.ListFavouritesCommand;
+import seedu.flirtfork.commands.ExitCommand;
+import seedu.flirtfork.commands.FindOptionsCommand;
+import seedu.flirtfork.commands.GenerateGiftCommand;
+import seedu.flirtfork.commands.GenerateIdeaCommand;
+import seedu.flirtfork.commands.GenerateItineraryCommand;
+import seedu.flirtfork.commands.GenerateSmartItineraryCommand;
+import seedu.flirtfork.commands.HelpCommand;
+import seedu.flirtfork.commands.ListOptionsCommand;
+import seedu.flirtfork.commands.UserDetailsCommand;
+import seedu.flirtfork.commands.ViewHistoryCommand;
+
 import seedu.flirtfork.exceptions.FlirtForkEmptyException;
 import seedu.flirtfork.exceptions.FlirtForkException;
 

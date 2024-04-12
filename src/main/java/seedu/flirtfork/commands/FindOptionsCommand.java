@@ -1,12 +1,18 @@
 package seedu.flirtfork.commands;
 
-import seedu.flirtfork.*;
-import seedu.flirtfork.exceptions.FlirtForkException;
-import seedu.flirtfork.FavouritesList;
-import seedu.flirtfork.FoodList;
+import seedu.flirtfork.Activity;
 import seedu.flirtfork.ActivityList;
+import seedu.flirtfork.Command;
+import seedu.flirtfork.Favourites;
+import seedu.flirtfork.FavouritesList;
+import seedu.flirtfork.Food;
+import seedu.flirtfork.FoodList;
+import seedu.flirtfork.Gift;
 import seedu.flirtfork.GiftList;
-
+import seedu.flirtfork.Storage;
+import seedu.flirtfork.Ui;
+import seedu.flirtfork.UserDetails;
+import seedu.flirtfork.exceptions.FlirtForkException;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -28,8 +34,12 @@ public class FindOptionsCommand extends Command {
     @Override
     public void execute(FavouritesList favourites, FoodList foods, ActivityList activities,
                         Ui ui, Storage storage, UserDetails userDetails, GiftList gifts) throws FlirtForkException {
-        assert (optionType.equals("food") || optionType.equals("activities") || optionType.equals("gifts") || optionType.equals("favourites")
-                || optionType.equals("cancel")) : "optionType should be food, activities, gifts or cancel";
+        assert (optionType.equals("food")
+                || optionType.equals("activities")
+                || optionType.equals("gifts")
+                || optionType.equals("favourites")
+                || optionType.equals("cancel"))
+                : "optionType should be food, activities, gifts or cancel";
 
         switch (optionType) {
         case "food":
@@ -64,7 +74,8 @@ public class FindOptionsCommand extends Command {
             System.out.println("Cancelling findings...");
             break;
         default:
-            throw new FlirtForkException("Invalid option! Please choose 'food', 'activities', 'gifts', 'favourites' or 'cancel'.");
+            throw new FlirtForkException("Invalid option!"
+                    + "Please choose 'food', 'activities', 'gifts', 'favourites' or 'cancel'.");
         }
     }
 

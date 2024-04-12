@@ -5,7 +5,7 @@ import seedu.flirtfork.commands.AddActivityCommand;
 import seedu.flirtfork.commands.AddFoodCommand;
 import seedu.flirtfork.commands.DeleteFavouritesCommand;
 import seedu.flirtfork.commands.ExitCommand;
-import seedu.flirtfork.commands.FindFavouritesCommand;
+import seedu.flirtfork.commands.FindOptionsCommand;
 import seedu.flirtfork.commands.ListFavouritesCommand;
 import seedu.flirtfork.commands.UserDetailsCommand;
 import seedu.flirtfork.exceptions.FlirtForkException;
@@ -87,17 +87,6 @@ class ParserTest {
                     "Expected DeleteFavouritesCommand for 'delete' input with a valid index.");
         } catch (Exception e) {
             fail("Exception should not be thrown for valid 'delete' input with a valid index.");
-        }
-    }
-
-    @Test
-    void parseCommand_findFavouritesCommandInputWithKeyword_expectFindFavouritesCommand() {
-        try {
-            Command result = Parser.parseCommand("find sushi", userDetails);
-            assertTrue(result instanceof FindFavouritesCommand,
-                    "Expected FindFavouritesCommand for 'find' input with a keyword.");
-        } catch (Exception e) {
-            fail("Exception should not be thrown for valid 'find' input with a keyword.");
         }
     }
 }
