@@ -1,19 +1,21 @@
 package seedu.flirtfork;
 
+
 import seedu.flirtfork.commands.AddActivityCommand;
 import seedu.flirtfork.commands.AddFoodCommand;
 import seedu.flirtfork.commands.DeleteFavouritesCommand;
+import seedu.flirtfork.commands.ListFavouritesCommand;
 import seedu.flirtfork.commands.ExitCommand;
-import seedu.flirtfork.commands.FindFavouritesCommand;
+import seedu.flirtfork.commands.FindOptionsCommand;
 import seedu.flirtfork.commands.GenerateGiftCommand;
 import seedu.flirtfork.commands.GenerateIdeaCommand;
 import seedu.flirtfork.commands.GenerateItineraryCommand;
 import seedu.flirtfork.commands.GenerateSmartItineraryCommand;
 import seedu.flirtfork.commands.HelpCommand;
-import seedu.flirtfork.commands.ListFavouritesCommand;
 import seedu.flirtfork.commands.ListOptionsCommand;
 import seedu.flirtfork.commands.UserDetailsCommand;
 import seedu.flirtfork.commands.ViewHistoryCommand;
+
 import seedu.flirtfork.exceptions.FlirtForkEmptyException;
 import seedu.flirtfork.exceptions.FlirtForkException;
 
@@ -35,7 +37,7 @@ public class Parser {
         switch (commandType) {
         case "food":
             if (arguments.trim().isEmpty()) {
-                throw new FlirtForkEmptyException();
+                throw new FlirtForkException("OOPS! Food description cannot be empty! \n" + HORIZONTAL);
             }
             return new AddFoodCommand(arguments);
         case "activity":
@@ -62,10 +64,13 @@ public class Parser {
                         "please specify task index correctly! \n" + HORIZONTAL);
             }
         case "find":
-            if (arguments.trim().isEmpty()) {
-                throw new FlirtForkException("OOPS! Please enter keyword(s) to find!");
+            if (!arguments.trim().isEmpty()) {
+                throw new FlirtForkException("OOPS! Don't need kanchiong! Just type 'find' first! \n" + HORIZONTAL);
             }
-            return new FindFavouritesCommand(arguments);
+            Ui.findCommand();
+            Scanner findScanner = new Scanner(System.in);
+            String findOptionType = findScanner.nextLine().toLowerCase();
+            return new FindOptionsCommand(findOptionType);
         case "itinerary":
             if (arguments.trim().isEmpty()) {
                 throw new FlirtForkEmptyException();
@@ -111,9 +116,9 @@ public class Parser {
                 throw new FlirtForkException("Only 'list' is required to view the list! \n" + HORIZONTAL);
             }
             Ui.listCommand();
-            Scanner scanner = new Scanner(System.in);
-            String optionType = scanner.nextLine().toLowerCase();
-            return new ListOptionsCommand(optionType);
+            Scanner listScanner = new Scanner(System.in);
+            String listOptionType = listScanner.nextLine().toLowerCase();
+            return new ListOptionsCommand(listOptionType);
         default:
             throw new FlirtForkException("Love is a language we all speak, but we didn't quite catch that. \n" +
                     "Try again? \n" + HORIZONTAL);

@@ -1,3 +1,4 @@
+/*
 package seedu.flirtfork.commands;
 
 import seedu.flirtfork.ActivityList;
@@ -26,3 +27,5 @@ public class FindFavouritesCommand extends Command {
         ui.showMatchingFavourites(matchingFavourites);
     }
 }
+
+ */

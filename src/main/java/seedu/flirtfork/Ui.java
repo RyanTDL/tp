@@ -122,6 +122,28 @@ public class Ui {
         }
     }
 
+    public void showMatchingActivities(ArrayList<Activity> matchingActivities) {
+        if (matchingActivities.isEmpty()) {
+            System.out.println("No activity found this time:( Let's try another clue?");
+        } else {
+            System.out.println("Eureka! Your cupid's arrow hit the target! We found these matches for you:");
+            for (int i = 0; i < matchingActivities.size(); i++) {
+                System.out.println((i + 1) + ". " + matchingActivities.get(i));
+            }
+        }
+    }
+
+    public void showMatchingGifts(ArrayList<Gift> matchingGifts) {
+        if (matchingGifts.isEmpty()) {
+            System.out.println("No gifts found this time:( Let's try another clue?");
+        } else {
+            System.out.println("Eureka! Your cupid's arrow hit the target! We found these matches for you:");
+            for (int i = 0; i < matchingGifts.size(); i++) {
+                System.out.println((i + 1) + ". " + matchingGifts.get(i));
+            }
+        }
+    }
+
     public static void listFood() {
         System.out.println("HMMMM Let's see what food is theree: ");
     }
@@ -140,8 +162,19 @@ public class Ui {
         System.out.println("1. List out delicious dining options (type 'food')");
         System.out.println("2. Discover exciting activities to do together (type 'activities')");
         System.out.println("3. Unwrap joy with our curated list of gifts that'll make hearts flutter! (type 'gifts')");
-        System.out.println("4. Changed you mind? Feel free to cancel this command! (type 'cancel')");
+        System.out.println("4. Changed your mind? Feel free to cancel this command! (type 'cancel')");
         System.out.println("What's your pleasure?");
+    }
+
+    public static void findCommand(){
+        System.out.println("What are you searching for in this enchanting realm?");
+        System.out.println("Choose from the following options:");
+        System.out.println("1. What delicious food are you craving for today? (type 'food')");
+        System.out.println("2. What exciting activity are you interested in? (type 'activities')");
+        System.out.println("3. On the hunt for the perfect gift? What are you looking for? ?(type 'gifts')");
+        System.out.println("4. Finding within your own treasures? (type 'favourites')");
+        System.out.println("5. Changed your mind? Feel free to cancel this command! (type 'cancel')");
+        System.out.println("What's on your mind?");
     }
 
     public void ideaSatisfiedErrorMessage() {
