@@ -4,6 +4,9 @@ public class Favourites {
     protected String description;
 
     public Favourites(String description) {
+        if (description == null) {
+            throw new IllegalArgumentException("Description cannot be null");
+        }
         this.description = description;
     }
 
