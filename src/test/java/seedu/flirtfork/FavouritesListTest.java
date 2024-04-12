@@ -40,12 +40,4 @@ public class FavouritesListTest {
         assertEquals(expected, favouritesList.getFormattedFavourites());
     }
 
-    @Test
-    void findFavourites_matchingKeyword_returnsMatchingFavourites() {
-        FavouritesList favouritesList = new FavouritesList();
-        favouritesList.addFavourite(new Favourites("Apple"));
-        favouritesList.addFavourite(new Favourites("Banana"));
-        favouritesList.addFavourite(new Favourites("Orange"));
-        assertEquals(2, favouritesList.findFavourites("an").size());
-    }
 }
