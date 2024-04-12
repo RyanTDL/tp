@@ -92,12 +92,12 @@ class ParserTest {
     @Test
     void parseCommand_findOptionsCommandInput_expectFindOptionsCommand() {
         try {
-            Command result = Parser.parseCommand("find", userDetails);
+            Command result = Parser.parseCommand("food", userDetails);
 
             assertTrue(result instanceof FindOptionsCommand,
-                    "Expected FindOptionsCommand for 'find' input.");
+                    "Expected FindOptionsCommand for 'food' input.");
         } catch (FlirtForkException e) {
-            fail("Exception should not be thrown for valid 'find' input.");
+            fail("Exception should not be thrown for valid 'food' input.");
         }
     }
 }
