@@ -17,9 +17,11 @@ public class FavouritesList {
         favourites.add(favourite);
     }
 
-    public void deleteFavourite(int index) {
+    public void deleteFavourite(int index) throws IndexOutOfBoundsException{
         if (index >= 0 && index < favourites.size()) {
             favourites.remove(index);
+        } else {
+            throw new IndexOutOfBoundsException("Index is out of bounds: " + index);
         }
     }
 
