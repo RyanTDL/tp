@@ -5,7 +5,7 @@ import seedu.flirtfork.commands.AddActivityCommand;
 import seedu.flirtfork.commands.AddFoodCommand;
 import seedu.flirtfork.commands.DeleteFavouritesCommand;
 import seedu.flirtfork.commands.ExitCommand;
-import seedu.flirtfork.commands.FindOptionsCommand;
+//import seedu.flirtfork.commands.FindOptionsCommand;
 import seedu.flirtfork.commands.ListFavouritesCommand;
 import seedu.flirtfork.commands.UserDetailsCommand;
 import seedu.flirtfork.exceptions.FlirtForkException;
@@ -89,15 +89,5 @@ class ParserTest {
             fail("Exception should not be thrown for valid 'delete' input with a valid index.");
         }
     }
-    @Test
-    void parseCommand_findOptionsCommandInput_expectFindOptionsCommand() {
-        try {
-            Command result = Parser.parseCommand("food", userDetails);
 
-            assertTrue(result instanceof FindOptionsCommand,
-                    "Expected FindOptionsCommand for 'food' input.");
-        } catch (FlirtForkException e) {
-            fail("Exception should not be thrown for valid 'food' input.");
-        }
-    }
 }

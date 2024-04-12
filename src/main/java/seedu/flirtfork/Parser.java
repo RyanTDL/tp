@@ -37,7 +37,7 @@ public class Parser {
         switch (commandType) {
         case "food":
             if (arguments.trim().isEmpty()) {
-                throw new FlirtForkEmptyException();
+                throw new FlirtForkException("OOPS! Food description cannot be empty! \n" + HORIZONTAL);
             }
             return new AddFoodCommand(arguments);
         case "activity":
