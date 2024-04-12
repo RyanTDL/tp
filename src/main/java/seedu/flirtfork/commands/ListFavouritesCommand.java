@@ -29,7 +29,8 @@ public class ListFavouritesCommand extends Command {
                 ui.listFavourites(favourites);
             }
         } catch (Exception e) {
-            FlirtForkException exception = new FlirtForkException("An error occurred while listing favourites: " + e.getMessage());
+            FlirtForkException exception = new FlirtForkException("An error occurred while listing favourites: "
+                    + e.getMessage());
             exception.initCause(e);
             throw exception;
         }
