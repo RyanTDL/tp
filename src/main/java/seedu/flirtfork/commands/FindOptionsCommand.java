@@ -24,7 +24,8 @@ public class FindOptionsCommand extends Command {
     public FindOptionsCommand(String optionType) {
         while (!optionType.equals("food") && !optionType.equals("activities")
                 && !optionType.equals("gifts") && !optionType.equals("favourites") && !optionType.equals("cancel")) {
-            System.out.println("Invalid option! Please choose 'food', 'activities', 'gifts', 'favourites' or 'cancel'.");;
+            System.out.println("Invalid option! Please choose 'food', 'activities', 'gifts'"
+                    + ", 'favourites' or 'cancel'.");
             Scanner scanner = new Scanner(System.in);
             optionType = scanner.nextLine().toLowerCase();
         }
