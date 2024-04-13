@@ -11,13 +11,33 @@ import seedu.flirtfork.Ui;
 import seedu.flirtfork.UserDetails;
 import seedu.flirtfork.exceptions.FlirtForkException;
 
+/**
+ * Command to delete a favourite item from the favourites list.
+ */
 public class DeleteFavouritesCommand extends Command {
     private final int index;
 
+    /**
+     * Constructs a DeleteFavouritesCommand with the specified index.
+     *
+     * @param index The index of the favourite item to delete.
+     */
     public DeleteFavouritesCommand(int index) {
         this.index = index;
     }
 
+    /**
+     * Executes the list favourites command.
+     *
+     * @param favourites The list of favourites.
+     * @param foods      The list of food options.
+     * @param activities The list of activity options.
+     * @param ui         The user interface.
+     * @param storage    The storage component.
+     * @param userDetails The user details.
+     * @param gifts      The list of gift options.
+     * @throws FlirtForkException If an error occurs during execution.
+     */
     @Override
     public void execute(FavouritesList favourites, FoodList foods, ActivityList activities, Ui ui,
                         Storage storage, UserDetails userDetails, GiftList gifts) throws FlirtForkException {
