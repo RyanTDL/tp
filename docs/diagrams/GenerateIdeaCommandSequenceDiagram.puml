@@ -11,38 +11,62 @@ participant ":Idea" as Idea
 participant ":Storage" as Storage
 
 User -> Ui: idea
+activate Ui
 Ui -> GenerateIdeaCommand: GenerateIdeaCommand()
+deactivate Ui
 activate GenerateIdeaCommand
 
 loop userSatisfied != yes
     GenerateIdeaCommand -> FoodList: getRandomFood()
+    deactivate GenerateIdeaCommand
     activate FoodList
     FoodList --> GenerateIdeaCommand
     deactivate FoodList
+    activate GenerateIdeaCommand
+
 
     GenerateIdeaCommand -> ActivityList: getRandomActivity()
+    deactivate GenerateIdeaCommand
     activate ActivityList
     ActivityList --> GenerateIdeaCommand
     deactivate ActivityList
+    activate GenerateIdeaCommand
 
     GenerateIdeaCommand -> Idea: Idea(Food, Activity)
+    deactivate GenerateIdeaCommand
     activate Idea
     Idea --> GenerateIdeaCommand:
     deactivate Idea
-    GenerateIdeaCommand --> User: print(idea)
+    activate GenerateIdeaCommand
+    GenerateIdeaCommand --> Ui:
     deactivate GenerateIdeaCommand
+    activate Ui
+    Ui --> User: printIdea()
+    deactivate Ui
 end
 
-User -> GenerateIdeaCommand: yes
+User -> Ui: yes
+activate Ui
+Ui -> GenerateIdeaCommand: yes
+deactivate Ui
 activate GenerateIdeaCommand
 GenerateIdeaCommand -> Storage: saveFood(foods)
-Storage --> GenerateIdeaCommand
+deactivate GenerateIdeaCommand
 activate Storage
-GenerateIdeaCommand -> Storage: saveActivity(activities)
 Storage --> GenerateIdeaCommand
-GenerateIdeaCommand --> User: print(doneMessage)
 deactivate Storage
+activate GenerateIdeaCommand
+GenerateIdeaCommand -> Storage: saveActivity(activities)
+deactivate GenerateIdeaCommand
+activate Storage
+Storage --> GenerateIdeaCommand
+deactivate Storage
+activate GenerateIdeaCommand
+GenerateIdeaCommand --> Ui:
 deactivate GenerateIdeaCommand
 destroy GenerateIdeaCommand
+activate Ui
+Ui --> User: printDoneMessage()
+deactivate Ui
 
 @enduml
