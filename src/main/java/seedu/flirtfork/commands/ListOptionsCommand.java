@@ -13,7 +13,8 @@ import seedu.flirtfork.exceptions.FlirtForkException;
 import java.util.Scanner;
 
 /**
- * Represents a command to list options of a specified type (food, activities, or gifts).
+ * Handles the command that allows users to list various options such as foods, activities, and gifts.
+ * Users can navigate through these options until they decide to cancel.
  */
 public class ListOptionsCommand extends Command {
     private static final String HORIZONTAL = "____________________________________________________________";
@@ -23,16 +24,17 @@ public class ListOptionsCommand extends Command {
     }
 
     /**
-     * Executes the list options command based on the specified option type.
+     * Executes the listing of different options like foods, activities, or gifts based on the user's choices.
+     * Continues to prompt the user until the 'cancel' command is issued.
      *
-     * @param favourites The list of favourites.
-     * @param foods The list of foods.
-     * @param activities The list of activities.
-     * @param ui The user interface.
-     * @param storage The storage component.
-     * @param userDetails The user details.
-     * @param gifts The list of gifts.
-     * @throws FlirtForkException If an invalid option type is provided.
+     * @param favourites List of user's favourite items, not used in this command.
+     * @param foods List of food items available for listing.
+     * @param activities List of activities available for listing.
+     * @param ui The UI interface to interact with the user.
+     * @param storage The storage handler, not used in this command.
+     * @param userDetails The user details, not used in this command.
+     * @param gifts The list of gifts available for listing.
+     * @throws FlirtForkException If an invalid option type is provided by the user.
      */
     @Override
     public void execute(FavouritesList favourites, FoodList foods, ActivityList activities,

@@ -3,6 +3,10 @@ package seedu.flirtfork;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Handles all user interfaces for FlirtFork, providing methods to display messages,
+ * read user commands, and show lists of options like food, activities, and gifts.
+ */
 public class Ui {
     private static final String BOT_NAME = "Flirt and Fork";
     private static final String HORIZONTAL = "____________________________________________________________";
@@ -12,6 +16,11 @@ public class Ui {
         this.scanner = new Scanner(System.in);
     }
 
+    /**
+     * Displays a greeting message to the user, optionally including the anniversary date if available.
+     *
+     * @param anniversary The user's anniversary date or "N.A" if not provided.
+     */
     public void greetingMessage(String anniversary) {
         System.out.println(HORIZONTAL);
         System.out.println("Hungry for love? You've come to the right place.\n" +
@@ -23,6 +32,9 @@ public class Ui {
         System.out.println(HORIZONTAL);
     }
 
+    /**
+     * Displays a first setup message to the user when starting the application for the first time.
+     */
     public void firstSetUpMessage() {
         System.out.println(HORIZONTAL);
         System.out.println("Hungry for love? You've come to the right place.\n" +
@@ -31,6 +43,9 @@ public class Ui {
         System.out.println(HORIZONTAL);
     }
 
+    /**
+     * Displays an exit message to the user when they choose to terminate the application.
+     */
     public void exitMessage() {
         System.out.println("Love, like a good meal, is all about timing.\n" +
                 "Keep your love simmering and your fork ready, " +
@@ -83,6 +98,11 @@ public class Ui {
         );
     }
 
+    /**
+     * Displays an error message to the user.
+     *
+     * @param message The error message to be displayed.
+     */
     public void errorMessage(String message) {
         System.out.println(message);
     }
@@ -100,6 +120,13 @@ public class Ui {
         System.out.println(favouritesList.getFormattedFavourites());
     }
 
+    /**
+     * Displays the search results for user's favourite items based on the given keyword.
+     * If matches are found, it lists all the matching favourites.
+     * Otherwise, it prompts the user to try another search term.
+     *
+     * @param matchingFavourites A list of Favourites entries that match the search keyword.
+     */
     public void showMatchingFavourites(ArrayList<Favourites> matchingFavourites) {
         if (matchingFavourites.isEmpty()) {
             System.out.println("No treasures found this time. Let's try another clue?");
@@ -156,6 +183,10 @@ public class Ui {
         System.out.println("Peek into Cupid's own gift collection!" );
     }
 
+    /**
+     * Displays the list command menu to the user, providing options for listing foods,
+     * activities, and gifts, or cancelling the command.
+     */
     public static void listCommand() {
         System.out.println("Looking for ideas to spice up your date night?");
         System.out.println("Choose from the following options:");
