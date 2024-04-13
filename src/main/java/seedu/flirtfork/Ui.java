@@ -12,6 +12,9 @@ public class Ui {
     private static final String HORIZONTAL = "____________________________________________________________";
     private Scanner scanner;
 
+    /**
+     * Constructs a Ui object with a new Scanner for reading user input from the console.
+     */
     public Ui() {
         this.scanner = new Scanner(System.in);
     }
@@ -52,6 +55,9 @@ public class Ui {
                 "see you at the next course!");
     }
 
+    /**
+     * Displays the help message with a list of available commands and their functions.
+     */
     public void helpMessage() {
         System.out.println(
             "----------------------------------------- \n" +
@@ -107,14 +113,29 @@ public class Ui {
         System.out.println(message);
     }
 
+    /**
+     * Reads the user's command input.
+     *
+     * @return The user's command input as a String.
+     */
     public String readCommand() {
         return scanner.nextLine();
     }
 
+    /**
+     * Displays a single favourite item.
+     *
+     * @param favourite The favourite item to be displayed.
+     */
     public void showFavourite(String favourite) {
         System.out.println(favourite);
     }
 
+    /**
+     * Lists all favourites in a formatted manner.
+     *
+     * @param favouritesList The list of favourites to be displayed.
+     */
     public void listFavourites(FavouritesList favouritesList) {
         System.out.println("Drumroll, please! Presenting the stars of your romantic sky: ");
         System.out.println(favouritesList.getFormattedFavourites());
@@ -138,6 +159,13 @@ public class Ui {
         }
     }
 
+    /**
+     * Displays the search results for food items based on the given keyword.
+     * If matches are found, it lists all the matching foods.
+     * Otherwise, it prompts the user to try another search term.
+     *
+     * @param matchingFoods A list of Food entries that match the search keyword.
+     */
     public void showMatchingFoods(ArrayList<Food> matchingFoods) {
         if (matchingFoods.isEmpty()) {
             System.out.println("No food found this time:( Let's try another clue?");
@@ -149,6 +177,13 @@ public class Ui {
         }
     }
 
+    /**
+     * Displays the search results for activities items based on the given keyword.
+     * If matches are found, it lists all the matching activities.
+     * Otherwise, it prompts the user to try another search term.
+     *
+     * @param matchingActivities A list of Activity entries that match the search keyword.
+     */
     public void showMatchingActivities(ArrayList<Activity> matchingActivities) {
         if (matchingActivities.isEmpty()) {
             System.out.println("No activity found this time:( Let's try another clue?");
@@ -160,6 +195,13 @@ public class Ui {
         }
     }
 
+    /**
+     * Displays the search results for gift items based on the given keyword.
+     * If matches are found, it lists all the matching gifts.
+     * Otherwise, it prompts the user to try another search term.
+     *
+     * @param matchingGifts A list of Gift entries that match the search keyword.
+     */
     public void showMatchingGifts(ArrayList<Gift> matchingGifts) {
         if (matchingGifts.isEmpty()) {
             System.out.println("No gifts found this time:( Let's try another clue?");
@@ -215,6 +257,11 @@ public class Ui {
         System.out.println("Please enter either yes or no or cancel the generation process");
     }
 
+    /**
+     * Displays a general message to the user.
+     *
+     * @param message The message to be displayed.
+     */
     public void showMessage(String message) {
         System.out.println(message);
     }

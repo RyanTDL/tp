@@ -22,7 +22,7 @@ Given below are my contributions to the project enhancements
     - Highlights:
     - Credits:
 
-- **New Feature**: 
+- **New Feature**: Finding entries from the Food List
 
 ## Documentation
 - Contributions to the User Guide

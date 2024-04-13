@@ -1,6 +1,5 @@
 package seedu.flirtfork;
 
-
 import seedu.flirtfork.commands.AddActivityCommand;
 import seedu.flirtfork.commands.AddFoodCommand;
 import seedu.flirtfork.commands.DeleteFavouritesCommand;
@@ -18,7 +17,6 @@ import seedu.flirtfork.commands.ViewHistoryCommand;
 
 import seedu.flirtfork.exceptions.FlirtForkEmptyException;
 import seedu.flirtfork.exceptions.FlirtForkException;
-
 
 /**
  * The Parser class is responsible for interpreting user input and converting it into a Command
@@ -175,6 +173,12 @@ public class Parser {
         return new GenerateGiftCommand(giftGender);
     }
 
+    /**
+     * Parses a string representation of favourites into a Favourites object.
+     *
+     * @param line The string representation of favourites.
+     * @return The corresponding Favourites object.
+     */
     public static Favourites parseFavourites(String line) {
         String[] parts = line.split(" \\| ");
         Favourites favourite = null;

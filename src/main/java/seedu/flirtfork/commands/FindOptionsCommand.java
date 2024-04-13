@@ -17,21 +17,36 @@ import seedu.flirtfork.exceptions.FlirtForkException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Command to find options based on user input.
+ */
 public class FindOptionsCommand extends Command {
 
     private static final String HORIZONTAL = "____________________________________________________________";
     private String optionType;
-    
+
     public FindOptionsCommand() {
     }
 
+    /**
+     * Executes the command to find options based on user input.
+     *
+     * @param favourites The list of favourites.
+     * @param foods      The list of food options.
+     * @param activities The list of activity options.
+     * @param ui         The user interface.
+     * @param storage    The storage component.
+     * @param userDetails The user details.
+     * @param gifts      The list of gift options.
+     * @throws FlirtForkException If an error occurs during execution.
+     */
     @Override
     public void execute(FavouritesList favourites, FoodList foods, ActivityList activities,
                         Ui ui, Storage storage, UserDetails userDetails, GiftList gifts) throws FlirtForkException {
 
         Scanner scanner = new Scanner(System.in);
         String optionType;
-        Ui.listCommand();
+        Ui.findCommand();
 
         while (true) {
             optionType = scanner.nextLine().toLowerCase();
