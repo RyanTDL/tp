@@ -19,8 +19,6 @@ import seedu.flirtfork.commands.ViewHistoryCommand;
 import seedu.flirtfork.exceptions.FlirtForkEmptyException;
 import seedu.flirtfork.exceptions.FlirtForkException;
 
-import java.util.Scanner;
-
 public class Parser {
     private static final String HORIZONTAL = "____________________________________________________________";
 
@@ -67,10 +65,7 @@ public class Parser {
             if (!arguments.trim().isEmpty()) {
                 throw new FlirtForkException("OOPS! Don't need kanchiong! Just type 'find' first! \n" + HORIZONTAL);
             }
-            Ui.findCommand();
-            Scanner findScanner = new Scanner(System.in);
-            String findOptionType = findScanner.nextLine().toLowerCase();
-            return new FindOptionsCommand(findOptionType);
+            return new FindOptionsCommand();
         case "itinerary":
             if (arguments.trim().isEmpty()) {
                 throw new FlirtForkEmptyException();
