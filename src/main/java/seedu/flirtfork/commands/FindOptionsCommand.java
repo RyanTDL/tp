@@ -24,7 +24,7 @@ public class FindOptionsCommand extends Command {
     public FindOptionsCommand(String optionType) {
         while (!optionType.equals("food") && !optionType.equals("activities")
                 && !optionType.equals("gifts") && !optionType.equals("favourites") && !optionType.equals("cancel")) {
-            System.out.println("Invalid option! Please choose 'food', 'activities', 'gifts' or 'cancel'.");;
+            System.out.println("Invalid option! Please choose 'food', 'activities', 'gifts', 'favourites' or 'cancel'.");;
             Scanner scanner = new Scanner(System.in);
             optionType = scanner.nextLine().toLowerCase();
         }
@@ -40,7 +40,7 @@ public class FindOptionsCommand extends Command {
                     || optionType.equals("gifts")
                     || optionType.equals("favourites")
                     || optionType.equals("cancel"))
-                    : "optionType should be food, activities, gifts or cancel";
+                    : "optionType should be food, activities, gifts, favourites or cancel";
 
             switch (optionType) {
             case "food":
@@ -72,7 +72,8 @@ public class FindOptionsCommand extends Command {
                 ui.showMatchingFavourites(matchingFavourites);
                 break;
             case "cancel":
-                System.out.println("Cancelling findings...");
+                System.out.println("Cancelling findings...\n" +
+                        "Cancel success!");
                 break;
             default:
                 throw new FlirtForkException("Invalid option!"

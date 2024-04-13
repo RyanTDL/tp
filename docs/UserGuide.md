@@ -24,6 +24,10 @@ This section provides an overview of the available commands in the application, 
 Explore potential dining, activities, and gifts options.
 - `list`: View a comprehensive list of restaurants, activities, and gift ideas.
 
+### Searching Options
+Search for potential dining. activities, and gift options to add on to your favourites. Search within your favourites list as well.
+- `find`: Search the database for potential dining places, activities and gifts. Search your favourites list for specific entries as well.
+
 ### Personalisation
 Tailor the application experience to your preferences for more customised suggestions.
 - `me`: Input personal details and preferences to enable personalised suggestions.
@@ -40,7 +44,6 @@ Stimulate creativity with randomised suggestions for dates and gifts.
 Manage a personalised list of your favourite foods and activities.
 - `food`: Add a food option to your favourites list.
 - `activity`: Add an activity to your favourites list.
-- `find`: Search your favourites list for specific entries.
 - `favourites`: List all entries in your current favourites list.
 - `delete`: Remove an entry from your favourites list based on its entry number.
 
@@ -232,7 +235,113 @@ Expected outcome:
 Cancelling listings... 
 Cancel success!
 ```
+### Find an entry: `find`
+Finds relevant entries from the food, activities, gifts database and your favourites list, based on the keyword inputted.
 
+Format: `find`
+
+Expected Outcome:
+```
+What are you searching for in this enchanting realm?
+Choose from the following options:
+1. What delicious food are you craving for today? (type 'food')
+2. What exciting activity are you interested in? (type 'activities')
+3. On the hunt for the perfect gift? What are you looking for? (type 'gifts')
+4. Finding within your own treasures? (type 'favourites')
+5. Changed your mind? Feel free to cancel this command! (type 'cancel')
+   What's on your mind?
+```
+- If user inputs 'food': 
+
+Expected Outcome:
+
+```Mmmm food yes. What restaurants would you like to search for?```
+
+User then needs to input their search keyword here.
+* The `keyword` is not case-sensitive. `Japanese` will yield the same result as `japanese`.
+* The `keyword` can contain multiple words.
+
+Example of usage:
+`sushi`
+`BBQ`
+
+Expected outcome:
+```
+Eureka! Your cupid's arrow hit the target! We found these matches for you:
+1. BBQ Smokehouse
+2. Bulgogi BBQ
+```
+- If user inputs 'activities':
+
+Expected Outcome:
+
+```Mmmm activities! What kind of activities would you like to search for?```
+
+User then needs to input their search keyword here.
+* The `keyword` is not case-sensitive. `Japanese` will yield the same result as `japanese`.
+* The `keyword` can contain multiple words.
+
+Example of usage:
+`walk`
+`concert`
+
+Expected outcome:
+```
+Eureka! Your cupid's arrow hit the target! We found these matches for you:
+1. Esplanade Free Concerts
+2. Victoria Theatre Concert Night
+3. Private Music Concerts
+```
+
+- If user inputs 'gifts':
+
+Expected Outcome:
+
+```Mmmm gifts! What kind of gifts would you like to search for?```
+
+User then needs to input their search keyword here.
+* The `keyword` is not case-sensitive. `Japanese` will yield the same result as `japanese`.
+* The `keyword` can contain multiple words.
+
+Example of usage:
+`bracelet`
+`ring`
+
+Expected outcome:
+```
+Eureka! Your cupid's arrow hit the target! We found these matches for you:
+1. [Accessory] Studs or dazzling chandelier earrings
+2. [Flower] Orchids: Love, beauty, strength, deep enduring passion
+3. [Accessory] Versatile silk scarf featuring a unique design or pattern
+```
+
+- If user inputs 'favourites':
+
+Expected Outcome:
+
+```Mmmm finding your own treasures i see. What would you like to search for?```
+
+User then needs to input their search keyword here.
+* The `keyword` is not case-sensitive. `Japanese` will yield the same result as `japanese`.
+* The `keyword` can contain multiple words.
+
+Example of usage:
+`bbq`
+`paragliding`
+
+Expected outcome:
+```
+Eureka! Your cupid's arrow hit the target! We found these matches for you:
+1. East Coast BBQ
+```
+
+- If user input `cancel`: Terminates and exits the current searching session.
+
+Expected outcome:
+```
+Cancelling findings... 
+Cancel success!
+```
 ### [Bugged] Generate a randomised date idea: `idea`
 Generates out a randomised date idea, consisting of 1 restaurant and 1 activity from our curated collection. After receiving the suggestion, users have the option to accept or request for another idea.
 
@@ -426,24 +535,6 @@ Cupid's arrow strikes! This is now in your favourites.
 You've collected 2 romantic treasures!
 ```
 
-### Find an entry from your favourites list: `find`
-Finds relevant entries from your favourites list, based on the keyword inputted.
-
-Format: `find [keyword]`
-
-* The `keyword` is case-sensitive. `Japanese` will not yield the same result as `japanese`. 
-* The `keyword` can contain multiple words.
-
-Example of usage: 
-`find thrifting`
-`find BBQ`
-
-Expected outcome:
-```
-Eureka! Your cupid's arrow hit the target! We found these matches for you:
-1. [Food] East Coast BBQ
-```
-
 ### List out all entries in your favourites list: `favourites`
 Lists out all the entries within your favourites list.
 
@@ -472,7 +563,6 @@ Poof! Sayonara~ This favourite has been removed:
 Now you have 1 romantic treasures!
 Your journey of love and taste continues~
 ```
-
 
 ### [Bugged] List out all entries from your past date history: `history`
 Lists out all the previous restaurants and activities completed on previous dates. Whenever `yes` is inputted for generating an idea or itinerary, it is assumed that the user will follow that date plan and hence, the suggested locations will be saved in the history.
