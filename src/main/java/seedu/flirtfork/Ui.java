@@ -164,6 +164,7 @@ public class Ui {
         System.out.println("3. Unwrap joy with our curated list of gifts that'll make hearts flutter! (type 'gifts')");
         System.out.println("4. Changed your mind? Feel free to cancel this command! (type 'cancel')");
         System.out.println("What's your pleasure?");
+        System.out.println(HORIZONTAL);
     }
 
     public static void findCommand(){
