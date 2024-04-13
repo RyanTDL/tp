@@ -127,8 +127,8 @@ public class FindOptionsCommand extends Command {
         ArrayList<Favourites> matchingSaves = new ArrayList<>();
 
         for(Favourites favourite: favourites.getFavourites()) {
-            String description = favourite.getDescription();
-            if (description.contains(keyword)) {
+            String description = favourite.getDescription().toLowerCase();
+            if (description.contains(keyword.toLowerCase())) {
                 matchingSaves.add(favourite);
             }
         }

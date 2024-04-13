@@ -172,10 +172,11 @@ public class Ui {
         System.out.println("Choose from the following options:");
         System.out.println("1. What delicious food are you craving for today? (type 'food')");
         System.out.println("2. What exciting activity are you interested in? (type 'activities')");
-        System.out.println("3. On the hunt for the perfect gift? What are you looking for? ?(type 'gifts')");
+        System.out.println("3. On the hunt for the perfect gift? What are you looking for? (type 'gifts')");
         System.out.println("4. Finding within your own treasures? (type 'favourites')");
         System.out.println("5. Changed your mind? Feel free to cancel this command! (type 'cancel')");
         System.out.println("What's on your mind?");
+        System.out.println(HORIZONTAL);
     }
 
     public void ideaSatisfiedErrorMessage() {
