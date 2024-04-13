@@ -37,8 +37,17 @@ public class GenerateGiftCommand extends Command {
                 gift.markComplete();
                 break;
             } else if (userSatisfied.equals("no")) {
-                System.out.println("Regenerating a new gift idea...");
                 gift = gifts.getRandomGift(this.gender);
+                if (gift == null) {
+                    System.out.println("Wow! You've seen all our ideas! \n" +
+                            "Sometimes, the best gifts are the ones you come up with yourself.\n" +
+                            "We believe in you!");
+                    System.out.println("");
+                    System.out.println("Cancelling the gift generation process...");
+                    System.out.println("Cancel success!");
+                    break;
+                }
+                System.out.println("Regenerating a new gift idea...");
                 System.out.println(gift);
                 System.out.println("-> Satisfied with the gift suggestion? [Yes/No]");
                 System.out.println("-> Changed you mind? type 'cancel' to exit this process!");
