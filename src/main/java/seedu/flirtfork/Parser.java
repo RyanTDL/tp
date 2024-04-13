@@ -1,6 +1,5 @@
 package seedu.flirtfork;
 
-
 import seedu.flirtfork.commands.AddActivityCommand;
 import seedu.flirtfork.commands.AddFoodCommand;
 import seedu.flirtfork.commands.DeleteFavouritesCommand;
@@ -20,18 +19,21 @@ import seedu.flirtfork.exceptions.FlirtForkEmptyException;
 import seedu.flirtfork.exceptions.FlirtForkException;
 
 /**
- * Parses user input into commands for execution.
+ * The Parser class is responsible for interpreting user input and converting it into a Command
+ * that the application can execute.
+ * It checks the command type, validates and processes any arguments,
+ * and returns the appropriate Command object to perform the requested action.
  */
 public class Parser {
     private static final String HORIZONTAL = "____________________________________________________________";
 
     /**
-     * Parses the user input into a command.
+     * Parses the user input into a command based on the first word of the input and any subsequent arguments.
      *
-     * @param userInput The user input.
-     * @param userDetails The user details.
-     * @return The command corresponding to the user input.
-     * @throws FlirtForkException If an error occurs during parsing.
+     * @param userInput The raw input string from the user.
+     * @param userDetails The UserDetails object containing specific data about the user.
+     * @return Command The command to be executed.
+     * @throws FlirtForkException if there is an error parsing the input or if the input is invalid.
      */
     public static Command parseCommand(String userInput, UserDetails userDetails) throws FlirtForkException {
         if (userInput.trim().isEmpty()) {
@@ -129,11 +131,11 @@ public class Parser {
     }
 
     /**
-     * Parses the "gift" command arguments into a command.
+     * Parses the command arguments to determine the gender-specific gift command to be generated.
      *
-     * @param arguments The arguments of the "gift" command.
-     * @return The corresponding command.
-     * @throws FlirtForkException If an error occurs during parsing.
+     * @param arguments The arguments part of the user input for gift-related commands.
+     * @return Command A new GenerateGiftCommand with the specified gender criteria.
+     * @throws FlirtForkException if the arguments are invalid or improperly formatted.
      */
     private static Command parseGiftCommand(String arguments) throws FlirtForkException {
         String giftGender = "any"; // Default to any gender
@@ -193,10 +195,10 @@ public class Parser {
     }
 
     /**
-     * Parses a string representation of food into a Food object.
+     * Parses a line from the FoodList.txt file and constructs a Food object from it.
      *
-     * @param line The string representation of food.
-     * @return The corresponding Food object.
+     * @param line The line from the food file.
+     * @return Food A new Food object based on the parsed line.
      */
     public static Food parseFood(String line) {
         String[] parts = line.split(" \\| ");
@@ -206,10 +208,10 @@ public class Parser {
     }
 
     /**
-     * Parses a string representation of activity into an Activity object.
+     * Parses a line from the ActivityList.txt file and constructs an Activity object from it.
      *
-     * @param line The string representation of activity.
-     * @return The corresponding Activity object.
+     * @param line The line from the activities file.
+     * @return Activity A new Activity object based on the parsed line.
      */
     public static Activity parseActivity(String line) {
         String[] parts = line.split(" \\| ");
@@ -219,11 +221,12 @@ public class Parser {
     }
 
     /**
-     * Parses a string representation of gift into a Gift object.
+     * Parses a line from the GiftList.txt file and constructs a Gift object from it.
+     * Ensures that each line includes a description, completion status, and gender marker.
      *
-     * @param line The string representation of gift.
-     * @return The corresponding Gift object.
-     * @throws FlirtForkException If the gift data is incomplete.
+     * @param line The line from the gifts file.
+     * @return Gift A new Gift object based on the parsed line.
+     * @throws FlirtForkException if the gift data is incomplete or improperly formatted.
      */
     public static Gift parseGift(String line) throws FlirtForkException {
         String[] parts = line.split(" \\| ");
