@@ -177,6 +177,7 @@ Choose from the following options:
 1. List out delicious dining options (type 'food')
 2. Discover exciting activities to do together (type 'activities')
 3. Unwrap joy with our curated list of gifts that'll make hearts flutter! (type 'gifts')
+4. Changed your mind? Feel free to cancel this command! (type 'cancel')
 What's your pleasure?
 ```
 ---
@@ -189,6 +190,10 @@ HMMMM Let's see what food is theree:
 1. 25 Degrees
 2. 49 Seats
 ...
+____________________________________________________________
+To discover exciting activities, type 'activities'
+To view a curated list of gifts, type 'gifts'
+To cancel this command, type 'cancel'
 ```
 ---
 - If user input `activities`: Shows a list of fun and engaging activities.
@@ -199,10 +204,13 @@ What are some activities you can do as a couple? Let's see..
 1. Botanic Garden Tours
 2. Gardens by the Bay
 ...
+____________________________________________________________
+To list out delicious dining options, type 'food'
+To view a curated list of gifts, type 'gifts'
+To cancel this command, type 'cancel'
 ```
 ---
 - If user input `gifts`: Presents a selection of gift ideas.
-
 
 Expected outcome:
 ```
@@ -210,6 +218,19 @@ Peek into Cupid's own gift collection!
 1. [Accessory] Customised pendant necklace
 2. [Accessory] Personalised charm bracelets
 ...
+____________________________________________________________
+To list out delicious dining options, type 'food'
+To discover exciting activities, type 'activities'
+To cancel this command, type 'cancel'
+```
+---
+- If user input `cancel`: Terminates and exits the current list viewing session.
+  - This command can be used at any point during the list viewing interaction if the user decides not to stop viewing.
+
+Expected outcome:
+```
+Cancelling listings... 
+Cancel success!
 ```
 
 ### [Bugged] Generate a randomised date idea: `idea`
