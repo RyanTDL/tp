@@ -182,7 +182,7 @@ public class Ui {
      * If matches are found, it lists all the matching activities.
      * Otherwise, it prompts the user to try another search term.
      *
-     * @param matchingFoods A list of Activity entries that match the search keyword.
+     * @param matchingActivities A list of Activity entries that match the search keyword.
      */
     public void showMatchingActivities(ArrayList<Activity> matchingActivities) {
         if (matchingActivities.isEmpty()) {
@@ -200,7 +200,7 @@ public class Ui {
      * If matches are found, it lists all the matching gifts.
      * Otherwise, it prompts the user to try another search term.
      *
-     * @param matchingFoods A list of Gift entries that match the search keyword.
+     * @param matchingGifts A list of Gift entries that match the search keyword.
      */
     public void showMatchingGifts(ArrayList<Gift> matchingGifts) {
         if (matchingGifts.isEmpty()) {
