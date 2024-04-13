@@ -87,6 +87,10 @@ Each step of the execute method interacts with the user to collect a specific pi
 
 The above sequence diagram depicts the interaction between UserDetailsCommand, the UI, and the Storage component, which highlights the flow of data collection and storage.
 
+#### Object Diagram
+Below is an object diagram representing the state of a `UserDetails` instance after a user has entered their information.
+
+![User Details Object Diagram](images/UserDetailsObjectDiagram.png)
 
 ### [Implemented] History Tracking feature
 
