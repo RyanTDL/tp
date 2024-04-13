@@ -19,8 +19,6 @@ import seedu.flirtfork.commands.ViewHistoryCommand;
 import seedu.flirtfork.exceptions.FlirtForkEmptyException;
 import seedu.flirtfork.exceptions.FlirtForkException;
 
-import java.util.Scanner;
-
 
 /**
  * The Parser class is responsible for interpreting user input and converting it into a Command
