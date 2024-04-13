@@ -67,10 +67,7 @@ public class Parser {
             if (!arguments.trim().isEmpty()) {
                 throw new FlirtForkException("OOPS! Don't need kanchiong! Just type 'find' first! \n" + HORIZONTAL);
             }
-            Ui.findCommand();
-            Scanner findScanner = new Scanner(System.in);
-            String findOptionType = findScanner.nextLine().toLowerCase();
-            return new FindOptionsCommand(findOptionType);
+            return new FindOptionsCommand();
         case "itinerary":
             if (arguments.trim().isEmpty()) {
                 throw new FlirtForkEmptyException();

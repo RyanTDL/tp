@@ -52,91 +52,58 @@ public class FindOptionsCommand extends Command {
             switch (optionType) {
             case "food":
                 System.out.println("Mmmm food yes. What restaurants would you like to search for?");
-                Scanner foodScanner = new Scanner(System.in);
-                String foodKeyword = foodScanner.nextLine().toLowerCase();
+                String foodKeyword = scanner.nextLine().toLowerCase();
                 ArrayList<Food> matchingFood = findFood(foodKeyword, foods);
                 ui.showMatchingFoods(matchingFood);
+                System.out.println(HORIZONTAL);
+                System.out.println("To find exciting activities, type 'activities'");
+                System.out.println("To hunt for gifts, type 'gifts'");
+                System.out.println("To search for your treasures, type 'favourites'");
+                System.out.println("To cancel this command, type 'cancel'");
                 break;
             case "activities":
                 System.out.println("Mmmm activities! What kind of activities would you like to search for?");
-                Scanner activityScanner = new Scanner(System.in);
-                String activityKeyword = activityScanner.nextLine().toLowerCase();
+                String activityKeyword = scanner.nextLine().toLowerCase();
                 ArrayList<Activity> matchingActivities = findActivities(activityKeyword, activities);
                 ui.showMatchingActivities(matchingActivities);
+                System.out.println(HORIZONTAL);
+                System.out.println("To find delicious food, type 'food'");
+                System.out.println("To hunt for gifts, type 'gifts'");
+                System.out.println("To search for your treasures, type 'favourites'");
+                System.out.println("To cancel this command, type 'cancel'");
                 break;
             case "gifts":
                 System.out.println("Mmmm gifts! What kind of gifts would you like to search for?");
-                Scanner giftScanner = new Scanner(System.in);
-                String giftKeyword = giftScanner.nextLine().toLowerCase();
+                String giftKeyword = scanner.nextLine().toLowerCase();
                 ArrayList<Gift> matchingGifts = findGifts(giftKeyword, gifts);
                 ui.showMatchingGifts(matchingGifts);
+                System.out.println(HORIZONTAL);
+                System.out.println("To find delicious food, type 'food'");
+                System.out.println("To find exciting activities, type 'activities'");
+                System.out.println("To search for your treasures, type 'favourites'");
+                System.out.println("To cancel this command, type 'cancel'");
                 break;
             case "favourites":
                 System.out.println("Mmmm finding your own treasures i see. What would you like to search for?");
-                Scanner favouritesScanner = new Scanner(System.in);
-                String favouritesKeyword = favouritesScanner.nextLine().toLowerCase();
+                String favouritesKeyword = scanner.nextLine().toLowerCase();
                 ArrayList<Favourites> matchingFavourites = findFavourites(favouritesKeyword, favourites);
                 ui.showMatchingFavourites(matchingFavourites);
+                System.out.println(HORIZONTAL);
+                System.out.println("To find delicious food, type 'food'");
+                System.out.println("To find exciting activities, type 'activities'");
+                System.out.println("To hunt for gifts, type 'gifts'");
+                System.out.println("To cancel this command, type 'cancel'");
                 break;
             case "cancel":
                 System.out.println("Cancelling findings...\n" +
                         "Cancel success!");
-                break;
+                return;
             default:
-                throw new FlirtForkException("Invalid option!"
+                System.out.println("Invalid option! "
                         + "Please choose 'food', 'activities', 'gifts', 'favourites' or 'cancel'.");
+                System.out.println(HORIZONTAL);
             }
         }
-        /*try {
-            assert (optionType.equals("food")
-                    || optionType.equals("activities")
-                    || optionType.equals("gifts")
-                    || optionType.equals("favourites")
-                    || optionType.equals("cancel"))
-                    : "optionType should be food, activities, gifts, favourites or cancel";
-
-            switch (optionType) {
-            case "food":
-                System.out.println("Mmmm food yes. What restaurants would you like to search for?");
-                Scanner foodScanner = new Scanner(System.in);
-                String foodKeyword = foodScanner.nextLine().toLowerCase();
-                ArrayList<Food> matchingFood = findFood(foodKeyword, foods);
-                ui.showMatchingFoods(matchingFood);
-                break;
-            case "activities":
-                System.out.println("Mmmm activities! What kind of activities would you like to search for?");
-                Scanner activityScanner = new Scanner(System.in);
-                String activityKeyword = activityScanner.nextLine().toLowerCase();
-                ArrayList<Activity> matchingActivities = findActivities(activityKeyword, activities);
-                ui.showMatchingActivities(matchingActivities);
-                break;
-            case "gifts":
-                System.out.println("Mmmm gifts! What kind of gifts would you like to search for?");
-                Scanner giftScanner = new Scanner(System.in);
-                String giftKeyword = giftScanner.nextLine().toLowerCase();
-                ArrayList<Gift> matchingGifts = findGifts(giftKeyword, gifts);
-                ui.showMatchingGifts(matchingGifts);
-                break;
-            case "favourites":
-                System.out.println("Mmmm finding your own treasures i see. What would you like to search for?");
-                Scanner favouritesScanner = new Scanner(System.in);
-                String favouritesKeyword = favouritesScanner.nextLine().toLowerCase();
-                ArrayList<Favourites> matchingFavourites = findFavourites(favouritesKeyword, favourites);
-                ui.showMatchingFavourites(matchingFavourites);
-                break;
-            case "cancel":
-                System.out.println("Cancelling findings...\n" +
-                        "Cancel success!");
-                break;
-            default:
-                throw new FlirtForkException("Invalid option!"
-                        + "Please choose 'food', 'activities', 'gifts', 'favourites' or 'cancel'.");
-            }
-        } catch (FlirtForkException e) {
-            ui.errorMessage(e.getMessage());
-        }
-
-         */
     }
 
     private ArrayList<Food> findFood(String keyword, FoodList foods) {
