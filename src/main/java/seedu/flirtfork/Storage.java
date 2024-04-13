@@ -26,7 +26,6 @@ public class Storage {
      * Constructs a new Storage object to handle file operations for the specified file path.
      *
      * @param filePath The file path where data will be loaded from and saved to.
-
      */
     public Storage(String filePath) {
         this.filePath = filePath;
