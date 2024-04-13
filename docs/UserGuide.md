@@ -241,23 +241,27 @@ That's great! Enjoy your date!
 Note: Saving an idea to history does not work as of v2.0 and will be fixed in the next release.
 
 ### Generate a randomised gift suggestion: `gift`
-Generates a randomised gift idea. Each suggestion comes with a category tag `[Creative]`, `[Food]`, `[Accessory]`, etc. to give users a sense of what type of gift it is.
+Generates a randomised gift idea either with or without any gender specifications.
 
-Example of usage: `gift`
+Each suggestion comes with a category tag `[Creative]`, `[Food]`, `[Accessory]`, etc. to give users a sense of what type of gift it is.
+
+Example of usage: `gift` / `gift male` / `gift female` / `gift unisex`
 
 Expected outcome:
 ```
-[Creative] Mixed media collage incorporating photographs, ticket stubs
-Satisfied with the gift suggestion? [Yes/No]
+[Creative] Personalised pens engraved with the recipient's name or initials
+-> Satisfied with the gift suggestion? [Yes/No]
+-> Changed you mind? type 'cancel' to exit this process!
 ```
+
 ---
-- If user input `no`: Regenerates another gift idea for users to consider.
+- If user input `no`: Regenerates another gift suggestion for users to consider.
 
 Expected outcome:
 ```
-No worries, love's journey has many paths. Let's try another! 
-[Food] High-quality beans or loose leaf teas
-Satisfied with the gift suggestion? [Yes/No]
+[Flower] Red roses: Love and passion (associated with deep affection and desire)
+-> Satisfied with the gift suggestion? [Yes/No]
+-> Changed you mind? type 'cancel' to exit this process!
 ```
 ---
 - If user input `yes`: Choice will be confirmed and saved in view history for ease of reference.
@@ -266,7 +270,32 @@ Expected outcome:
 ```
 This gift is about to make a love story even sweeter.
 ```
+---
+- If user input `cancel`: Terminates the current gift suggestion session and exits the gift generation process. 
+  - This command can be used at any point during the gift suggestion interaction if the user decides not to continue or wishes to start over.
 
+Expected outcome:
+```
+Taking a break? That's okay! 
+Remember, great ideas need their own time to unwrap.
+```
+> **!IMPORTANT**
+>
+> Be aware that only one type of gift command can be active at a time. If you initiate a gift suggestion command (`gift`, `gift male`, `gift female`, or `gift unisex`), you must follow through with that choice.
+>
+> If during the process you wish to change the gender specification of the gift, you will need to terminate the current session by typing `cancel`.
+>
+> Once canceled, you can then start a new gift suggestion session with the desired command to specify a different gender.
+>
+> **Example scenario:**
+>
+> Initial command: `gift male`
+>
+> User response: Wishes to switch to female-oriented gifts.
+>
+> Required action:
+> 1. `cancel` to stop the current process.
+> 2. Input `gift female` to start receiving gift suggestions suitable for a female recipient.
 
 ### Generate a date itinerary, based on preferred location and budget: `itinerary`
 Generates out a date itinerary, consisting of 2 restaurants and 2 activities from our curated collection.

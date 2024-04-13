@@ -41,7 +41,7 @@ public class GenerateGiftCommand extends Command {
                 gift = gifts.getRandomGift(this.gender);
                 System.out.println(gift);
                 System.out.println("-> Satisfied with the gift suggestion? [Yes/No]");
-                System.out.println("-> Changed you mind? Feel free to cancel this process! (type 'cancel')");
+                System.out.println("-> Changed you mind? type 'cancel' to exit this process!");
                 System.out.println(HORIZONTAL);
             } else if (userSatisfied.equals("cancel")) {
                 System.out.println("Taking a break? That's okay! \n" +
