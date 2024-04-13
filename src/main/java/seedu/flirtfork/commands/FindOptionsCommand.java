@@ -21,7 +21,7 @@ public class FindOptionsCommand extends Command {
 
     private static final String HORIZONTAL = "____________________________________________________________";
     private String optionType;
-    
+
     public FindOptionsCommand() {
     }
 
