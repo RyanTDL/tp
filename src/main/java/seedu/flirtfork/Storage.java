@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.InputStream;
 
+/**
+ * Handles the loading and saving of data to files.
+ */
 public class Storage {
     private static final String USER_DETAILS_FILE = "./data/UserDetails.txt";
     private static final String FAVOURITES_DETAILS_FILE = "./data/Favourites.txt";
@@ -18,10 +21,21 @@ public class Storage {
     private static final String GIFTS_DETAILS_FILE = "./data/GiftList.txt";
     private String filePath;
 
+    /**
+     * Constructs a Storage object with the given file path.
+     *
+     * @param filePath The file path.
+     */
     public Storage(String filePath) {
         this.filePath = filePath;
     }
 
+    /**
+     * Loads the list of favourite items from the file.
+     *
+     * @return The list of favourite items.
+     * @throws FileNotFoundException If the file is not found.
+     */
     public FavouritesList loadFavourites() throws FileNotFoundException {
         try {
             ArrayList<Favourites> loadedFavourites = new ArrayList<>();
@@ -42,6 +56,12 @@ public class Storage {
         return new FavouritesList();
     }
 
+    /**
+     * Saves the list of favourite items to the file.
+     *
+     * @param favourites The list of favourite items to save.
+     * @throws IOException If an I/O error occurs.
+     */
     public void saveFavourites(ArrayList<Favourites> favourites) throws IOException {
         try {
             File file = new File(FAVOURITES_DETAILS_FILE);
@@ -62,6 +82,11 @@ public class Storage {
         }
     }
 
+    /**
+     * Saves the user details to a file.
+     *
+     * @param userDetails The user details to save.
+     */
     public void saveUserDetails(UserDetails userDetails) {
         try {
             File file = new File(USER_DETAILS_FILE);
@@ -78,6 +103,11 @@ public class Storage {
         }
     }
 
+    /**
+     * Loads the user details from a file.
+     *
+     * @return The loaded user details.
+     */
     public UserDetails loadUserDetails() {
         File file = new File(USER_DETAILS_FILE);
         if (!file.exists()) {
@@ -98,6 +128,12 @@ public class Storage {
         }
     }
 
+    /**
+     * Loads the list of food items from the file.
+     *
+     * @return The list of food items.
+     * @throws FileNotFoundException If the file is not found.
+     */
     public ArrayList<Food> loadFood() throws FileNotFoundException {
         ArrayList<Food> loadedFoods = new ArrayList<>();
         try {
@@ -116,6 +152,12 @@ public class Storage {
         return loadedFoods;
     }
 
+    /**
+     * Loads the initial food list from a file packaged with the application.
+     *
+     * @return The list of food items loaded from the file.
+     * @throws FileNotFoundException If the food list file is not found.
+     */
     public ArrayList<Food> loadFoodFirstTime() throws FileNotFoundException {
         ArrayList<Food> loadedFoods = new ArrayList<>();
         InputStream is = getClass().getClassLoader().getResourceAsStream("FoodList.txt");
@@ -132,6 +174,11 @@ public class Storage {
         return loadedFoods;
     }
 
+    /**
+     * Saves the list of food items to the file.
+     *
+     * @param foods The list of food items to save.
+     */
     public void saveFood(FoodList foods) {
         try (FileWriter writer = new FileWriter(FOOD_DETAILS_FILE)) {
             for (int i = 0; i < foods.size(); i++) {
@@ -146,6 +193,12 @@ public class Storage {
         }
     }
 
+    /**
+     * Loads the initial activity list from a file packaged with the application.
+     *
+     * @return The list of activities loaded from the file.
+     * @throws FileNotFoundException If the activity list file is not found.
+     */
     public ArrayList<Activity> loadActivityFirstTime() throws FileNotFoundException {
         ArrayList<Activity> loadedActivities = new ArrayList<>();
         InputStream is = getClass().getClassLoader().getResourceAsStream("ActivityList.txt");
@@ -162,6 +215,12 @@ public class Storage {
         return loadedActivities;
     }
 
+    /**
+     * Loads the activity list from a file.
+     *
+     * @return The list of activities loaded from the file.
+     * @throws FileNotFoundException If the activity list file is not found.
+     */
     public ArrayList<Activity> loadActivity() throws FileNotFoundException {
         ArrayList<Activity> loadedActivities = new ArrayList<>();
         try {
@@ -180,6 +239,11 @@ public class Storage {
         return loadedActivities;
     }
 
+    /**
+     * Saves the activity list to a file.
+     *
+     * @param activities The activity list to save.
+     */
     public void saveActivity(ActivityList activities) {
         try (FileWriter writer = new FileWriter(ACTIVITIES_DETAILS_FILE)) {
             for (int i = 0; i < activities.size(); i++) {
@@ -194,6 +258,12 @@ public class Storage {
         }
     }
 
+    /**
+     * Loads the initial gift list from a file packaged with the application.
+     *
+     * @return The list of gifts loaded from the file.
+     * @throws FileNotFoundException If the gift list file is not found.
+     */
     public ArrayList<Gift> loadGiftFirstTime() throws FileNotFoundException {
         ArrayList<Gift> loadedGift = new ArrayList<>();
         InputStream is = getClass().getClassLoader().getResourceAsStream("GiftList.txt");
@@ -214,6 +284,12 @@ public class Storage {
         return loadedGift;
     }
 
+    /**
+     * Loads the list of gift items from the file.
+     *
+     * @return The list of gift items.
+     * @throws FileNotFoundException If the file is not found.
+     */
     public ArrayList<Gift> loadGift() throws FileNotFoundException {
         ArrayList<Gift> loadGifts = new ArrayList<>();
         try {
@@ -235,7 +311,12 @@ public class Storage {
         }
         return loadGifts;
     }
-    
+
+    /**
+     * Saves the list of gift items to the file.
+     *
+     * @param gifts The list of gift items to save.
+     */
     public void saveGift(GiftList gifts) {
         try (FileWriter writer = new FileWriter(GIFTS_DETAILS_FILE)) {
             for (int i = 0; i < gifts.size(); i++) {

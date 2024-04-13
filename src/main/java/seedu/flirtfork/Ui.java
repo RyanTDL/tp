@@ -3,15 +3,27 @@ package seedu.flirtfork;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * This class handles user interface functionalities
+ * such as displaying messages, reading user input, and input validation.
+ */
 public class Ui {
     private static final String BOT_NAME = "Flirt and Fork";
     private static final String HORIZONTAL = "____________________________________________________________";
     private Scanner scanner;
 
+    /**
+     * Constructs a Ui object with a new Scanner for reading user input from the console.
+     */
     public Ui() {
         this.scanner = new Scanner(System.in);
     }
 
+    /**
+     * Displays the greeting message when the application starts.
+     *
+     * @param anniversary The anniversary date to be displayed in the greeting message.
+     */
     public void greetingMessage(String anniversary) {
         System.out.println(HORIZONTAL);
         System.out.println("Hungry for love? You've come to the right place.\n" +
@@ -23,6 +35,9 @@ public class Ui {
         System.out.println(HORIZONTAL);
     }
 
+    /**
+     * Displays the message for the first setup of the application.
+     */
     public void firstSetUpMessage() {
         System.out.println(HORIZONTAL);
         System.out.println("Hungry for love? You've come to the right place.\n" +
@@ -31,12 +46,18 @@ public class Ui {
         System.out.println(HORIZONTAL);
     }
 
+    /**
+     * Displays the exit message when the user exits the application.
+     */
     public void exitMessage() {
         System.out.println("Love, like a good meal, is all about timing.\n" +
                 "Keep your love simmering and your fork ready, " +
                 "see you at the next course!");
     }
 
+    /**
+     * Displays the help message with a list of available commands and their functions.
+     */
     public void helpMessage() {
         System.out.println(
             "----------------------------------------- \n" +
@@ -83,23 +104,48 @@ public class Ui {
         );
     }
 
+    /**
+     * Displays an error message.
+     *
+     * @param message The error message to be displayed.
+     */
     public void errorMessage(String message) {
         System.out.println(message);
     }
 
+    /**
+     * Reads the user's command input.
+     *
+     * @return The user's command input as a String.
+     */
     public String readCommand() {
         return scanner.nextLine();
     }
 
+    /**
+     * Displays a single favourite item.
+     *
+     * @param favourite The favourite item to be displayed.
+     */
     public void showFavourite(String favourite) {
         System.out.println(favourite);
     }
 
+    /**
+     * Lists all favourites in a formatted manner.
+     *
+     * @param favouritesList The list of favourites to be displayed.
+     */
     public void listFavourites(FavouritesList favouritesList) {
         System.out.println("Drumroll, please! Presenting the stars of your romantic sky: ");
         System.out.println(favouritesList.getFormattedFavourites());
     }
 
+    /**
+     * Shows matching favourites based on user input.
+     *
+     * @param matchingFavourites The list of matching favourites to be displayed.
+     */
     public void showMatchingFavourites(ArrayList<Favourites> matchingFavourites) {
         if (matchingFavourites.isEmpty()) {
             System.out.println("No treasures found this time. Let's try another clue?");
@@ -111,6 +157,11 @@ public class Ui {
         }
     }
 
+    /**
+     * Shows matching food options based on user input.
+     *
+     * @param matchingFoods The list of matching food options to be displayed.
+     */
     public void showMatchingFoods(ArrayList<Food> matchingFoods) {
         if (matchingFoods.isEmpty()) {
             System.out.println("No food found this time:( Let's try another clue?");
@@ -122,6 +173,11 @@ public class Ui {
         }
     }
 
+    /**
+     * Shows matching activity options based on user input.
+     *
+     * @param matchingActivities The list of matching activity options to be displayed.
+     */
     public void showMatchingActivities(ArrayList<Activity> matchingActivities) {
         if (matchingActivities.isEmpty()) {
             System.out.println("No activity found this time:( Let's try another clue?");
@@ -133,6 +189,11 @@ public class Ui {
         }
     }
 
+    /**
+     * Shows matching gift options based on user input.
+     *
+     * @param matchingGifts The list of matching gift options to be displayed.
+     */
     public void showMatchingGifts(ArrayList<Gift> matchingGifts) {
         if (matchingGifts.isEmpty()) {
             System.out.println("No gifts found this time:( Let's try another clue?");
@@ -184,6 +245,11 @@ public class Ui {
         System.out.println("Please enter either yes or no or cancel the generation process");
     }
 
+    /**
+     * Displays a general message to the user.
+     *
+     * @param message The message to be displayed.
+     */
     public void showMessage(String message) {
         System.out.println(message);
     }

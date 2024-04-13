@@ -46,7 +46,7 @@ public class FindOptionsCommand extends Command {
 
         Scanner scanner = new Scanner(System.in);
         String optionType;
-        Ui.listCommand();
+        Ui.findCommand();
 
         while (true) {
             optionType = scanner.nextLine().toLowerCase();

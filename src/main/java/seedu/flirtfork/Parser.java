@@ -19,9 +19,20 @@ import seedu.flirtfork.commands.ViewHistoryCommand;
 import seedu.flirtfork.exceptions.FlirtForkEmptyException;
 import seedu.flirtfork.exceptions.FlirtForkException;
 
+/**
+ * Parses user input into commands for execution.
+ */
 public class Parser {
     private static final String HORIZONTAL = "____________________________________________________________";
 
+    /**
+     * Parses the user input into a command.
+     *
+     * @param userInput The user input.
+     * @param userDetails The user details.
+     * @return The command corresponding to the user input.
+     * @throws FlirtForkException If an error occurs during parsing.
+     */
     public static Command parseCommand(String userInput, UserDetails userDetails) throws FlirtForkException {
         if (userInput.trim().isEmpty()) {
             throw new FlirtForkException("OOPS! Input cannot be empty! \n" + HORIZONTAL);
@@ -117,6 +128,13 @@ public class Parser {
         }
     }
 
+    /**
+     * Parses the "gift" command arguments into a command.
+     *
+     * @param arguments The arguments of the "gift" command.
+     * @return The corresponding command.
+     * @throws FlirtForkException If an error occurs during parsing.
+     */
     private static Command parseGiftCommand(String arguments) throws FlirtForkException {
         String giftGender = "any"; // Default to any gender
 
@@ -153,6 +171,12 @@ public class Parser {
         return new GenerateGiftCommand(giftGender);
     }
 
+    /**
+     * Parses a string representation of favourites into a Favourites object.
+     *
+     * @param line The string representation of favourites.
+     * @return The corresponding Favourites object.
+     */
     public static Favourites parseFavourites(String line) {
         String[] parts = line.split(" \\| ");
         Favourites favourite = null;
@@ -168,6 +192,12 @@ public class Parser {
         return favourite;
     }
 
+    /**
+     * Parses a string representation of food into a Food object.
+     *
+     * @param line The string representation of food.
+     * @return The corresponding Food object.
+     */
     public static Food parseFood(String line) {
         String[] parts = line.split(" \\| ");
         Food food;
@@ -175,6 +205,12 @@ public class Parser {
         return food;
     }
 
+    /**
+     * Parses a string representation of activity into an Activity object.
+     *
+     * @param line The string representation of activity.
+     * @return The corresponding Activity object.
+     */
     public static Activity parseActivity(String line) {
         String[] parts = line.split(" \\| ");
         Activity activity;
@@ -182,6 +218,13 @@ public class Parser {
         return activity;
     }
 
+    /**
+     * Parses a string representation of gift into a Gift object.
+     *
+     * @param line The string representation of gift.
+     * @return The corresponding Gift object.
+     * @throws FlirtForkException If the gift data is incomplete.
+     */
     public static Gift parseGift(String line) throws FlirtForkException {
         String[] parts = line.split(" \\| ");
         if (parts.length < 3) {
