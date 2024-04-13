@@ -115,10 +115,7 @@ public class Parser {
             if (!arguments.trim().isEmpty()) {
                 throw new FlirtForkException("Only 'list' is required to view the list! \n" + HORIZONTAL);
             }
-            Ui.listCommand();
-            Scanner listScanner = new Scanner(System.in);
-            String listOptionType = listScanner.nextLine().toLowerCase();
-            return new ListOptionsCommand(listOptionType);
+            return new ListOptionsCommand();
         default:
             throw new FlirtForkException("Love is a language we all speak, but we didn't quite catch that. \n" +
                     "Try again? \n" + HORIZONTAL);
