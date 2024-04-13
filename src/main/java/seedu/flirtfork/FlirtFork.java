@@ -8,8 +8,9 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 /**
- * The main class for the FlirtFork application.
- * FlirtFork initializes the application and runs the main loop.
+ * The main class that initializes and runs the FlirtFork application.
+ * It sets up the environment, loads necessary data,
+ * and handles the main interaction loop where commands are processed.
  */
 public class FlirtFork {
     private static final String FILE_PATH = "./data/FlirtFork.txt";
@@ -50,6 +51,11 @@ public class FlirtFork {
         }
     }
 
+    /**
+     * Starts the application's main loop.
+     * It handles user input, processes commands, and continues until an exit command is called.
+     * Depending on whether the user details are set, it may prompt for initial setup.
+     */
     public void run() {
         if (userDetails.getName().equals("NOT SET")) {
             ui.firstSetUpMessage();
@@ -75,6 +81,12 @@ public class FlirtFork {
         }
     }
 
+    /**
+     * Main entry point of the application.
+     * It creates an instance of FlirtFork and starts the application.
+     *
+     * @param args The command line arguments passed to the application. 
+     */
     public static void main(String[] args) {
         FlirtFork flirtFork = new FlirtFork(FILE_PATH);
         assert foods.get(0).toString().equals("25 Degrees") : "first entry in food database must be 25 degrees";

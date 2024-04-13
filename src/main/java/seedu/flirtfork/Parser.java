@@ -21,9 +21,23 @@ import seedu.flirtfork.exceptions.FlirtForkException;
 
 import java.util.Scanner;
 
+/**
+ * The Parser class is responsible for interpreting user input and converting it into a Command
+ * that the application can execute.
+ * It checks the command type, validates and processes any arguments,
+ * and returns the appropriate Command object to perform the requested action.
+ */
 public class Parser {
     private static final String HORIZONTAL = "____________________________________________________________";
 
+    /**
+     * Parses the user input into a command based on the first word of the input and any subsequent arguments.
+     *
+     * @param userInput The raw input string from the user.
+     * @param userDetails The UserDetails object containing specific data about the user.
+     * @return Command The command to be executed.
+     * @throws FlirtForkException if there is an error parsing the input or if the input is invalid.
+     */
     public static Command parseCommand(String userInput, UserDetails userDetails) throws FlirtForkException {
         if (userInput.trim().isEmpty()) {
             throw new FlirtForkException("OOPS! Input cannot be empty! \n" + HORIZONTAL);
@@ -122,6 +136,13 @@ public class Parser {
         }
     }
 
+    /**
+     * Parses the command arguments to determine the gender-specific gift command to be generated.
+     *
+     * @param arguments The arguments part of the user input for gift-related commands.
+     * @return Command A new GenerateGiftCommand with the specified gender criteria.
+     * @throws FlirtForkException if the arguments are invalid or improperly formatted.
+     */
     private static Command parseGiftCommand(String arguments) throws FlirtForkException {
         String giftGender = "any"; // Default to any gender
 
@@ -173,6 +194,12 @@ public class Parser {
         return favourite;
     }
 
+    /**
+     * Parses a line from the FoodList.txt file and constructs a Food object from it.
+     *
+     * @param line The line from the food file.
+     * @return Food A new Food object based on the parsed line.
+     */
     public static Food parseFood(String line) {
         String[] parts = line.split(" \\| ");
         Food food;
@@ -180,6 +207,12 @@ public class Parser {
         return food;
     }
 
+    /**
+     * Parses a line from the ActivityList.txt file and constructs an Activity object from it.
+     *
+     * @param line The line from the activities file.
+     * @return Activity A new Activity object based on the parsed line.
+     */
     public static Activity parseActivity(String line) {
         String[] parts = line.split(" \\| ");
         Activity activity;
@@ -187,6 +220,14 @@ public class Parser {
         return activity;
     }
 
+    /**
+     * Parses a line from the GiftList.txt file and constructs a Gift object from it.
+     * Ensures that each line includes a description, completion status, and gender marker.
+     *
+     * @param line The line from the gifts file.
+     * @return Gift A new Gift object based on the parsed line.
+     * @throws FlirtForkException if the gift data is incomplete or improperly formatted.
+     */
     public static Gift parseGift(String line) throws FlirtForkException {
         String[] parts = line.split(" \\| ");
         if (parts.length < 3) {
