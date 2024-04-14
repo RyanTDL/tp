@@ -15,6 +15,7 @@ Here’s what makes 'Flirt and Fork' an essential tool for anyone wanting to imp
 
 Don’t let another special occasion slip by uncelebrated. Sign up for 'Flirt and Fork' today, and start crafting those perfect evenings that turn into cherished memories. Why wait? Let us help you create a night out that’s as wonderful as your significant other. Embrace the ease of planning, and give your date nights the upgrade they deserve with 'Flirt and Fork'!
 
+
 ## Quick Start
 
 1. Ensure you have Java `11` or above installed in your Computer.
@@ -229,10 +230,7 @@ Peek into Cupid's own gift collection!
 1. [Accessory] Customised pendant necklace
 2. [Accessory] Personalised charm bracelets
 ...
-```
-
-//@@author tiffanyliu0220
-### Discovering Options Based on Category:
+____________________________________________________________
 To list out delicious dining options, type 'food'
 To discover exciting activities, type 'activities'
 To cancel this command, type 'cancel'
@@ -353,8 +351,6 @@ Expected outcome:
 Cancelling findings... 
 Cancel success!
 ```
-//@@author
-
 ### Generate a randomised date idea: `idea`
 Generates out a randomised date idea, consisting of 1 restaurant and 1 activity from our curated collection. After receiving the suggestion, users have the option to accept or request for another idea.
 
@@ -422,7 +418,7 @@ Expected outcome:
 Taking a break? That's okay! 
 Remember, great ideas need their own time to unwrap.
 ```
-> **IMPORTANT**
+> **!IMPORTANT**
 >
 > Be aware that only one type of gift command can be active at a time. If you initiate a gift suggestion command (`gift`, `gift male`, `gift female`, or `gift unisex`), you must follow through with that choice.
 >
