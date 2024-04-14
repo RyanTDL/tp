@@ -51,6 +51,7 @@ public class FlirtFork {
         }
     }
 
+
     /**
      * Starts the application's main loop.
      * It handles user input, processes commands, and continues until an exit command is called.
