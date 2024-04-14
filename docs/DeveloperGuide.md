@@ -29,6 +29,10 @@ The existing Generate Idea feature is facilitated by `GenerateIdea` by leveragin
 
 - `execute()` - Generates a randomised date idea consisting of 1 food and 1 dining option. Users can prompt to regenerate an idea until they are satisfied.
 
+`execute()` is responsible for creating an idea object, which has takes data from a Food object and an Activity object. For example, a date idea of going to Haji Lane for shopping and habing a meal at Zen Zen Sushi is shown in the object diagram below:
+
+<img src="images/GenerateIdeaObjectDiagram.png">
+
 Given below is an example usage scenario and how the Generate Idea mechanism behaves at each step.
 
 Step 1. The user launches the application and executes the `idea` command. The `idea` command is parsed by the `parseCommand` method in the `Parser` class, which creates a `GenerateIdeaCommand` instance.
@@ -43,7 +47,7 @@ The following activity diagram summarises what happens when a user inputs `idea`
 
 <img src="images/GenerateIdeaActivityDiagram.png" height = "375">
 
-The following sequence diagram shows how `idea` causes various entities to interact with one another:
+The following sequence diagram shows how `idea` the order in which methods in various classes are executed to produce a result to the user:
 
 <img src="images/GenerateIdeaCommandSequenceDiagram.png">
 
@@ -91,6 +95,10 @@ Each step of the execute method interacts with the user to collect a specific pi
 
 The above sequence diagram depicts the interaction between UserDetailsCommand, the UI, and the Storage component, which highlights the flow of data collection and storage.
 
+#### Object Diagram
+Below is an object diagram representing the state of a `UserDetails` instance after a user has entered their information.
+
+![User Details Object Diagram](images/UserDetailsObjectDiagram.png)
 
 ### [Implemented] History Tracking feature
 

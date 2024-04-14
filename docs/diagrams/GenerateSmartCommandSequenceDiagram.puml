@@ -1,0 +1,20 @@
+@startuml
+hide footbox
+actor User
+participant ":UI" as UI
+participant ":GenerateSmartItineraryCommand" as Gen
+participant ":UserDetails" as UDetails
+participant ":FoodList" as Food
+participant ":ActivityList" as Act
+
+User -> UI : smart
+UI -> Gen : create(UserDetails userDetails)
+Gen -> UDetails : getUserPreferences()
+UDetails -> Gen
+Gen -> Food : getCustomisedFood(location, cuisine)
+Food -> Gen
+Gen -> Act : getRandomActivity()
+Act -> Gen
+Gen -> UI : showItinerary(Itinerary)
+UI -> User
+@enduml

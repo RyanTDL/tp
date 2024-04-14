@@ -10,6 +10,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.InputStream;
 
+/**
+ * Manages the storage of user details and application data such as favourites, food items, activities,
+ * and gift suggestions. This class provides functionality to load data from and save data to external files.
+ */
 public class Storage {
     private static final String USER_DETAILS_FILE = "./data/UserDetails.txt";
     private static final String FAVOURITES_DETAILS_FILE = "./data/Favourites.txt";
@@ -18,10 +22,21 @@ public class Storage {
     private static final String GIFTS_DETAILS_FILE = "./data/GiftList.txt";
     private String filePath;
 
+    /**
+     * Constructs a new Storage object to handle file operations for the specified file path.
+     *
+     * @param filePath The file path where data will be loaded from and saved to.
+     */
     public Storage(String filePath) {
         this.filePath = filePath;
     }
 
+    /**
+     * Loads the list of favourite items from the file.
+     *
+     * @return The list of favourite items.
+     * @throws FileNotFoundException If the file is not found.
+     */
     public FavouritesList loadFavourites() throws FileNotFoundException {
         try {
             ArrayList<Favourites> loadedFavourites = new ArrayList<>();
@@ -42,6 +57,12 @@ public class Storage {
         return new FavouritesList();
     }
 
+    /**
+     * Saves the list of favourite items to the file.
+     *
+     * @param favourites The list of favourite items to save.
+     * @throws IOException If an I/O error occurs.
+     */
     public void saveFavourites(ArrayList<Favourites> favourites) throws IOException {
         try {
             File file = new File(FAVOURITES_DETAILS_FILE);
@@ -62,6 +83,11 @@ public class Storage {
         }
     }
 
+    /**
+     * Saves the user details to a file.
+     *
+     * @param userDetails The user details to save.
+     */
     public void saveUserDetails(UserDetails userDetails) {
         try {
             File file = new File(USER_DETAILS_FILE);
@@ -78,6 +104,11 @@ public class Storage {
         }
     }
 
+    /**
+     * Loads the user details from a file.
+     *
+     * @return The loaded user details.
+     */
     public UserDetails loadUserDetails() {
         File file = new File(USER_DETAILS_FILE);
         if (!file.exists()) {
@@ -98,6 +129,12 @@ public class Storage {
         }
     }
 
+    /**
+     * Loads the list of food items from the file.
+     *
+     * @return The list of food items.
+     * @throws FileNotFoundException If the file is not found.
+     */
     public ArrayList<Food> loadFood() throws FileNotFoundException {
         ArrayList<Food> loadedFoods = new ArrayList<>();
         try {
@@ -116,6 +153,12 @@ public class Storage {
         return loadedFoods;
     }
 
+    /**
+     * Loads the initial food list from a file packaged with the application.
+     *
+     * @return The list of food items loaded from the file.
+     * @throws FileNotFoundException If the food list file is not found.
+     */
     public ArrayList<Food> loadFoodFirstTime() throws FileNotFoundException {
         ArrayList<Food> loadedFoods = new ArrayList<>();
         InputStream is = getClass().getClassLoader().getResourceAsStream("FoodList.txt");
@@ -132,6 +175,11 @@ public class Storage {
         return loadedFoods;
     }
 
+    /**
+     * Saves the list of food items to the file.
+     *
+     * @param foods The list of food items to save.
+     */
     public void saveFood(FoodList foods) {
         try (FileWriter writer = new FileWriter(FOOD_DETAILS_FILE)) {
             for (int i = 0; i < foods.size(); i++) {
@@ -146,6 +194,12 @@ public class Storage {
         }
     }
 
+    /**
+     * Loads the initial activity list from a file packaged with the application.
+     *
+     * @return The list of activities loaded from the file.
+     * @throws FileNotFoundException If the activity list file is not found.
+     */
     public ArrayList<Activity> loadActivityFirstTime() throws FileNotFoundException {
         ArrayList<Activity> loadedActivities = new ArrayList<>();
         InputStream is = getClass().getClassLoader().getResourceAsStream("ActivityList.txt");
@@ -162,6 +216,12 @@ public class Storage {
         return loadedActivities;
     }
 
+    /**
+     * Loads the activity list from a file.
+     *
+     * @return The list of activities loaded from the file.
+     * @throws FileNotFoundException If the activity list file is not found.
+     */
     public ArrayList<Activity> loadActivity() throws FileNotFoundException {
         ArrayList<Activity> loadedActivities = new ArrayList<>();
         try {
@@ -180,6 +240,11 @@ public class Storage {
         return loadedActivities;
     }
 
+    /**
+     * Saves the activity list to a file.
+     *
+     * @param activities The activity list to save.
+     */
     public void saveActivity(ActivityList activities) {
         try (FileWriter writer = new FileWriter(ACTIVITIES_DETAILS_FILE)) {
             for (int i = 0; i < activities.size(); i++) {
@@ -194,6 +259,13 @@ public class Storage {
         }
     }
 
+    /**
+     * Loads the gift list from a resource file during the initial setup.
+     * This method is typically called when the application is run for the first time.
+     *
+     * @return An ArrayList of Gift objects loaded from the resource file.
+     * @throws FileNotFoundException If the resource file cannot be found.
+     */
     public ArrayList<Gift> loadGiftFirstTime() throws FileNotFoundException {
         ArrayList<Gift> loadedGift = new ArrayList<>();
         InputStream is = getClass().getClassLoader().getResourceAsStream("GiftList.txt");
@@ -203,7 +275,6 @@ public class Storage {
         try (Scanner scanner = new Scanner(is)) {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                // Parse the line into an Activity object and add it to the list
                 try {
                     loadedGift.add(Parser.parseGift(line));
                 } catch (FlirtForkException e) {
@@ -214,6 +285,12 @@ public class Storage {
         return loadedGift;
     }
 
+    /**
+     * Loads the gift list from an external file, typically called when the application is started.
+     *
+     * @return An ArrayList of Gift objects loaded from the file.
+     * @throws FileNotFoundException If the file cannot be found and thus cannot be loaded.
+     */
     public ArrayList<Gift> loadGift() throws FileNotFoundException {
         ArrayList<Gift> loadGifts = new ArrayList<>();
         try {
@@ -235,7 +312,13 @@ public class Storage {
         }
         return loadGifts;
     }
-    
+
+    /**
+     * Saves the current list of gifts to an external file. This method is called when the application
+     * is closing or when the user chooses to save their changes.
+     *
+     * @param gifts The GiftList containing all gift objects to be saved.
+     */
     public void saveGift(GiftList gifts) {
         try (FileWriter writer = new FileWriter(GIFTS_DETAILS_FILE)) {
             for (int i = 0; i < gifts.size(); i++) {

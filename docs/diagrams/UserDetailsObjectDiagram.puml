@@ -1,0 +1,13 @@
+@startuml
+
+object "<u>userDetails:UserDetails</u>" as UserDetails {
+  name = "Forky Flirt"
+  age = "30"
+  gender = "Male"
+  location = "C"
+  cuisine = "J"
+  status = "M"
+  anniversary = "13/04/2002"
+}
+
+@enduml

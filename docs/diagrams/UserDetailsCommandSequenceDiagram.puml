@@ -1,0 +1,28 @@
+@startuml
+hide footbox
+participant "u:Ui" as Ui
+participant "c:UserDetailsCommand" as UserDetailsCommand
+participant "s:Storage" as Storage
+participant "userDetails:UserDetails" as UserDetails
+
+activate UserDetailsCommand
+
+UserDetailsCommand -> Ui: showMessage("Please enter your name:")
+UserDetailsCommand <- Ui: readCommand()
+UserDetailsCommand -> UserDetails: setName(name)
+
+UserDetailsCommand -> Ui: showMessage("Please enter your age:")
+UserDetailsCommand <- Ui: readAge()
+UserDetailsCommand -> UserDetails: setAge(age)
+
+alt is "M" or "R" or "D"
+    UserDetailsCommand -> Ui: showMessage("Please enter your anniversary:")
+    UserDetailsCommand <- Ui: readCommand()
+    UserDetailsCommand -> UserDetails: setAnniversary(anniversary)
+end
+
+UserDetailsCommand -> Storage: saveUserDetails(userDetails)
+UserDetailsCommand -> Ui: showMessage("User details saved successfully!")
+
+deactivate UserDetailsCommand
+@enduml

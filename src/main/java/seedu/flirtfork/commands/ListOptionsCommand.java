@@ -13,60 +13,70 @@ import seedu.flirtfork.exceptions.FlirtForkException;
 import java.util.Scanner;
 
 /**
- * Represents a command to list options of a specified type (food, activities, or gifts).
+ * Handles the command that allows users to list various options such as foods, activities, and gifts.
+ * Users can navigate through these options until they decide to cancel.
  */
 public class ListOptionsCommand extends Command {
+    private static final String HORIZONTAL = "____________________________________________________________";
     private String optionType;
 
-    /**
-     * Constructs a ListOptionsCommand object with the specified option type.
-     * Will ask for the user's input until a valid option type is given for construction.
-     *
-     * @param optionType The type of options to list (food, activities, or gifts).
-     */
-    public ListOptionsCommand(String optionType) {
-        while (!optionType.equals("food") && !optionType.equals("activities") 
-                && !optionType.equals("gifts") && !optionType.equals("cancel")) {
-            System.out.println("Invalid option! Please choose 'food', 'activities', 'gifts' or 'cancel'.");;
-            Scanner scanner = new Scanner(System.in);
-            optionType = scanner.nextLine().toLowerCase();
-        }
-        this.optionType = optionType;
+    public ListOptionsCommand() {
     }
 
     /**
-     * Executes the list options command based on the specified option type.
+     * Executes the listing of different options like foods, activities, or gifts based on the user's choices.
+     * Continues to prompt the user until the 'cancel' command is issued.
      *
-     * @param favourites The list of favourites.
-     * @param foods The list of foods.
-     * @param activities The list of activities.
-     * @param ui The user interface.
-     * @param storage The storage component.
-     * @param userDetails The user details.
-     * @param gifts The list of gifts.
-     * @throws FlirtForkException If an invalid option type is provided.
+     * @param favourites List of user's favourite items, not used in this command.
+     * @param foods List of food items available for listing.
+     * @param activities List of activities available for listing.
+     * @param ui The UI interface to interact with the user.
+     * @param storage The storage handler, not used in this command.
+     * @param userDetails The user details, not used in this command.
+     * @param gifts The list of gifts available for listing.
+     * @throws FlirtForkException If an invalid option type is provided by the user.
      */
     @Override
     public void execute(FavouritesList favourites, FoodList foods, ActivityList activities,
                         Ui ui, Storage storage, UserDetails userDetails, GiftList gifts) throws FlirtForkException {
-        assert (optionType.equals("food") || optionType.equals("activities")|| optionType.equals("gifts") 
-                || optionType.equals("cancel")) : "optionType should be food, activities, gifts or cancel";
 
-        switch(optionType) {
-        case "food":
-            printFoodList(ui, foods);
-            break;
-        case "activities":
-            printActivityList(ui, activities);
-            break;
-        case "gifts":
-            printGiftList(ui, gifts);
-            break;
-        case "cancel":
-            System.out.println("Cancelling listings...");
-            break;
-        default:
-            throw new FlirtForkException("Invalid option! Please choose 'food', 'activities', 'gifts' or 'cancel'.");
+        Scanner scanner = new Scanner(System.in);
+        String optionType;
+        Ui.listCommand();
+
+        while (true) {
+
+            optionType = scanner.nextLine().toLowerCase();
+
+            switch (optionType) {
+            case "food":
+                printFoodList(ui, foods);
+                System.out.println(HORIZONTAL);
+                System.out.println("To discover exciting activities, type 'activities'");
+                System.out.println("To view a curated list of gifts, type 'gifts'");
+                System.out.println("To cancel this command, type 'cancel'");
+                break;
+            case "activities":
+                printActivityList(ui, activities);
+                System.out.println(HORIZONTAL);
+                System.out.println("To list out delicious dining options, type 'food'");
+                System.out.println("To view a curated list of gifts, type 'gifts'");
+                System.out.println("To cancel this command, type 'cancel'");
+                break;
+            case "gifts":
+                printGiftList(ui, gifts);
+                System.out.println(HORIZONTAL);
+                System.out.println("To list out delicious dining options, type 'food'");
+                System.out.println("To discover exciting activities, type 'activities'");
+                System.out.println("To cancel this command, type 'cancel'");
+                break;
+            case "cancel":
+                System.out.println("Cancelling listings... \n" +
+                        "Cancel success!");
+                return;
+            default:
+                System.out.println("Invalid option! Please choose 'food', 'activities', 'gifts' or 'cancel'.");
+            }
         }
     }
 

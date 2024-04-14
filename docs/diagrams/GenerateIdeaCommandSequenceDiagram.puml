@@ -11,6 +11,7 @@ participant ":Idea" as Idea
 participant ":Storage" as Storage
 
 User -> Ui: idea
+activate Ui
 Ui -> GenerateIdeaCommand: GenerateIdeaCommand()
 activate GenerateIdeaCommand
 
@@ -29,20 +30,28 @@ loop userSatisfied != yes
     activate Idea
     Idea --> GenerateIdeaCommand:
     deactivate Idea
-    GenerateIdeaCommand --> User: print(idea)
+    GenerateIdeaCommand --> Ui:
     deactivate GenerateIdeaCommand
+    Ui --> User: printIdea()
+    deactivate Ui
 end
 
-User -> GenerateIdeaCommand: yes
+User -> Ui: yes
+activate Ui
+Ui -> GenerateIdeaCommand: yes
 activate GenerateIdeaCommand
 GenerateIdeaCommand -> Storage: saveFood(foods)
-Storage --> GenerateIdeaCommand
 activate Storage
-GenerateIdeaCommand -> Storage: saveActivity(activities)
 Storage --> GenerateIdeaCommand
-GenerateIdeaCommand --> User: print(doneMessage)
 deactivate Storage
+GenerateIdeaCommand -> Storage: saveActivity(activities)
+activate Storage
+Storage --> GenerateIdeaCommand
+deactivate Storage
+GenerateIdeaCommand --> Ui:
 deactivate GenerateIdeaCommand
 destroy GenerateIdeaCommand
+Ui --> User: printDoneMessage()
+deactivate Ui
 
 @enduml

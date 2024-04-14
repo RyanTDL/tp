@@ -13,7 +13,22 @@ import seedu.flirtfork.Ui;
 import seedu.flirtfork.UserDetails;
 import seedu.flirtfork.exceptions.FlirtForkException;
 
+/**
+ * Command to view the user's history.
+ */
 public class ViewHistoryCommand extends Command {
+    /**
+     * Executes the list options command based on the specified option type.
+     *
+     * @param favourites The list of favourites.
+     * @param foods The list of foods.
+     * @param activities The list of activities.
+     * @param ui The user interface.
+     * @param storage The storage component.
+     * @param userDetails The user details.
+     * @param gifts The list of gifts.
+     * @throws FlirtForkException If an invalid option type is provided.
+     */
     @Override
     public void execute(FavouritesList favourites, FoodList foods, ActivityList activities, Ui ui,
                         Storage storage, UserDetails userDetails, GiftList gifts) throws FlirtForkException {
