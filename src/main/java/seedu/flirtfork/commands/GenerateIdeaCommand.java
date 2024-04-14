@@ -37,7 +37,7 @@ public class GenerateIdeaCommand extends Command {
      */
     @Override
     public void execute(FavouritesList favourites, FoodList foods, ActivityList activities, Ui ui,
-                        Storage storage, UserDetails userDetails, GiftList gifts)  {
+                        Storage storage, UserDetails userDetails, GiftList gifts) {
         String userSatisfied;
 
         Food food = foods.getRandomFood();

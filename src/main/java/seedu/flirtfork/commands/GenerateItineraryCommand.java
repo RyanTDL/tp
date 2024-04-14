@@ -44,7 +44,7 @@ public class GenerateItineraryCommand extends Command {
      */
     @Override
     public void execute(FavouritesList favourites, FoodList foods, ActivityList activities, Ui ui,
-                        Storage storage, UserDetails userDetails, GiftList gifts) {
+                        Storage storage, UserDetails userDetails, GiftList gifts) throws FlirtForkException {
         String userSatisfied;
         Food food1;
         Food food2;
