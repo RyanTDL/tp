@@ -1,7 +1,7 @@
 # Project Portfolio Page (PPP): soongensayo
 
 ## Overview
-*Flirt Fork* is an innovative application designed to create smart itineraries for individuals based on personal preferences and data-driven insights. The application is built to streamline the process of planning outings and events by providing curated suggestions that can be tailored to user profiles.
+*Flirt and Fork* is an innovative application designed to create smart itineraries for individuals based on personal preferences and data-driven insights. The application is built to streamline the process of planning outings and events by providing curated suggestions that can be tailored to user profiles.
 
 ## Summary of Contributions
 
@@ -10,8 +10,8 @@ You can find my code contributions in the [tP Code Dashboard](https://nus-cs2113
 
 ### Enhancements Implemented
 - **UserDetailsCommand**: Implemented the command that captures user details and preferences for itinerary generation.
-- **SmartItinerary**: Developed the logic that creates smart itineraries based on user preferences, ensuring a tailored experience.
-- **HelpCommand**: Crafted a comprehensive help command to assist users in navigating through the application with ease.
+- **Smart Itinerary**: Developed the logic that creates smart itineraries based on user preferences, ensuring a tailored experience.
+- **Help Command**: Crafted a comprehensive help command to assist users in navigating through the application with ease.
 
 ### Contributions to the User Guide (UG)
 - Authored the section on the `me` command, providing users with instructions on how to set up their profiles.
@@ -32,11 +32,11 @@ You can find my code contributions in the [tP Code Dashboard](https://nus-cs2113
 ### Review Contributions
 - Reviewed pull requests to ensure consistency and quality of code, and gave encouraging comments. Example: [PR #152](https://github.com/AY2324S2-CS2113-T11-2/tp/pull/152#issuecomment-2045649394)
 
-## Contributions beyond project team:
+### Contributions beyond project team:
 - Exchanged JAR files with team F15-2. Did extensive user testing and raised relevant issues found during testing, using the [issue tracker](https://github.com/AY2324S2-CS2113-F15-2/tp/issues). 
 
 ---
 
-**Reflection**: Working on Flirt Fork has been a remarkable journey where I not only applied my software engineering skills but also developed new ones. Crafting features like `SmartItinerary` challenged my problem-solving abilities and enhanced my understanding of user-centric design. Collaborating with the team, mentoring, and contributing to the SE community were equally fulfilling experiences that underscored the importance of teamwork and knowledge sharing.
+**Reflection**: Working on Flirt Fork has been a remarkable journey where I not only applied my software engineering skills but also developed new ones. Crafting features like the `Smart Itinerary` challenged my problem-solving abilities and enhanced my understanding of user-centric design. Collaborating with the team, mentoring, and contributing to the CS2113 community were equally fulfilling experiences that underscored the importance of teamwork and knowledge sharing.
 
 ---
