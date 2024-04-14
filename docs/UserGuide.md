@@ -25,7 +25,7 @@ Don’t let another special occasion slip by uncelebrated. Sign up for 'Flirt an
 5. Type the command in the command box and press Enter to execute it.
 6. Refer to the [Features](#Features) section below for an overview of all valid commands.
 
-# Warning
+### Warning
 Do NOT manually tamper with the .txt files in the data folder - `Flirt and Fork` will refuse to cooperate with you if you choose to violate this rule.
 
 ## Features 
