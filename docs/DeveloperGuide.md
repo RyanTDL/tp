@@ -29,6 +29,10 @@ The existing Generate Idea feature is facilitated by `GenerateIdea` by leveragin
 
 - `execute()` - Generates a randomised date idea consisting of 1 food and 1 dining option. Users can prompt to regenerate an idea until they are satisfied.
 
+`execute()` is responsible for creating an idea object, which has takes data from a Food object and an Activity object. For example, a date idea of going to Haji Lane for shopping and habing a meal at Zen Zen Sushi is shown in the object diagram below:
+
+<img src="images/GenerateIdeaObjectDiagram.png">
+
 Given below is an example usage scenario and how the Generate Idea mechanism behaves at each step.
 
 Step 1. The user launches the application and executes the `idea` command. The `idea` command is parsed by the `parseCommand` method in the `Parser` class, which creates a `GenerateIdeaCommand` instance.
@@ -43,9 +47,13 @@ The following activity diagram summarises what happens when a user inputs `idea`
 
 <img src="images/GenerateIdeaActivityDiagram.png" height = "375">
 
-The following sequence diagram shows how `idea` causes various entities to interact with one another:
+The following sequence diagram shows how `idea` the order in which methods in various classes are executed to produce a result to the user:
 
 <img src="images/GenerateIdeaCommandSequenceDiagram.png">
+
+The following class diagrams show the `FoodList` and `ActivityList` called upon during generation of the date idea:
+
+<img src="images/FoodActivityClassDiagram.png">
 
 ### [Implemented] Smart Itinerary Generation feature
 
@@ -124,98 +132,67 @@ The following activity diagram summarises how the history database is displayed 
 
 This feature enhances the user experience by offering access to a curated list of gift ideas and enabling the generation of random gift suggestions. 
 
-### Feature Components and Interaction
+#### Feature Components and Interaction
 
-The feature comprise several key components:
+The feature comprise several key components.
 
-- `Gift` Class: Extends `Favourites` class to include gift-specific attributes.
-- `GiftList` Class: Manages a collection of `Gift` objects.
-- `GenerateGiftCommand` Class: Handles the logic for generating random gift suggestions.
-- `ListOptionsCommands` Class: Provides functionality to list gifts among other options of food and activity.
-- `ViewHistoryCommand` Class: Displays a history of saved gift ideas.
-- `Storage` Class: Manages data persistence for gifts.
+**`Gift` Class:**
+- Inherits from the `Favourites` class.
+- Adds specific attributes like `gender` and `completionStatus` to manage gift properties effectively.
+- Methods such as `markComplete()` to change the status once a gift is accepted by the user.
 
-<img src="images/GiftClassDiagram.png" height = "650">
+**`GiftList` Class:**
+- Manages a collection (`ArrayList<Gift>`) of gifts and keeps track of which gifts have been suggested (`HashSet<Gift>`).
+- Includes functionality to retrieve a random gift that hasn't been suggested or marked as complete, enhancing the user experience by providing fresh suggestions.
 
-**Component Interaction Flow:**
-1. Initialisation
+**`GenerateGiftCommand` Class:**
+- Executes the process of fetching and suggesting a gift from the `GiftList`.
+- Handles user interactions during the suggestion process, processing responses to either continue suggesting, accept the gift, or exit the suggestion loop.
 
-    - The `Storage` class loads existing gift data from the `GiftList.txt` file into a `GiftList` object at application startup. 
-    - Users interact with the gift-related feature via commands `list`, `gift`, `history`.
+**`Ui` Class:**
+- Facilitates user interaction by displaying messages and capturing user input, which guides the flow of the gift suggestion process.
+
+**`Storage` Class:**
+- Responsible for loading and saving gift data to ensure that the `GiftList` is persistent across sessions, maintaining the state of which gifts have been suggested or accepted.
+
+**`Parser` Class:**
+- Interprets user commands and directs the application to execute specific actions based on the user input, such as initiating the gift suggestion process.
+
+<img src="images/GiftClassDiagram.png">
+
+**Component Interaction Flow**
+
+**1. Initialisation**
+- The `Storage` class loads existing gift data from the `GiftList.txt` file into a `GiftList` object at application startup. 
+- This ensures that the application remembers which gifts have been previously suggested or marked as complete.
    
-2. Listing Gifts
-
-    - The `ListOptionsCommand` interprets user input to display the `GiftList` when user inputs `gifts` after `list` command input.
-    - This interaction leverages the `Ui` class to output the list to the user.
+**2. Command Parsing**
+- The `Parser` class determines when the `GenerateGiftCommand` should be activated based on user input (e.g., `gift`, `gift male`, `gift female`, or `gift unisex`). 
+- It creates an instance of this command with the specified gender parameter.
    
-3. Generating Gift Suggestions
+**3. Generating Gift Suggestions**
+- The `GenerateGiftCommand` interacts with the `GiftList` to fetch a random gift that matches the specified gender and hasn’t been completed or previously suggested.
+- If a gift is available, it is presented to the user through the `Ui` class, which asks whether the user is satisfied with the suggestion.
 
-    - Upon `gift` command input, `GenerateGiftCommand` is triggered.
-    - It fetches a random gift from `GiftList` that is not previously marked as complete (`C`).
-    - The user's satisfaction response is handled in a loop that continuously generate new suggestions until `yes` is received, at which point the gift is marked as complete.
-   
-4. View Gift History
+**4. User Interaction Loop**
+- The user's response is handled in a loop:
+  - Accept (yes): The gift’s `markComplete()` method is called, and the gift is marked as completed.
+  - Reject (no): Another gift suggestion is fetched from the `GiftList`, and the process repeats.
+  - Exit (cancel): Exits the gift suggestion loop and ends the command execution.
 
-    - The `ViewHistoryCommand` displays gifts marked as complete, showing the user's previously accepted suggestions.
-
-5. Data Saving
-
-    - Changes to gift selections are persisted back to the `GiftList.txt` file via `Storage`, ensuring user choices are saved across different sessions.
+**5. Data Saving**
+- After exiting the loop (either through acceptance of a gift or cancellation), the `Storage` class updates the gift data file to reflect any changes (e.g., marking a gift as complete).
 
 <img src="images/GiftSequenceDiagram.png">
-
-#### Detailed Implementation
-
-`Gift` Class
-
-- The `Gift` class inherits from `Favourites`, adding a `completionStatus` attribute. 
-- Each `Gift` object holds a description and a completion status to track if the gift has been selected by the user.
-
-`GiftList` Class
-
-- The `GiftList` class maintains a collection of `Gift` objects using `ArrayList<Gift>`.
-- It includes methods to access the size of the list, retrieve a specific gift, and fetch a random gift suggestion, filtering out already selected gifts.
-
-`Command` Classes
-
-- `GenerateGiftCommand` executes the logic for interactive gift suggestions, incorporating user feedback loops until a satisfactory gift is found.
-- `ListOptionsCommand` segregates listing functionality by the type of list requested by the user (food, activities, gifts), specifically isolating the gift listing process.
-- `ViewHistoryCommand` compiles and presents a history of gifts that have been marked as complete.
-
-`Storage` Class
-
-- The `Storage` class is crucial for loading gift data at startup and saving updates when gifts are marked complete. 
-- It utilises Java's I/O and Collections to manage the lifecycle of gift data within the application.
 
 #### Design Considerations
 
 - Using a class hierarchy where `Gift` extends `Favourites` allows for easy addition of new types of favourites in the future.
 - Segregating functionalities into distinct classes (`Gift`, `GiftList`, `GenerateGiftCommand`, etc.) enhances modularity, making the codebase more maintainable and scalable.
 - Random selection from the `GiftList` ensures a diverse range of suggestions, enhancing user experience by preventing repetitive recommendations.
-- The interactive approval process for gift suggestions enhances user engagement, making the feature more dynamic and responsive to user preferences.
 - Utilising a text file for storing gift data ensures simplicity and reliability, avoiding over-complication with external databases or dependencies.
-
-#### Future Enhancements: Gender-Specific Recommendations
-
-Enhance the gift suggestion feature to provide gender-specific recommendations, allowing the users to refine their searches based on the recipient's gender. 
-
-This enhancement aims to offer more personalised and relevant gift options, improving user satisfaction and the applicability of suggestions.
-
-**Implementation Overview**
-
-The implementation of gender-specific gift recommendations would involve extending the current `Gift` class structure, modifying the `GiftList` management logic, and updating the `GenerateGiftCommand` to interpret and act on additional user inputs specifying gender preferences.
-
-- `Gift` class enhancement: Include a new attribute for gender specificity. This attribute could take values such as "male", "female", or "unisex", indicating the intended recipient's gender for the gift.
-- `GiftList` class adjustments: Update to filter gift suggestions based on the new gender attribute. This might involve adding a method to retrieve a random gift filtered by the specified gender.
-- `GenerateGiftCommand` modifications: Revise this command to accept and process additional arguments for gender, altering the random gift selection logic to utilise the updated `getRandomGift` method in `GiftList`.
-
-**User Interaction Flow**
-
-The command syntax for generating gift suggestions would be expanded to allow for optional gender specification: `gift`, `gift male`, or `gift female`. This modification enables the application to cater to a broader range of user intentions and preferences, enhancing the personalised nature of the gift suggestion feature.
-
-- By enabling gender-specific gift suggestions, the application can provide more targeted and relevant options, increasing the likelihood of user satisfaction.
-- This enhancement also retains flexibility by allowing users to opt for non-gendered suggestions when preferences are not specified or when seeking more universally appealing gift ideas.
-
+- By enabling gender-specific gift suggestions, the application can provide more targeted and relevant options.
+- At the same time, it also retains flexibility by allowing users to opt for non-gendered suggestions when preferences are not specified.
 
 ## Product scope
 ### Target user profile

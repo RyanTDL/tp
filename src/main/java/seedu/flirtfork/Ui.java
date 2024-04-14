@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * This class handles user interface functionalities
- * such as displaying messages, reading user input, and input validation.
+ * Handles all user interfaces for FlirtFork, providing methods to display messages,
+ * read user commands, and show lists of options like food, activities, and gifts.
  */
 public class Ui {
     private static final String BOT_NAME = "Flirt and Fork";
@@ -20,9 +20,9 @@ public class Ui {
     }
 
     /**
-     * Displays the greeting message when the application starts.
+     * Displays a greeting message to the user, optionally including the anniversary date if available.
      *
-     * @param anniversary The anniversary date to be displayed in the greeting message.
+     * @param anniversary The user's anniversary date or "N.A" if not provided.
      */
     public void greetingMessage(String anniversary) {
         System.out.println(HORIZONTAL);
@@ -36,7 +36,7 @@ public class Ui {
     }
 
     /**
-     * Displays the message for the first setup of the application.
+     * Displays a first setup message to the user when starting the application for the first time.
      */
     public void firstSetUpMessage() {
         System.out.println(HORIZONTAL);
@@ -47,7 +47,7 @@ public class Ui {
     }
 
     /**
-     * Displays the exit message when the user exits the application.
+     * Displays an exit message to the user when they choose to terminate the application.
      */
     public void exitMessage() {
         System.out.println("Love, like a good meal, is all about timing.\n" +
@@ -105,7 +105,7 @@ public class Ui {
     }
 
     /**
-     * Displays an error message.
+     * Displays an error message to the user.
      *
      * @param message The error message to be displayed.
      */
@@ -142,9 +142,11 @@ public class Ui {
     }
 
     /**
-     * Shows matching favourites based on user input.
+     * Displays the search results for user's favourite items based on the given keyword.
+     * If matches are found, it lists all the matching favourites.
+     * Otherwise, it prompts the user to try another search term.
      *
-     * @param matchingFavourites The list of matching favourites to be displayed.
+     * @param matchingFavourites A list of Favourites entries that match the search keyword.
      */
     public void showMatchingFavourites(ArrayList<Favourites> matchingFavourites) {
         if (matchingFavourites.isEmpty()) {
@@ -158,9 +160,11 @@ public class Ui {
     }
 
     /**
-     * Shows matching food options based on user input.
+     * Displays the search results for food items based on the given keyword.
+     * If matches are found, it lists all the matching foods.
+     * Otherwise, it prompts the user to try another search term.
      *
-     * @param matchingFoods The list of matching food options to be displayed.
+     * @param matchingFoods A list of Food entries that match the search keyword.
      */
     public void showMatchingFoods(ArrayList<Food> matchingFoods) {
         if (matchingFoods.isEmpty()) {
@@ -174,9 +178,11 @@ public class Ui {
     }
 
     /**
-     * Shows matching activity options based on user input.
+     * Displays the search results for activities items based on the given keyword.
+     * If matches are found, it lists all the matching activities.
+     * Otherwise, it prompts the user to try another search term.
      *
-     * @param matchingActivities The list of matching activity options to be displayed.
+     * @param matchingActivities A list of Activity entries that match the search keyword.
      */
     public void showMatchingActivities(ArrayList<Activity> matchingActivities) {
         if (matchingActivities.isEmpty()) {
@@ -190,9 +196,11 @@ public class Ui {
     }
 
     /**
-     * Shows matching gift options based on user input.
+     * Displays the search results for gift items based on the given keyword.
+     * If matches are found, it lists all the matching gifts.
+     * Otherwise, it prompts the user to try another search term.
      *
-     * @param matchingGifts The list of matching gift options to be displayed.
+     * @param matchingGifts A list of Gift entries that match the search keyword.
      */
     public void showMatchingGifts(ArrayList<Gift> matchingGifts) {
         if (matchingGifts.isEmpty()) {
@@ -217,6 +225,10 @@ public class Ui {
         System.out.println("Peek into Cupid's own gift collection!" );
     }
 
+    /**
+     * Displays the list command menu to the user, providing options for listing foods,
+     * activities, and gifts, or cancelling the command.
+     */
     public static void listCommand() {
         System.out.println("Looking for ideas to spice up your date night?");
         System.out.println("Choose from the following options:");

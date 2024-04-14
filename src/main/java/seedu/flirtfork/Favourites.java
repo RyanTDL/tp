@@ -1,5 +1,8 @@
 package seedu.flirtfork;
 
+/**
+ * Represents a favourited item consisting of a description.
+ */
 public class Favourites {
     protected String description;
 

@@ -1,56 +1,56 @@
 @startuml
-'https://plantuml.com/class-diagram
-
-class Favourites {
-    - description : String
-    + getDescription() : String
-    + toString() : String
-    + toFileFormat() : String
-}
+skinparam style strictuml
+skinparam classAttributeIconSize 0
 
 class Gift {
     - completionStatus : String
+    - gender : String
+    + Gift(name: String, gender: String, completionStatus: String)
     + markComplete() : void
     + getCompletionStatus() : String
+    + getGender() : String
+    + toString() : String
 }
 
 class GiftList {
-    - gifts : ArrayList<Gift>
+    - gifts : List<Gift>
+    - suggestedGifts : Set<Gift>
+    + GiftList(gifts : ArrayList<Gift>)
     + size() : int
-    + get(int) : Gift
-    + getRandomGift() : Gift
+    + get(i : int) : Gift
+    + getRandomGift(gender : String) : Gift
+}
+
+class GenerateGiftCommand {
+    - gender : String
+    + GenerateGiftCommand(gender : String)
+    + execute(favourites : FavouritesList, foods : FoodList, activities : ActivityList,
+        ui : Ui, storage : Storage, userDetails : UserDetails, gifts : GiftList) : void
 }
 
 class Ui {
     - scanner : Scanner
-    + listGifts() : void
-    + listCommand() : void
+    + errorMessage(message : String) : void
     + readCommand() : String
-}
-
-class GenerateGiftCommand {
-    + execute(...) : void
+    + listGifts() : void
 }
 
 class Storage {
     - filePath : String
+    + Storage(filePath : String)
     + loadGift() : ArrayList<Gift>
-    + saveGift(GiftList) : void
+    + saveGift(gifts : GiftList) : void
 }
 
 class Parser {
-    + parseCommand(String, UserDetails) : Command
-    + parseGift(String) : Gift
+    + parseCommand(userInput : String, userDetails : UserDetails) : Command
+    + parseGiftCommand(arguments : String) : Command
+    + parseGift(line : String) : Gift
 }
 
-Favourites <|-- Gift
-Gift "1" -- "0..*" GiftList
-GenerateGiftCommand ..> GiftList : uses >
-GenerateGiftCommand ..> Ui : interacts >
-GenerateGiftCommand ..> Storage : uses >
-Ui ..> GiftList : displays >
-Storage ..> Gift : reads/writes >
-Parser ..> GenerateGiftCommand : creates >
-Parser ..> Gift : creates >
-
+Gift "1" -left- "0..*" GiftList : contains
+GenerateGiftCommand "1" -up- "1" GiftList : uses >
+GenerateGiftCommand -down- "1" Ui : interacts >
+GenerateGiftCommand -down- "1" Storage : interacts >
+Parser -right- "1" GenerateGiftCommand : creates >
 @enduml
