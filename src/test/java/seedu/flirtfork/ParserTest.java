@@ -5,15 +5,18 @@ import seedu.flirtfork.commands.AddActivityCommand;
 import seedu.flirtfork.commands.AddFoodCommand;
 import seedu.flirtfork.commands.DeleteFavouritesCommand;
 import seedu.flirtfork.commands.ExitCommand;
-//import seedu.flirtfork.commands.FindOptionsCommand;
 import seedu.flirtfork.commands.ListFavouritesCommand;
 import seedu.flirtfork.commands.UserDetailsCommand;
+import seedu.flirtfork.commands.HelpCommand;
+import seedu.flirtfork.commands.GenerateGiftCommand;
 import seedu.flirtfork.exceptions.FlirtForkException;
 
+import org.junit.jupiter.api.BeforeEach;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
-
-import org.junit.jupiter.api.BeforeEach;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 class ParserTest {
 
@@ -28,6 +31,14 @@ class ParserTest {
 
     // 3 part format
     //methodBeingTested_conditionToTest_ExpectedOutcome
+    @Test
+    void parseCommand_emptyInput_expectException() {
+        // Test to ensure that exception is thrown for empty input
+        assertThrows(FlirtForkException.class, () -> {
+            Parser.parseCommand("", userDetails);
+        }, "Empty input should throw FlirtForkException");
+    }
+
     @Test
     void parseCommand_exitCommand_expectExitMessage() {
         try {
@@ -46,6 +57,14 @@ class ParserTest {
         } catch (Exception e) {
             fail("Exception should not be thrown for valid 'food' input.");
         }
+    }
+
+    @Test
+    void parseCommand_foodCommandWithEmptyArguments_expectException() {
+        // Test food command without arguments throws an exception
+        assertThrows(FlirtForkException.class, () -> {
+            Parser.parseCommand("food", userDetails);
+        }, "Food command without description should throw FlirtForkException");
     }
 
     @Test
@@ -69,6 +88,14 @@ class ParserTest {
     }
 
     @Test
+    void parseCommand_invalidUserDetailsCommand_expectException() {
+        // Test that an invalid command for user details throws FlirtForkException
+        assertThrows(FlirtForkException.class, () -> {
+            Parser.parseCommand("undefined 123", userDetails);
+        }, "Undefined command should throw FlirtForkException");
+    }
+
+    @Test
     void parseCommand_listFavouritesCommandInput_expectListFavouritesCommand() {
         try {
             Command result = Parser.parseCommand("favourites", userDetails);
@@ -88,6 +115,42 @@ class ParserTest {
         } catch (Exception e) {
             fail("Exception should not be thrown for valid 'delete' input with a valid index.");
         }
+    }
+
+    @Test
+    void parseCommand_helpCommand_expectHelpCommand() {
+        // Test for correct parsing of the help command
+        assertDoesNotThrow(() -> {
+            Command result = Parser.parseCommand("help", userDetails);
+            assertTrue(result instanceof HelpCommand, "Expected HelpCommand for 'help'.");
+        });
+    }
+
+    @Test
+    void parseCommand_giftDefault_expectGenerateGiftCommandWithAny() {
+        try {
+            Command result = Parser.parseCommand("gift", userDetails);
+            assertTrue(result instanceof GenerateGiftCommand);
+        } catch (FlirtForkException e) {
+            fail("Should not throw an exception for 'gift'");
+        }
+    }
+
+    @Test
+    void parseCommand_giftWithInvalidArgument_expectException() {
+        // Test that an invalid gender argument for gift command throws FlirtForkException
+        String invalidGender = "invalid_gender";
+        String userInput = "gift " + invalidGender;
+        assertThrows(FlirtForkException.class, () -> Parser.parseCommand(userInput, userDetails),
+                "An invalid gender argument should throw a FlirtForkException.");
+    }
+
+    @Test
+    void parseCommand_giftWithMultipleArguments_expectException() {
+        // Test that multiple arguments for gift command throws FlirtForkException
+        String userInput = "gift male female";
+        assertThrows(FlirtForkException.class, () -> Parser.parseCommand(userInput, userDetails),
+                "Multiple arguments should throw a FlirtForkException.");
     }
 
 }
