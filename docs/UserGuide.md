@@ -96,6 +96,8 @@ ____________________________________________________________
 Please enter your gender(Male/Female/Other):
 ```
 
+Note: The age entered has to be an integer value between 0 and 120 inclusive.
+
 - Expected outcome after inputting gender as `Male`:
 
 ```
@@ -158,7 +160,7 @@ Curious about what you can do? Just type 'help' for a sprinkle of tips!
 ____________________________________________________________
 ```
 
-Note: Anniversary option only shows up if `M`, `R` or `D` are set as the relationship status.
+Note: Anniversary option only shows up if `M`, `R` or `D` are set as the relationship status. Also, do note that the date entered cannot be later than the current date.
 
 ### Display all possible commands: `help`
 Lists out all possible commands used to interact with Flirt and Fork.
