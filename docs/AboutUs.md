@@ -7,4 +7,4 @@ Display |        Name         |               Github Profile                | Po
 ![](https://i.ibb.co/F4N8CXc/photo-2024-03-07-17-28-20.jpg) | Dooa Shaw Peng Sean |    [Github](https://github.com/seandooa)    | [Portfolio](team/seandooa.md)
 
 ![](https://i.ibb.co/P18rZQX/msg-826612051-262152.jpg) |     Liu Ting Yu     | [Github](https://github.com/tiffanyliu0220) | [Portfolio](team/tiffanyliu0220.md)
-![](https://ibb.co/10SS3R2) |     Teo De Liang Ryan     | [Github](https://https://github.com/RyanTDL) | [linkedin](https://www.linkedin.com/in/ryan-teo/)
+![](https://i.ibb.co/4N09Rk2/photo-2024-04-14-23-50-18.jpg) |     Teo De Liang Ryan     | [Github](https://https://github.com/RyanTDL) | [Portfolio](team/ryantdl.md)
