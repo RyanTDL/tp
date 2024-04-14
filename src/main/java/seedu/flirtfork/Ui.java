@@ -1,5 +1,6 @@
 package seedu.flirtfork;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -418,7 +419,6 @@ public class Ui {
         String input = readCommand();
 
         while (!isValidDateFormat(input)) {
-            showMessage("Invalid date format. Please enter the date in 'dd/mm/yyyy' format.");
             input = readCommand();
         }
         return input;
@@ -438,9 +438,16 @@ public class Ui {
             int year = Integer.parseInt(parts[2]);
 
             if (month >= 1 && month <= 12 && day >= 1 && day <= 31 && year >= 1000 && year <= 9999) {
+                LocalDate currentDate = LocalDate.now();
+                LocalDate parsedDate = LocalDate.of(year, month, day);
+                if (parsedDate.isAfter(currentDate)) {
+                    showMessage("Please enter a date no later than today's date");
+                    return false;
+                }
                 return true;
             }
         }
+        showMessage("Invalid date format. Please enter a valid  date in 'dd/mm/yyyy' format.");
         return false;
     }
 }
