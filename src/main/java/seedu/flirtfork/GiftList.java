@@ -11,7 +11,6 @@ import java.util.stream.Collectors;
  * and track which gifts have been suggested using a hashset.
  */
 public class GiftList {
-
     private ArrayList<Gift> gifts;
     private HashSet<Gift> suggestedGifts = new HashSet<>();
 
