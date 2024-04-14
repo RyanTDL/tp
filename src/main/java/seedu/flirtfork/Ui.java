@@ -1,8 +1,10 @@
 package seedu.flirtfork;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Handles all user interfaces for FlirtFork, providing methods to display messages,
@@ -417,8 +419,7 @@ public class Ui {
      */
     public String readAnniversaryDate() {
         String input = readCommand();
-
-        while (!isValidDateFormat(input)) {
+        while (!isValidDate(input)) {
             input = readCommand();
         }
         return input;
@@ -430,24 +431,20 @@ public class Ui {
      * @param input The input string to be validated as a date.
      * @return true if the input string represents a valid date, false otherwise.
      */
-    private boolean isValidDateFormat(String input) {
-        if (input.matches("\\d{2}/\\d{2}/\\d{4}")) {
-            String[] parts = input.split("/");
-            int day = Integer.parseInt(parts[0]);
-            int month = Integer.parseInt(parts[1]);
-            int year = Integer.parseInt(parts[2]);
-
-            if (month >= 1 && month <= 12 && day >= 1 && day <= 31 && year >= 1000 && year <= 9999) {
-                LocalDate currentDate = LocalDate.now();
-                LocalDate parsedDate = LocalDate.of(year, month, day);
-                if (parsedDate.isAfter(currentDate)) {
-                    showMessage("Please enter a date no later than today's date");
-                    return false;
-                }
-                return true;
+    public boolean isValidDate(String input) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        dateFormat.setLenient(false);
+        try {
+            Date inputDate = dateFormat.parse(input);
+            Date currentDate = new Date();
+            if (inputDate.after(currentDate)) {
+                showMessage("Do note that the date cannot be later than the current date!");
+                return false;
             }
+            return true;
+        } catch (ParseException e) {
+            showMessage("Please enter a valid date in dd/mm/yyyy format.");
+            return false;
         }
-        showMessage("Invalid date format. Please enter a valid  date in 'dd/mm/yyyy' format.");
-        return false;
     }
 }
