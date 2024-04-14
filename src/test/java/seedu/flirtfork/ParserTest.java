@@ -9,6 +9,7 @@ import seedu.flirtfork.commands.ListFavouritesCommand;
 import seedu.flirtfork.commands.UserDetailsCommand;
 import seedu.flirtfork.commands.HelpCommand;
 import seedu.flirtfork.commands.GenerateGiftCommand;
+import seedu.flirtfork.commands.ListOptionsCommand;
 import seedu.flirtfork.exceptions.FlirtForkException;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -151,6 +152,17 @@ class ParserTest {
         String userInput = "gift male female";
         assertThrows(FlirtForkException.class, () -> Parser.parseCommand(userInput, userDetails),
                 "Multiple arguments should throw a FlirtForkException.");
+    }
+
+    @Test
+    void parseCommand_listInput_expectListOptionsCommand() {
+        String userInput = "list";
+        try {
+            Command result = Parser.parseCommand(userInput, userDetails);
+            assertTrue(result instanceof ListOptionsCommand, "Expected ListOptionsCommand for 'list' input.");
+        } catch (FlirtForkException e) {
+            fail("No exception should be thrown for valid 'list' input.");
+        }
     }
 
 }
