@@ -51,6 +51,10 @@ The following sequence diagram shows how `idea` the order in which methods in va
 
 <img src="images/GenerateIdeaCommandSequenceDiagram.png">
 
+The following class diagrams show the `FoodList` and `ActivityList` called upon during generation of the date idea:
+
+<img src="images/FoodActivityClassDiagram.png">
+
 ### [Implemented] Smart Itinerary Generation feature
 
 #### Implementation

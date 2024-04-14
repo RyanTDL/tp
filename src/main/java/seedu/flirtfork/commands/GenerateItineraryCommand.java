@@ -14,6 +14,12 @@ import seedu.flirtfork.Ui;
 import seedu.flirtfork.UserDetails;
 import seedu.flirtfork.exceptions.FlirtForkException;
 
+/**
+ * Represents a command to generate a date itinerary for the user based on a specified category of food and activity.
+ * The user can choose whether they are satisfied with the itinerary or not.
+ * If the user is satisfied, the chosen food and activity items are marked as completed
+ * If the user is not satisfied, the command stops and the user is prompted to try again
+ */
 public class GenerateItineraryCommand extends Command {
     private String description;
 
@@ -21,6 +27,22 @@ public class GenerateItineraryCommand extends Command {
         this.description = description;
     }
 
+    /**
+     * Generates a date itinerary consisting of 2 food items and 2 activities.
+     * Food and activites generated are based on the chosen location and price category specified by the user
+     * Asks the user if they are satisfied with the idea. If satisfied, marks the chosen food
+     * and activity as complete and saves the changes to storage. If not satisfied, prompts
+     * the user to try again.
+     *
+     * @param favourites The user's list of favourite items (not directly used in this method).
+     * @param foods The list of food items.
+     * @param activities The list of activities.
+     * @param ui The user interface to interact with the user for input and output.
+     * @param storage The storage handler to save changes to food and activity lists.
+     * @param userDetails The UserDetails object containing user details (not directly used in this method).
+     * @param gifts The list of gifts (not directly used in this method). 
+     * @throws FlirtForkException If an error occurs during the execution of the command.
+     */
     @Override
     public void execute(FavouritesList favourites, FoodList foods, ActivityList activities, Ui ui,
                         Storage storage, UserDetails userDetails, GiftList gifts) throws FlirtForkException {
