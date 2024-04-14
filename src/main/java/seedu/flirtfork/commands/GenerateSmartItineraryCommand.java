@@ -50,6 +50,7 @@ public class GenerateSmartItineraryCommand extends Command {
      * @param storage     The storage handler to save or load data.
      * @param userDetails The details of the user, including preferences.
      * @param gifts       The list of gifts available for the user.
+     * @throws FlirtForkException If an error occurs during the execution of the command.
      */
     @Override
     public void execute(FavouritesList favourites, FoodList foods, ActivityList activities, Ui ui, Storage storage,

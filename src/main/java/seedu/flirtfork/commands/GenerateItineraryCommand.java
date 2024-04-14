@@ -41,6 +41,7 @@ public class GenerateItineraryCommand extends Command {
      * @param storage The storage handler to save changes to food and activity lists.
      * @param userDetails The UserDetails object containing user details (not directly used in this method).
      * @param gifts The list of gifts (not directly used in this method). 
+     * @throws FlirtForkException If an error occurs during the execution of the command.
      */
     @Override
     public void execute(FavouritesList favourites, FoodList foods, ActivityList activities, Ui ui,
