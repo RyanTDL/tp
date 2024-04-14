@@ -10,11 +10,11 @@ participant ":ActivityList" as Act
 User -> UI : smart
 UI -> Gen : create(UserDetails userDetails)
 Gen -> UDetails : getUserPreferences()
-UDetails -> Gen
+UDetails --> Gen
 Gen -> Food : getCustomisedFood(location, cuisine)
-Food -> Gen
+Food --> Gen
 Gen -> Act : getRandomActivity()
-Act -> Gen
-Gen -> UI : showItinerary(Itinerary)
-UI -> User
+Act --> Gen
+Gen --> UI : showItinerary(Itinerary)
+UI --> User
 @enduml
