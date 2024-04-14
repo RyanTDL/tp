@@ -23,7 +23,7 @@ Given below are my contributions to the project enhancements
 
 ### Documentation
 - Contributions to the User Guide
-  - authored the features that I implemented along with the instructions for usage
+  - authored the 'find' feature that I implemented along with the instructions for usage
   - corrected spelling and grammatical errors in the UG
   - ensured that the terminologies used were consistent
   
@@ -32,12 +32,16 @@ Given below are my contributions to the project enhancements
   - added in instructions for user manual testing
 
 ### Contributions to team-based tasks
-- added in error handling for commands
-- added in JUnit Tests for commands
-- added in JavaDoc documentation for classes
-- updated/resolved the issue tracker for team bugs
+- added in error handling for classes and commands such as 'Favourites', 'FavouritesList', 'FindOptionsCommand', 'ListFavouritesCommand', etc.
+- added in JUnit Tests for favourites-related commands
+- added in JavaDoc documentation for classes such as 'Storage', 'Ui', etc. 
+- added in JavaDoc documentation for commands such as 'AddActivityCommand', 'AddFoodCommand', 'DeleteFavourites', etc.
+- fixed bug issues raised in PE dry run and updated/resolved the issue tracker for team bugs
 
 ### Review/Mentoring contributions
-    - PRs reviewed (with non-trivial review comments): 
+- tried to assist team members whenever I can in the group chat
 
 ### Contributions beyond the project team
+- reviewed other team's TP during PE dry run and provided comments
+- reviewed other team's DG during tutorial and provided comments
+- reviewed a peer team's TP and provided comments. The issues I have raised can be found [here](https://github.com/AY2324S2-CS2113-F15-2/tp/issues/created_by/tiffanyliu0220)
