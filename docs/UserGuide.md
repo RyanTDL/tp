@@ -521,7 +521,7 @@ Example of usage:
 Expected outcome:
 ```
 Cupid's arrow strikes! This is now in your favourites. 
-[Food] East Coast BBQ
+East Coast BBQ, NE, B, J
 You've collected 1 romantic treasures!
 ```
 
@@ -537,12 +537,12 @@ Format: `activity [name of activity], [location], [price]`
 
 Example of usage: 
 `activity Paragliding, C, S`
-`activity Bungee Jumping at Sentose, S, P`
+`activity Bungee Jumping at Sentosa, S, P`
 
 Expected outcome:
 ```
 Cupid's arrow strikes! This is now in your favourites. 
-[Activity] Paragliding
+Paragliding, C, S
 You've collected 2 romantic treasures!
 ```
 
@@ -554,8 +554,8 @@ Format: `favourites`
 Expected outcome:
 ```
 Drumroll, please! Presenting the stars of your romantic sky: 
-1. [Food] East Coast BBQ
-2. [Activity] Paragliding
+1. East Coast BBQ
+2. Paragliding
 ```
 
 ### Delete an entry from your favourites list: `delete`
