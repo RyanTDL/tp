@@ -139,7 +139,7 @@ The feature comprise several key components:
 - `ViewHistoryCommand` Class: Displays a history of saved gift ideas.
 - `Storage` Class: Manages data persistence for gifts.
 
-<img src="images/GiftClassDiagram.png" height = "650">
+<img src="images/GiftClassDiagram.png">
 
 **Component Interaction Flow:**
 1. Initialisation
