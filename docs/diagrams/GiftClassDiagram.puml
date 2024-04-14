@@ -28,11 +28,6 @@ class GenerateGiftCommand {
         ui : Ui, storage : Storage, userDetails : UserDetails, gifts : GiftList) : void
 }
 
-class ViewHistoryCommand {
-    + execute(favourites : FavouritesList, foods : FoodList, activities : ActivityList,
-        ui : Ui, storage : Storage, userDetails : UserDetails, gifts : GiftList) : void
-}
-
 class Ui {
     - scanner : Scanner
     + errorMessage(message : String) : void
@@ -58,5 +53,4 @@ GenerateGiftCommand "1" -up- "1" GiftList : uses >
 GenerateGiftCommand -down- "1" Ui : interacts >
 GenerateGiftCommand -down- "1" Storage : interacts >
 Parser -right- "1" GenerateGiftCommand : creates >
-ViewHistoryCommand -right- "1" GiftList : views >
 @enduml
