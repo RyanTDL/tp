@@ -8,16 +8,16 @@ participant "userDetails:UserDetails" as UserDetails
 activate UserDetailsCommand
 
 UserDetailsCommand -> Ui: showMessage("Please enter your name:")
-UserDetailsCommand <- Ui: readCommand()
+UserDetailsCommand <-- Ui: readCommand()
 UserDetailsCommand -> UserDetails: setName(name)
 
 UserDetailsCommand -> Ui: showMessage("Please enter your age:")
-UserDetailsCommand <- Ui: readAge()
+UserDetailsCommand <-- Ui: readAge()
 UserDetailsCommand -> UserDetails: setAge(age)
 
 alt is "M" or "R" or "D"
     UserDetailsCommand -> Ui: showMessage("Please enter your anniversary:")
-    UserDetailsCommand <- Ui: readCommand()
+    UserDetailsCommand <-- Ui: readCommand()
     UserDetailsCommand -> UserDetails: setAnniversary(anniversary)
 end
 
