@@ -231,6 +231,130 @@ Peek into Cupid's own gift collection!
 ...
 ```
 
+//@@author tiffanyliu0220
+### Discovering Options Based on Category:
+To list out delicious dining options, type 'food'
+To discover exciting activities, type 'activities'
+To cancel this command, type 'cancel'
+```
+---
+- If user input `cancel`: Terminates and exits the current list viewing session.
+  - This command can be used at any point during the list viewing interaction if the user decides not to stop viewing.
+
+Expected outcome:
+```
+Cancelling listings... 
+Cancel success!
+```
+### Find an entry: `find`
+Finds relevant entries from the food, activities, gifts database and your favourites list, based on the keyword inputted.
+
+Format: `find`
+
+Expected Outcome:
+```
+What are you searching for in this enchanting realm?
+Choose from the following options:
+1. What delicious food are you craving for today? (type 'food')
+2. What exciting activity are you interested in? (type 'activities')
+3. On the hunt for the perfect gift? What are you looking for? (type 'gifts')
+4. Finding within your own treasures? (type 'favourites')
+5. Changed your mind? Feel free to cancel this command! (type 'cancel')
+   What's on your mind?
+```
+- If user inputs 'food': 
+
+Expected Outcome:
+
+```Mmmm food yes. What restaurants would you like to search for?```
+
+User then needs to input their search keyword here.
+* The `keyword` is not case-sensitive. `Japanese` will yield the same result as `japanese`.
+* The `keyword` can contain multiple words.
+
+Example of usage:
+`sushi`
+`BBQ`
+
+Expected outcome:
+```
+Eureka! Your cupid's arrow hit the target! We found these matches for you:
+1. BBQ Smokehouse
+2. Bulgogi BBQ
+```
+- If user inputs 'activities':
+
+Expected Outcome:
+
+```Mmmm activities! What kind of activities would you like to search for?```
+
+User then needs to input their search keyword here.
+* The `keyword` is not case-sensitive. `Japanese` will yield the same result as `japanese`.
+* The `keyword` can contain multiple words.
+
+Example of usage:
+`walk`
+`concert`
+
+Expected outcome:
+```
+Eureka! Your cupid's arrow hit the target! We found these matches for you:
+1. Esplanade Free Concerts
+2. Victoria Theatre Concert Night
+3. Private Music Concerts
+```
+
+- If user inputs 'gifts':
+
+Expected Outcome:
+
+```Mmmm gifts! What kind of gifts would you like to search for?```
+
+User then needs to input their search keyword here.
+* The `keyword` is not case-sensitive. `Japanese` will yield the same result as `japanese`.
+* The `keyword` can contain multiple words.
+
+Example of usage:
+`bracelet`
+`ring`
+
+Expected outcome:
+```
+Eureka! Your cupid's arrow hit the target! We found these matches for you:
+1. [Accessory] Studs or dazzling chandelier earrings
+2. [Flower] Orchids: Love, beauty, strength, deep enduring passion
+3. [Accessory] Versatile silk scarf featuring a unique design or pattern
+```
+
+- If user inputs 'favourites':
+
+Expected Outcome:
+
+```Mmmm finding your own treasures i see. What would you like to search for?```
+
+User then needs to input their search keyword here.
+* The `keyword` is not case-sensitive. `Japanese` will yield the same result as `japanese`.
+* The `keyword` can contain multiple words.
+
+Example of usage:
+`bbq`
+`paragliding`
+
+Expected outcome:
+```
+Eureka! Your cupid's arrow hit the target! We found these matches for you:
+1. East Coast BBQ
+```
+
+- If user input `cancel`: Terminates and exits the current searching session.
+
+Expected outcome:
+```
+Cancelling findings... 
+Cancel success!
+```
+//@@author
+
 ### Generate a randomised date idea: `idea`
 Generates out a randomised date idea, consisting of 1 restaurant and 1 activity from our curated collection. After receiving the suggestion, users have the option to accept or request for another idea.
 
