@@ -273,7 +273,6 @@ User then needs to input their search keyword here.
 * The `keyword` can contain multiple words.
 
 Example of usage:
-`sushi`
 `BBQ`
 
 Expected outcome:
@@ -293,7 +292,6 @@ User then needs to input their search keyword here.
 * The `keyword` can contain multiple words.
 
 Example of usage:
-`walk`
 `concert`
 
 Expected outcome:
@@ -315,7 +313,6 @@ User then needs to input their search keyword here.
 * The `keyword` can contain multiple words.
 
 Example of usage:
-`bracelet`
 `ring`
 
 Expected outcome:
@@ -338,7 +335,6 @@ User then needs to input their search keyword here.
 
 Example of usage:
 `bbq`
-`paragliding`
 
 Expected outcome:
 ```
@@ -521,7 +517,7 @@ Example of usage:
 Expected outcome:
 ```
 Cupid's arrow strikes! This is now in your favourites. 
-East Coast BBQ, NE, B, J
+East Coast BBQ
 You've collected 1 romantic treasures!
 ```
 
@@ -542,7 +538,7 @@ Example of usage:
 Expected outcome:
 ```
 Cupid's arrow strikes! This is now in your favourites. 
-Paragliding, C, S
+Paragliding
 You've collected 2 romantic treasures!
 ```
 
