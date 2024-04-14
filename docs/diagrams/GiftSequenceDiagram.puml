@@ -1,33 +1,48 @@
 @startuml
-'https://plantuml.com/sequence-diagram
+skinparam style strictuml
 
 actor User
-participant "Ui" as UI
-participant "Parser" as P
-participant "GenerateGiftCommand" as GGC
-participant "GiftList" as GL
-participant "Gift" as G
-participant "Storage" as S
+participant ":Ui" as UI
+participant ":Parser" as Parser
+participant ":GenerateGiftCommand" as GGC
+participant ":GiftList" as GL
+participant ":Gift" as G
+participant ":Storage" as Storage
 
-User -> UI : gift
-UI -> P : parseCommand(userInput, userDetails)
-P -> GGC : new GenerateGiftCommand()
+User -> UI : input: "gift"
+UI -> Parser : parseCommand("gift", userDetails)
+Parser -> GGC : new GenerateGiftCommand("any")
 activate GGC
 
-loop until user is satisfied
-GGC -> GL : getRandomGift()
+GGC -> GL : getRandomGift("any")
 GL -> G : select random
 G --> GL : return gift
 GL --> GGC : return gift
 GGC --> UI : display gift suggestion
 UI -> User : show gift and ask "Satisfied with the gift suggestion? [Yes/No]"
-User -> UI : no
-UI -> GGC : continue
+
+loop until user is satisfied or cancels
+    User -> UI : input: "no"
+    UI -> GGC : continue
+    GGC -> GL : getRandomGift("any")
+    GL -> G : select random
+    G --> GL : return gift
+    GL --> GGC : return gift
+    GGC --> UI : display gift suggestion
+    UI -> User : show gift and ask "Satisfied with the gift suggestion? [Yes/No]"
 end
 
-User -> UI : yes
-UI -> GGC : user satisfied
-GGC -> G : markComplete()
-GGC -> S : saveGift(gifts)
-deactivate GGC
+alt user is satisfied
+    User -> UI : input: "yes"
+    UI -> GGC : user satisfied
+    GGC -> G : markComplete()
+    deactivate GGC
+else user cancels
+    User -> UI : input: "cancel"
+    UI -> GGC : handle cancellation
+    deactivate GGC
+end
+
+GGC -> Storage : saveGift(gifts)
+
 @enduml
