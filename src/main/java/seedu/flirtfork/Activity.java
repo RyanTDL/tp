@@ -5,8 +5,8 @@ public class Activity extends Favourites {
     protected String price;
     protected String completionStatus;
 
-    public Activity(String name, String location, String price, String completionStatus) {
-        super(name);
+    public Activity(String description, String location, String price, String completionStatus) {
+        super(description);
         this.location = location;
         this.price = price;
         this.completionStatus = completionStatus;

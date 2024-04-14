@@ -47,6 +47,10 @@ The following sequence diagram shows how `idea` causes various entities to inter
 
 <img src="images/GenerateIdeaCommandSequenceDiagram.png">
 
+The following class diagrams show the `FoodList` and `ActivityList` called upon during generation of the date idea:
+
+<img src="images/FoodActivityClassDiagram.png">
+
 ### [Implemented] Smart Itinerary Generation feature
 
 #### Implementation

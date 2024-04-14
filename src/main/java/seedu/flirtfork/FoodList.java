@@ -75,7 +75,7 @@ public class FoodList {
     }
 
 
-    public  ArrayList<Food> findFood(String keyword) {
+    public ArrayList<Food> findFood(String keyword) {
         ArrayList<Food> matchingFoods = new ArrayList<>();
 
         for(Food food : foods) {

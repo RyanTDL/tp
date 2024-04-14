@@ -6,8 +6,8 @@ public class Food extends Favourites {
     protected String cuisine;
     protected String completionStatus;
 
-    public Food(String name, String location, String price, String cuisine, String completionStatus) {
-        super(name);
+    public Food(String description, String location, String price, String cuisine, String completionStatus) {
+        super(description);
         this.location = location;
         this.price = price;
         this.cuisine = cuisine;

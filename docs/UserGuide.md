@@ -2,10 +2,18 @@
 
 ## Introduction
 
-Introducing 'Flirt and Fork', your personalised date planner! 
+It's Friday evening, the clock is ticking down the final hours at work, and all you can think about is kicking back and enjoying a great night out. But then, it hits you—it’s your 1-year anniversary and you haven’t planned anything special yet! With just three hours to go before you meet your significant other, panic starts to set in. But wait, there’s no need to worry! Introducing 'Flirt and Fork,' your personalized date night concierge.
 
-Ever had trouble coming up with fresh, fun ideas for date night? Well, say goodbye to the hassle of planning dates! 
-Our application generates creative, enjoyable date itineraries that fit within your specified budget and location!
+Imagine never running out of creative and exciting date night ideas again. Whether you're caught up in work or simply struggling for inspiration, 'Flirt and Fork' takes the stress out of your romantic plans. Our app generates tailor-made, delightful date itineraries with just a few clicks.
+
+Here’s what makes 'Flirt and Fork' an essential tool for anyone wanting to impress their special someone:
+
+1. **Curated Experiences**: From trendy restaurants and cozy cafes to thrilling activities and thoughtful gifts, our app curates a list of experiences that promise to make your date memorable.
+2. **Personalized Options**: We understand that uniqueness is key. That's why 'Flirt and Fork' offers customizable options to filter your date plans based on location, budget, and cuisine preferences, ensuring every date is as unique as your relationship.
+3. **Simplicity and Speed**: Forget the endless browsing and decision fatigue. Our user-friendly interface provides quick, efficient, and enjoyable planning, so you can focus more on living in the moment and less on the logistics.
+4. **Ever-Growing Database**: Our extensive and ever-expanding collection of venues and activities keeps your dating life vibrant and exciting, offering new experiences every time you use the app.
+
+Don’t let another special occasion slip by uncelebrated. Sign up for 'Flirt and Fork' today, and start crafting those perfect evenings that turn into cherished memories. Why wait? Let us help you create a night out that’s as wonderful as your significant other. Embrace the ease of planning, and give your date nights the upgrade they deserve with 'Flirt and Fork'!
 
 ## Quick Start
 
@@ -212,7 +220,7 @@ Peek into Cupid's own gift collection!
 ...
 ```
 
-### [Bugged] Generate a randomised date idea: `idea`
+### Generate a randomised date idea: `idea`
 Generates out a randomised date idea, consisting of 1 restaurant and 1 activity from our curated collection. After receiving the suggestion, users have the option to accept or request for another idea.
 
 Example of usage: `idea`
@@ -424,7 +432,7 @@ Your journey of love and taste continues~
 ```
 
 
-### [Bugged] List out all entries from your past date history: `history`
+### List out all entries from your past date history: `history`
 Lists out all the previous restaurants and activities completed on previous dates. Whenever `yes` is inputted for generating an idea or itinerary, it is assumed that the user will follow that date plan and hence, the suggested locations will be saved in the history.
 
 Format: `history`
