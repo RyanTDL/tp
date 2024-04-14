@@ -22,19 +22,34 @@ public class Gift extends Favourites {
         this.completionStatus = completionStatus;
     }
 
+    /**
+     * Returns the description of the gift.
+     * @return String description of the gift.
+     */
     @Override
     public String toString() {
         return (description);
     }
 
+    /**
+     * Updates the completion status of the gift, marking it as having been completed.
+     */
     public void markComplete() {
         this.completionStatus = "C";
     }
 
+    /**
+     * Returns the completion status of the gift.
+     * @return completionStatus Completion status of the gift.
+     */
     public String getCompletionStatus() {
         return completionStatus;
     }
 
+    /**
+     * Returns the gender classification of the gift.
+     * @return gender gender classification of the gift.
+     */
     public String getGender() {
         return gender;
     }
