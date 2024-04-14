@@ -15,6 +15,9 @@ import seedu.flirtfork.UserDetails;
 /**
  * Represents a command to generate a date idea for the user based on a random combination of food and activity.
  * The user can choose whether they are satisfied with the idea or not.
+ * If the user is satisfied, the chosen food and activity items are marked as completed.
+ * If the user is not satisfied, the command runs again and another idea is regenerated.
+ * The user is allowed to cancel the command if idea generation is not satisfactory
  */
 public class GenerateIdeaCommand extends Command {
 
