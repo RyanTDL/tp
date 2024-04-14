@@ -76,7 +76,7 @@ public class Ui {
             "8. activity NAME_OF_ACTIVITY, LOCATION, PRICE: Add an activity to your favourites \n\n" +
             "9. favourites: List out all your favourites \n\n" +
             "10. delete INDEX_OF_ENTRY: Delete an entry from your favourites \n\n" +
-            "11. find KEYWORD: Find an entry from your favourites, based off keyword \n\n" +
+            "11. find: enter menu to find an entry, based off keyword \n\n" +
             "12. history: List out all your past date locations and restaurants \n\n" +
             "13. exit: Exit the program \n\n" +
 
