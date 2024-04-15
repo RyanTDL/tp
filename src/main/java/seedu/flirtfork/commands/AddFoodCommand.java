@@ -80,7 +80,7 @@ public class AddFoodCommand extends Command {
             }
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Hmm... you may have entered the wrong number of fields. How about you try again?");
-            System.out.println("Follow this format: 'food NAME, LOCATION, PRICE, CUISINE'");
+            System.out.println("Follow this format: 'food NAME_OF_EATERY, LOCATION, PRICE, CUISINE'");
         }
     }
 }

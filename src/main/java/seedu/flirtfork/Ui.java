@@ -217,7 +217,7 @@ public class Ui {
     }
 
     public static void listFood() {
-        System.out.println("HMMMM Let's see what food is theree: ");
+        System.out.println("HMMMM Let's see what food is there: ");
     }
 
     public static void listActivities() {
