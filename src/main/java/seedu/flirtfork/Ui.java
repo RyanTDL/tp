@@ -85,7 +85,7 @@ public class Ui {
             "B: Budget\n" +
             "A: Affordable\n" +
             "P: Pricey\n" +
-            "S: Special Ocassions Only\n\n" +
+            "S: Special Occasions Only\n\n" +
 
             "LEGEND (cuisines):\n" +
             "W: Western\n" +
