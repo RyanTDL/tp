@@ -441,10 +441,11 @@ Remember, great ideas need their own time to unwrap.
 Generates out a date itinerary, consisting of 2 restaurants and 2 activities from our curated collection.
 The itinerary selected will be based off the user's indicated location and budget.
 
-Format: `itinerary [preferred_location], [preferred_price]`
+Format: `itinerary [PREFERRED_LOCATION], [PREFERRED_PRICE]`
 
-> Note: The `preferred location` and `preferred price` must be within the [legend](#Legend).  
-
+> Note: The `preferred location` and `preferred price` must be within the [legend](#Legend).
+> Ensure the formatting is strictly followed, including the spacing and the capitalisation for preferred location and preferred price.
+> For example, ``itinerary E, A` will be registered, whereas `itinerary E,A` or `itinerary e, a` will result in an error.
 Example of usage: `itinerary E, A`
 
 Expected outcome:
@@ -507,11 +508,11 @@ By using the smart command, you can discover new and exciting ways to enjoy your
 ### Add a restaurant to your favourites: `food`
 Adds a new restaurant to your favourites list.
 
-Format: `food [name of eatery], [location], [price], [cuisine]`
+Format: `food [name of eatery], [LOCATION], [PRICE], [CUISINE]`
 
 > Note: The `location` and `price` must be within the [legend](#Legend).  
-> Ensure the formatting is strictly followed, including the spacing. 
-> For example, `food Omakase, C, S, J` will be registered, whereas `food Omakase,C,S,J` will result in an error.
+> Ensure the formatting is strictly followed, including the spacing and the capitalisation for location, price and cuisine. 
+> For example, `food Omakase, C, S, J` will be registered, whereas `food Omakase,C,S,J` or 'food Omakase, c, s, j' will result in an error.
 
 Example of usage: 
 `food East Coast BBQ, NE, B, J`
@@ -528,11 +529,11 @@ You've collected 1 romantic treasures!
 ### Add an activity to your favourites: `activity`
 Adds a new activity to your favourites list.
 
-Format: `activity [name of activity], [location], [price]`
+Format: `activity [name of activity], [LOCATION], [PRICE]`
 
 > Note: The `location` and `price` must be within the [legend](#Legend).  
-> Ensure the formatting is strictly followed, including the spacing. 
-> For example, `activity Paragliding, C, S` will be registered, whereas `activity Paragliding,C,S` will result in an error.
+> Ensure the formatting is strictly followed, including the spacing and the capitalisation for location and price. 
+> For example, `activity Paragliding, C, S` will be registered, whereas `activity Paragliding,C,S` or 'activity Paragliding, c, s' will result in an error.
 
 Example of usage: 
 `activity Paragliding, C, S`
@@ -670,10 +671,10 @@ A: Keep your user details updated and regularly add to your favorites list! Ensu
 * List out all restaurants or activities: `list`
 * Update your personal information: `me`
 * Generate a randomised date idea: `idea`
-* Generate a date itinerary, based on preferred location and budget: `itinerary [preferred_location], [preferred_price]`
+* Generate a date itinerary, based on preferred location and budget: `itinerary [PREFERRED_LOCATION], [PREFERRED_PRICE]`
 * Generate a smart date itinerary, based on your user profile: `smart`
-* Add a restaurant to your favourites: `food [name of eatery], [location], [price]`
-* Add an activity to your favourites: `activity [name of activity], [location], [price]`
+* Add a restaurant to your favourites: `food [name of eatery], [LOCATION], [PRICE], [CUISINE]`
+* Add an activity to your favourites: `activity [name of activity], [LOCATION], [PRICE]`
 * Find an entry from your favourites list: `find [keyword]`
 * List out all entries in your favourites list: `favourites`
 * Delete an entry from your favourites list: `delete [index of entry]`
