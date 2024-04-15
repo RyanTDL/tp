@@ -73,7 +73,7 @@ public class AddActivityCommand extends Command {
             }
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Hmm... you may have entered the wrong number of fields. How about you try again?");
-            System.out.println("Follow this format: 'activity NAME, LOCATION, PRICE'");
+            System.out.println("Follow this format: 'activity NAME_OF_ACTIVITY, LOCATION, PRICE'");
         }
     }
 }
