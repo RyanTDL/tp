@@ -455,7 +455,7 @@ The itinerary selected will be based off the user's indicated location and budge
 Format: `itinerary [LOCATION], [PRICE]`
 
 
-> Note: The `location` and `price` must be within the [legend](#Legend).
+> Note: The `location` and `price` must be within the [legend](#legend).
 > Ensure the formatting is strictly followed, including the spacing and the capitalisation for location and price.
 > For example, ``itinerary E, A` will be registered, whereas `itinerary E,A` or `itinerary e, a` will result in an error.
 Example of usage: `itinerary E, A`
