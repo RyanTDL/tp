@@ -23,7 +23,7 @@ Don’t let another special occasion slip by uncelebrated. Sign up for 'Flirt an
 3. Copy the file to the folder you want to use as the _home folder_
 4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar Flirt_and_Fork.jar` command to run the bot. The GUI should appear in a few seconds.
 5. Type the command in the command box and press Enter to execute it.
-6. Refer to the [Features](#Features) section below for an overview of all valid commands.
+6. Refer to the [Features](#features-) section below for an overview of all valid commands.
 
 ### Warning
 Do NOT manually tamper with the .txt files in the data folder - `Flirt and Fork` will refuse to cooperate with you if you choose to violate this rule.
@@ -68,7 +68,7 @@ Extra commands to facilitate application use.
 There is only one command to terminate the program:
 - `exit`: Saves all current data and exits the program.
 
-Refer to the [Usage](#Usage) section below for details of each command.
+Refer to the [Usage](#usage) section below for details of each command.
 
 ## Usage
 
@@ -457,7 +457,7 @@ The itinerary selected will be based off the user's indicated location and budge
 
 Format: `itinerary [PREFERRED_LOCATION], [PREFERRED_PRICE]`
 
-> Note: The `preferred location` and `preferred price` must be within the [legend](#Legend).
+> Note: The `preferred location` and `preferred price` must be within the [legend](#legend).
 > Ensure the formatting is strictly followed, including the spacing and the capitalisation for preferred location and preferred price.
 > For example, ``itinerary E, A` will be registered, whereas `itinerary E,A` or `itinerary e, a` will result in an error.
 Example of usage: `itinerary E, A`
@@ -524,7 +524,7 @@ Adds a new restaurant to your favourites list.
 
 Format: `food [name of eatery], [LOCATION], [PRICE], [CUISINE]`
 
-> Note: The `location` and `price` must be within the [legend](#Legend).  
+> Note: The `location` and `price` must be within the [legend](#legend).  
 > Ensure the formatting is strictly followed, including the spacing and the capitalisation for location, price and cuisine. 
 > For example, `food Omakase, C, S, J` will be registered, whereas `food Omakase,C,S,J` or 'food Omakase, c, s, j' will result in an error.
 
@@ -545,7 +545,7 @@ Adds a new activity to your favourites list.
 
 Format: `activity [name of activity], [LOCATION], [PRICE]`
 
-> Note: The `location` and `price` must be within the [legend](#Legend).  
+> Note: The `location` and `price` must be within the [legend](#legend).  
 > Ensure the formatting is strictly followed, including the spacing and the capitalisation for location and price. 
 > For example, `activity Paragliding, C, S` will be registered, whereas `activity Paragliding,C,S` or 'activity Paragliding, c, s' will result in an error.
 
