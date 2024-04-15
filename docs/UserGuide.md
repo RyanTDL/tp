@@ -549,7 +549,7 @@ You've collected 2 romantic treasures!
 ```
 
 ### List out all entries in your favourites list: `favourites`
-Lists out all the entries within your favourites list.
+Lists out all the entries within your favourites list. Multiple similar entries can be present in the list, because of either franchising, or the sake of emphasis.
 
 Format: `favourites`
 
@@ -666,6 +666,9 @@ A: Yes, when you use the 'exit' command, 'Flirt and Fork' will automatically sav
 
 **Q: How can I ensure the best experience with 'Flirt and Fork'?**  
 A: Keep your user details updated and regularly add to your favorites list! Ensure that your location and price inputs align with the provided legend for accurate itinerary generation.
+
+**Q: What languages are available for 'Flirt and Fork'?**  
+A: Only English at the moment.
 
 ## Command Summary
 
