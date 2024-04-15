@@ -103,7 +103,6 @@ public class FindOptionsCommand extends Command {
             default:
                 System.out.println("Invalid option! "
                         + "Please choose 'food', 'activities', 'gifts', 'favourites' or 'cancel'.");
-                System.out.println(HORIZONTAL);
             }
         }
     }
