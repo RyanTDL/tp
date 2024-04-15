@@ -19,7 +19,7 @@ Don’t let another special occasion slip by uncelebrated. Sign up for 'Flirt an
 ## Quick Start
 
 1. Ensure you have Java `11` or above installed in your Computer.
-2. Download the latest version of `Flirt and Fork` from [here](http://link.to/FlirtandFork).
+2. Download the latest version of `Flirt and Fork` from [here](https://github.com/AY2324S2-CS2113-T11-2/tp/releases).
 3. Copy the file to the folder you want to use as the _home folder_
 4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar Flirt_and_Fork.jar` command to run the bot. The GUI should appear in a few seconds.
 5. Type the command in the command box and press Enter to execute it.
