@@ -126,7 +126,7 @@ public class Parser {
             return new ListOptionsCommand();
         default:
             throw new FlirtForkException("Love is a language we all speak, but we didn't quite catch that. \n" +
-                    "Try again? \n" + HORIZONTAL);
+                    "Beware of spelling and unnecessary capitalization! Try again? \n" + HORIZONTAL);
         }
     }
 
