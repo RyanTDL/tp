@@ -23,7 +23,7 @@ Don’t let another special occasion slip by uncelebrated. Sign up for 'Flirt an
 3. Copy the file to the folder you want to use as the _home folder_
 4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar Flirt_and_Fork.jar` command to run the bot. The GUI should appear in a few seconds.
 5. Type the command in the command box and press Enter to execute it.
-6. Refer to the [Features](#features-) section below for an overview of all valid commands.
+6. Refer to the [Features](#features) section below for an overview of all valid commands.
 
 ### Warning
 Do NOT manually tamper with the .txt files in the data folder - `Flirt and Fork` will refuse to cooperate with you if you choose to violate this rule.

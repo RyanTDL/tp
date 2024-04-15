@@ -32,8 +32,8 @@ Here are the enhancements I implemented
 - Helped with maintaining the issue tracker.
 
 ### Review/mentoring contributions
-- Authored several PR reviews
-- Helped some team members with learning how to use shadowJar
+- Authored several PR reviews.
+- Helped some team members with learning how to use shadowJar.
 - Reply as soon as possible whenever team members are asking for assistance in the group chat, providing helpful advice or solving the problem alongside them.
 
 ## Contributions beyond the project team
