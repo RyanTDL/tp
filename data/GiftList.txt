@@ -34,7 +34,7 @@
 [Plant] Succulents and cacti: low-maintenance plants, suitable for those who may not have a green thumb | U | U
 [Plant] DIY terrarium kit: thoughtful choice for someone who enjoys crafts and plants | U | U
 [Plant] Garden starter kit with seeds, pots, and planting instructions | U | U
-[Flower] Red roses: Love and passion (associated with deep affection and desire) | U | U
+[Flower] Red roses: Love and passion (associated with deep affection and desire) | U | C
 [Flower] Tulips: Perfect love (Red - deep love, purple - royalty and elegance) | U | U
 [Flower] Peonies: Romance, prosperity, bashful love. Also a good luck charm for a happy marriage! | U | U
 [Flower] Orchids: Love, beauty, strength, deep enduring passion | U | U
@@ -56,7 +56,7 @@
 [Flower] Ranunculus: Use to convey charm and attractiveness (wonderful gift to say "I am dazzled by your charms") | U | U
 [Beauty] Skincare products | F | U
 [Fashion] Stylish handbag | F | U
-[Accessory] Versatile silk scarf featuring a unique design or pattern | F | U
+[Accessory] Versatile silk scarf featuring a unique design or pattern | F | C
 [Scent] Artisanal Candle Collection | U | U
 [Food] A box of gourmet chocolates with a variety of flavors | U | U
 [Music] Vinyl Record Player | U | U
@@ -79,6 +79,6 @@
 [Entertainment] Collectible models such as cars, planes, or figures related to their interests | M | U
 [Creative] Art or prints especially if they are fans of specific genres or artists | U | U
 [Entertainment] Virtual reality (VR) gaming set for an immersive gaming experience | M | U
-[Creative] 3D Printer for the hobbyist or DIY enthusiasts | M | U
+[Creative] 3D Printer for the hobbyist or DIY enthusiasts | M | C
 [Entertainment] Language learning software subscription | U | U
 [Accessory] DIY mechanical keyboard or custom keycaps that match the recipient's style or interests | U | U

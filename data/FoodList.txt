@@ -75,7 +75,7 @@ Sushi Spectacular | E | P | J | U
 Spanish Fiesta | E | P | S | U
 Gourmet Grille | E | P | W | U
 Thai Elite | E | P | T | U
-Korean Kuisine | E | P | K | U
+Korean Kuisine | E | P | K | C
 Knead To Eat | E | P | W | U
 Craze Kitchen | E | P | I | U
 Neptune | E | P | I | U
@@ -149,7 +149,7 @@ Burger Labo | S | A | W | U
 Old Habits Cafe | S | A | W | U
 South End Italian | S | P | I | U
 Sushi Scene | S | P | J | U
-Southern Spain | S | P | S | U
+Southern Spain | S | P | S | C
 Gourmet Southern Grill | S | P | W | U
 Thai Fine Dining | S | P | T | U
 Southern Korean Delights | S | P | K | U
