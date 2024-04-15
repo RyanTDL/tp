@@ -302,8 +302,10 @@ public class Ui {
             try {
                 String input = readCommand();
                 age = Integer.parseInt(input);
-                if (age <= 0) {
+                if ((age == 0 && input.length() == 1) || (age < 0)) {
                     showMessage("Age cannot be negative or zero. Please enter a valid age.");
+                } else if (input.startsWith("0")) {
+                    showMessage("Age cannot start with '0'. Please enter a valid age.");
                 } else if (age >= 120) {
                     showMessage("I don't think you're older than the oldest person alive...re-enter your age!");
                 } else {
