@@ -361,17 +361,19 @@ Example of usage: `idea`
 
 Expected outcome:
 ```
-You can do Marina Bay Sands Helicopter Tour and have a nice meal at 49 Seats
-Satisfied with the date idea? [Yes/No]
+You can do Sentosa Cable Car Standard Ride and have a nice meal at Northeast Nibbles
+-> Are you satisfied with the date idea? [Yes/No]
+-> Else, feel free to stop idea generation using the command 'cancel'
 ```
 ---
 - If user input `no`: Regenerates another date idea for users to consider.
 
 Expected outcome:
 ```
-Regenerating a new date idea..
-You can do Punggol Settlement Seafood Dining and have a nice meal at Pura Barsa
-Satisfied with the date idea? [Yes/No]
+Regenerating a new date idea...
+You can do Lee Kong Chian Natural History Museum Visit and have a nice meal at Seoul Street
+-> Are you satisfied with the date idea? [Yes/No]
+-> Else, feel free to stop idea generation using the command 'cancel'
 ```
 ---
 - If user input `yes`: Choice will be confirmed and saved in view history for ease of reference.
@@ -381,6 +383,16 @@ Expected outcome:
 That's great! Enjoy your date!
 ```
 Note: Saving an idea to history does not work as of v2.0 and will be fixed in the next release.
+
+---
+- If user input `cancel`: Terminates the current session and exits the idea generation process.
+  - This command can be used at any point during the idea suggestion interaction if the user decides not to continue or wishes to start over.
+
+Expected outcome:
+```
+Taking a break? That's okay! 
+Remember, great ideas need their own time to unwrap.
+```
 
 ### Generate a randomised gift suggestion: `gift`
 Generates a randomised gift idea either with or without any gender specifications.
@@ -513,6 +525,8 @@ Adds a new restaurant to your favourites list.
 Format: `food [name of eatery], [LOCATION], [PRICE], [CUISINE]`
 
 > Note: The `location` and `price` must be within the [legend](#Legend).  
+> Repeated food entries are allowed to be added to favourites. We understand that franchises like Mcdonalds and KFC do not have unique names for their respective branches, and thus we will consider them as separate entries. For example, 'food KFC, E, C, W' could be used to represent both the KFC branch at Pasir Ris Park and at East Coast Park. The responsibility is on the user to ensure that the naming convention used allows him/her to clearly differentiate the food 
+> For the name of eatery, commas are not allowed. Kindly omit commas used. For example, `food Steak, Burgers and Cocktail Bar, C, S, J` should be replaced with `food Steak Burgers and Cocktail Bar, C, S, J`
 > Ensure the formatting is strictly followed, including the spacing and the capitalisation for location, price and cuisine. 
 > For example, `food Omakase, C, S, J` will be registered, whereas `food Omakase,C,S,J` or 'food Omakase, c, s, j' will result in an error.
 
@@ -534,6 +548,8 @@ Adds a new activity to your favourites list.
 Format: `activity [name of activity], [LOCATION], [PRICE]`
 
 > Note: The `location` and `price` must be within the [legend](#Legend).  
+> Repeated activity entries are allowed to be added to favourites. We understand that common activities like cycling or swimming do not have unique names, and thus we will consider them as separate entries. For example, 'activity cycling, E, C' could be used to represent both cycling at Pasir Ris Park and cycling at East Coast Park. The responsibility is on the user to ensure that the naming convention used allows him/her to clearly differentiate the activity 
+> For the name of activity, commas are not allowed. Kindly omit commas used. For example, `activity Bizad Run, 2024 Version, C, S` should be replaced with `activity Bizad Run 2024 Version, C, S`
 > Ensure the formatting is strictly followed, including the spacing and the capitalisation for location and price. 
 > For example, `activity Paragliding, C, S` will be registered, whereas `activity Paragliding,C,S` or 'activity Paragliding, c, s' will result in an error.
 
@@ -549,7 +565,7 @@ You've collected 2 romantic treasures!
 ```
 
 ### List out all entries in your favourites list: `favourites`
-Lists out all the entries within your favourites list.
+Lists out all the entries within your favourites list. Multiple similar entries can be present in the list, because of either franchising, or the sake of emphasis.
 
 Format: `favourites`
 
@@ -667,17 +683,21 @@ A: Yes, when you use the 'exit' command, 'Flirt and Fork' will automatically sav
 **Q: How can I ensure the best experience with 'Flirt and Fork'?**  
 A: Keep your user details updated and regularly add to your favorites list! Ensure that your location and price inputs align with the provided legend for accurate itinerary generation.
 
+**Q: What languages are available for 'Flirt and Fork'?**  
+A: Only English at the moment.
+
 ## Command Summary
 
 * Display all possible commands: `help`
 * List out all restaurants or activities: `list`
 * Update your personal information: `me`
 * Generate a randomised date idea: `idea`
+* Generate a randomised gift idea: `gift`
 * Generate a date itinerary, based on preferred location and budget: `itinerary [PREFERRED_LOCATION], [PREFERRED_PRICE]`
 * Generate a smart date itinerary, based on your user profile: `smart`
 * Add a restaurant to your favourites: `food [name of eatery], [LOCATION], [PRICE], [CUISINE]`
 * Add an activity to your favourites: `activity [name of activity], [LOCATION], [PRICE]`
-* Find an entry from your favourites list: `find [keyword]`
+* Find an entry based on a keyword: `find`
 * List out all entries in your favourites list: `favourites`
 * Delete an entry from your favourites list: `delete [index of entry]`
 * List out all entries from your past date history: `history`

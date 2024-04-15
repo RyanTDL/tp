@@ -20,6 +20,7 @@ import seedu.flirtfork.UserDetails;
  * The user is allowed to cancel the command if idea generation is not satisfactory
  */
 public class GenerateIdeaCommand extends Command {
+    private static final String HORIZONTAL = "____________________________________________________________";
 
     /**
      * Generates a date idea consisting of a random food item and a random activity.
@@ -40,12 +41,14 @@ public class GenerateIdeaCommand extends Command {
                         Storage storage, UserDetails userDetails, GiftList gifts) {
         String userSatisfied;
 
+
         Food food = foods.getRandomFood();
         Activity activity = activities.getRandomActivity();
         Idea idea = new Idea(food, activity);
         System.out.println(idea);
         System.out.println("-> Are you satisfied with the date idea? [Yes/No]");
         System.out.println("-> Else, feel free to stop idea generation using the command 'cancel'");
+        System.out.println(HORIZONTAL);
 
         while (true) {
             userSatisfied = ui.readCommand().toLowerCase();
@@ -65,6 +68,7 @@ public class GenerateIdeaCommand extends Command {
                 System.out.println(idea);
                 System.out.println("-> Are you satisfied with the date idea? [Yes/No]");
                 System.out.println("-> Else, feel free to stop idea generation using the command 'cancel'");
+                System.out.println(HORIZONTAL);
             } else if (userSatisfied.equalsIgnoreCase("cancel")) {
                 System.out.println("Taking a break? That's okay! \n" +
                         "Remember, great ideas need their own time to unwrap.");

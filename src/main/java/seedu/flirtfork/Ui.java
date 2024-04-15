@@ -85,7 +85,7 @@ public class Ui {
             "B: Budget\n" +
             "A: Affordable\n" +
             "P: Pricey\n" +
-            "S: Special Ocassions Only\n\n" +
+            "S: Special Occasions Only\n\n" +
 
             "LEGEND (cuisines):\n" +
             "W: Western\n" +
@@ -217,7 +217,7 @@ public class Ui {
     }
 
     public static void listFood() {
-        System.out.println("HMMMM Let's see what food is theree: ");
+        System.out.println("HMMMM Let's see what food is there: ");
     }
 
     public static void listActivities() {
@@ -258,6 +258,7 @@ public class Ui {
     public void ideaSatisfiedErrorMessage() {
         System.out.println("Sorry, I didn't quite understand that :(");
         System.out.println("Please enter either yes or no or cancel the generation process");
+        System.out.println(HORIZONTAL);
     }
 
     /**
@@ -301,8 +302,10 @@ public class Ui {
             try {
                 String input = readCommand();
                 age = Integer.parseInt(input);
-                if (age <= 0) {
+                if ((age == 0 && input.length() == 1) || (age < 0)) {
                     showMessage("Age cannot be negative or zero. Please enter a valid age.");
+                } else if (input.startsWith("0")) {
+                    showMessage("Age cannot start with '0'. Please enter a valid age.");
                 } else if (age >= 120) {
                     showMessage("I don't think you're older than the oldest person alive...re-enter your age!");
                 } else {
@@ -432,6 +435,10 @@ public class Ui {
      * @return true if the input string represents a valid date, false otherwise.
      */
     public boolean isValidDate(String input) {
+        if (!input.matches("\\d{2}/\\d{2}/\\d{4}")) {
+            showMessage("Please enter a valid date in dd/mm/yyyy format.");
+            return false;
+        }
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         dateFormat.setLenient(false);
         try {
