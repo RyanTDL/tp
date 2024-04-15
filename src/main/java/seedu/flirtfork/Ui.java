@@ -433,6 +433,10 @@ public class Ui {
      * @return true if the input string represents a valid date, false otherwise.
      */
     public boolean isValidDate(String input) {
+        if (!input.matches("\\d{2}/\\d{2}/\\d{4}")) {
+            showMessage("Please enter a valid date in dd/mm/yyyy format.");
+            return false;
+        }
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         dateFormat.setLenient(false);
         try {
