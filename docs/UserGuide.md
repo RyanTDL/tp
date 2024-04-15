@@ -688,6 +688,7 @@ A: Only English at the moment.
 * List out all restaurants or activities: `list`
 * Update your personal information: `me`
 * Generate a randomised date idea: `idea`
+* Generate a randomised gift idea: `gift`
 * Generate a date itinerary, based on preferred location and budget: `itinerary [PREFERRED_LOCATION], [PREFERRED_PRICE]`
 * Generate a smart date itinerary, based on your user profile: `smart`
 * Add a restaurant to your favourites: `food [name of eatery], [LOCATION], [PRICE], [CUISINE]`
