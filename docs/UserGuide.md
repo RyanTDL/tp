@@ -29,7 +29,7 @@ Don’t let another special occasion slip by uncelebrated. Sign up for 'Flirt an
 Do NOT manually tamper with the .txt files in the data folder - `Flirt and Fork` will refuse to cooperate with you if you choose to violate this rule.
 
 ## Features
-This section provides an overview of the available commands in the application, grouped by their functionality. Detailed usage instructions for each command can be found in the [Usage](#Usage) section.
+This section provides an overview of the available commands in the application, grouped by their functionality. Detailed usage instructions for each command can be found in the [Usage](#usage) section.
 
 ### Discovering Options
 Explore potential dining, activities, and gifts options.
