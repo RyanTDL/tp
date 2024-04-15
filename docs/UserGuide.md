@@ -525,6 +525,8 @@ Adds a new restaurant to your favourites list.
 Format: `food [name of eatery], [LOCATION], [PRICE], [CUISINE]`
 
 > Note: The `location` and `price` must be within the [legend](#Legend).  
+> Repeated food entries are allowed to be added to favourites. We understand that franchises like Mcdonalds and KFC do not have unique names for their respective branches, and thus we will consider them as separate entries. For example, 'food KFC, E, C, W' could be used to represent both the KFC branch at Pasir Ris Park and at East Coast Park. The responsibility is on the user to ensure that the naming convention used allows him/her to clearly differentiate the food 
+> For the name of eatery, commas are not allowed. Kindly omit commas used. For example, `food Steak, Burgers and Cocktail Bar, C, S, J` should be replaced with `food Steak Burgers and Cocktail Bar, C, S, J`
 > Ensure the formatting is strictly followed, including the spacing and the capitalisation for location, price and cuisine. 
 > For example, `food Omakase, C, S, J` will be registered, whereas `food Omakase,C,S,J` or 'food Omakase, c, s, j' will result in an error.
 
@@ -546,6 +548,8 @@ Adds a new activity to your favourites list.
 Format: `activity [name of activity], [LOCATION], [PRICE]`
 
 > Note: The `location` and `price` must be within the [legend](#Legend).  
+> Repeated activity entries are allowed to be added to favourites. We understand that common activities like cycling or swimming do not have unique names, and thus we will consider them as separate entries. For example, 'activity cycling, E, C' could be used to represent both cycling at Pasir Ris Park and cycling at East Coast Park. The responsibility is on the user to ensure that the naming convention used allows him/her to clearly differentiate the activity 
+> For the name of activity, commas are not allowed. Kindly omit commas used. For example, `activity Bizad Run, 2024 Version, C, S` should be replaced with `activity Bizad Run 2024 Version, C, S`
 > Ensure the formatting is strictly followed, including the spacing and the capitalisation for location and price. 
 > For example, `activity Paragliding, C, S` will be registered, whereas `activity Paragliding,C,S` or 'activity Paragliding, c, s' will result in an error.
 

@@ -72,7 +72,7 @@ public class Parser {
                 return new DeleteFavouritesCommand(index);
             } catch (NumberFormatException e) {
                 throw new FlirtForkException("OOPS! Invalid format, " +
-                        "please specify task index correctly! \n" + HORIZONTAL);
+                        "please specify the index of the entry correctly! \n" + HORIZONTAL);
             }
         case "find":
             if (!arguments.trim().isEmpty()) {
