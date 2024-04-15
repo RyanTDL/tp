@@ -361,17 +361,19 @@ Example of usage: `idea`
 
 Expected outcome:
 ```
-You can do Marina Bay Sands Helicopter Tour and have a nice meal at 49 Seats
-Satisfied with the date idea? [Yes/No]
+You can do Sentosa Cable Car Standard Ride and have a nice meal at Northeast Nibbles
+-> Are you satisfied with the date idea? [Yes/No]
+-> Else, feel free to stop idea generation using the command 'cancel'
 ```
 ---
 - If user input `no`: Regenerates another date idea for users to consider.
 
 Expected outcome:
 ```
-Regenerating a new date idea..
-You can do Punggol Settlement Seafood Dining and have a nice meal at Pura Barsa
-Satisfied with the date idea? [Yes/No]
+Regenerating a new date idea...
+You can do Lee Kong Chian Natural History Museum Visit and have a nice meal at Seoul Street
+-> Are you satisfied with the date idea? [Yes/No]
+-> Else, feel free to stop idea generation using the command 'cancel'
 ```
 ---
 - If user input `yes`: Choice will be confirmed and saved in view history for ease of reference.
@@ -381,6 +383,16 @@ Expected outcome:
 That's great! Enjoy your date!
 ```
 Note: Saving an idea to history does not work as of v2.0 and will be fixed in the next release.
+
+---
+- If user input `cancel`: Terminates the current session and exits the idea generation process.
+  - This command can be used at any point during the idea suggestion interaction if the user decides not to continue or wishes to start over.
+
+Expected outcome:
+```
+Taking a break? That's okay! 
+Remember, great ideas need their own time to unwrap.
+```
 
 ### Generate a randomised gift suggestion: `gift`
 Generates a randomised gift idea either with or without any gender specifications.
