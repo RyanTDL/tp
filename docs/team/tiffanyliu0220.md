@@ -36,7 +36,8 @@ Given below are my contributions to the project enhancements
 - added in JUnit Tests for favourites-related commands
 - added in JavaDoc documentation for classes such as 'Storage', 'Ui', etc. 
 - added in JavaDoc documentation for commands such as 'AddActivityCommand', 'AddFoodCommand', 'DeleteFavourites', etc.
-- fixed bug issues raised in PE dry run and updated/resolved the issue tracker for team bugs
+- fixed bug issues raised in PE dry run and peer testing 
+- updated/resolved the issue tracker for team bugs
 
 ### Review/Mentoring contributions
 - tried to assist team members whenever I can in the group chat
