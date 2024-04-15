@@ -25,6 +25,9 @@ Don’t let another special occasion slip by uncelebrated. Sign up for 'Flirt an
 5. Type the command in the command box and press Enter to execute it.
 6. Refer to the [Features](#Features) section below for an overview of all valid commands.
 
+### Warning
+Do NOT manually tamper with the .txt files in the data folder - `Flirt and Fork` will refuse to cooperate with you if you choose to violate this rule.
+
 ## Features 
 
 This section provides an overview of the available commands in the application, grouped by their functionality. Detailed usage instructions for each command can be found in the [Usage](#Usage) section.
@@ -273,7 +276,6 @@ User then needs to input their search keyword here.
 * The `keyword` can contain multiple words.
 
 Example of usage:
-`sushi`
 `BBQ`
 
 Expected outcome:
@@ -293,7 +295,6 @@ User then needs to input their search keyword here.
 * The `keyword` can contain multiple words.
 
 Example of usage:
-`walk`
 `concert`
 
 Expected outcome:
@@ -315,7 +316,6 @@ User then needs to input their search keyword here.
 * The `keyword` can contain multiple words.
 
 Example of usage:
-`bracelet`
 `ring`
 
 Expected outcome:
@@ -338,7 +338,6 @@ User then needs to input their search keyword here.
 
 Example of usage:
 `bbq`
-`paragliding`
 
 Expected outcome:
 ```
@@ -521,7 +520,7 @@ Example of usage:
 Expected outcome:
 ```
 Cupid's arrow strikes! This is now in your favourites. 
-[Food] East Coast BBQ
+East Coast BBQ
 You've collected 1 romantic treasures!
 ```
 
@@ -537,12 +536,12 @@ Format: `activity [name of activity], [location], [price]`
 
 Example of usage: 
 `activity Paragliding, C, S`
-`activity Bungee Jumping at Sentose, S, P`
+`activity Bungee Jumping at Sentosa, S, P`
 
 Expected outcome:
 ```
 Cupid's arrow strikes! This is now in your favourites. 
-[Activity] Paragliding
+Paragliding
 You've collected 2 romantic treasures!
 ```
 
@@ -554,8 +553,8 @@ Format: `favourites`
 Expected outcome:
 ```
 Drumroll, please! Presenting the stars of your romantic sky: 
-1. [Food] East Coast BBQ
-2. [Activity] Paragliding
+1. East Coast BBQ
+2. Paragliding
 ```
 
 ### Delete an entry from your favourites list: `delete`

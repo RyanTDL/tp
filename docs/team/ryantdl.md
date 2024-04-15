@@ -43,3 +43,10 @@ Given below are my contributions to the project enhancements
     - Setting up thr GitHub team organisation/repository
     - Maintaining the issue tracker
     - Documenting product scope and requirements  
+
+## Review/Mentoring contributions:
+- Provided assistance to team members when asking for help online
+- Reviewed pull requests to ensure consistency and quality of code.
+
+## Contributions beyond the project team:
+- Exchanged JAR files with team F15-2. Did extensive user testing and raised relevant issues found during testing, using the [issue tracker](https://github.com/AY2324S2-CS2113-F15-2/tp/issues). 
