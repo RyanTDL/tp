@@ -72,6 +72,8 @@ Refer to the [Usage](#Usage) section below for details of each command.
 
 ## Usage
 
+For all the commands below, please only use English Language to test them out. 
+
 ### Put in your personal details: `me`
 Takes in personal details like cuisine preferences, location and anniversary date if applicable to personalise the user experience. It is also automatically run on first start-up and has to be completed before using the app. Entering `me` subsequently provide the option to update user deatils.
 
