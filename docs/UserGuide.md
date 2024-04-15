@@ -680,7 +680,7 @@ A: Only English at the moment.
 * Generate a smart date itinerary, based on your user profile: `smart`
 * Add a restaurant to your favourites: `food [name of eatery], [LOCATION], [PRICE], [CUISINE]`
 * Add an activity to your favourites: `activity [name of activity], [LOCATION], [PRICE]`
-* Find an entry from your favourites list: `find [keyword]`
+* Find an entry based on a keyword: `find`
 * List out all entries in your favourites list: `favourites`
 * Delete an entry from your favourites list: `delete [index of entry]`
 * List out all entries from your past date history: `history`
