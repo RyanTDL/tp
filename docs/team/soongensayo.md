@@ -28,6 +28,7 @@ You can find my code contributions in the [tP Code Dashboard](https://nus-cs2113
 - Proposed App Idea and provided the initial working database for Flirt and Fork.
 - Drafted the initial draft of the Demo video script.
 - Helped to maintain the Issue Tracker.
+- Fixed bugs discovered during PE Dry Run and Peer Testing.
 
 ### Review Contributions
 - Reviewed pull requests to ensure consistency and quality of code, and gave encouraging comments. Example: [PR #152](https://github.com/AY2324S2-CS2113-T11-2/tp/pull/152#issuecomment-2045649394)
