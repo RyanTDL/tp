@@ -32,8 +32,9 @@ Here are the enhancements I implemented
 - Helped with maintaining the issue tracker.
 
 ### Review/mentoring contributions
+- Authored several PR reviews
 - Helped some team members with learning how to use shadowJar
-- Try to reply immediately whenever team members are asking for assistance in the group chat.
+- Reply as soon as possible whenever team members are asking for assistance in the group chat, providing helpful advice or solving the problem alongside them.
 
 ## Contributions beyond the project team
 - Highlighted 7-8 non-trivial bugs for the team I was assigned to during the PE dry run. This ranged from serious issues with the User Guide pdf formatting to feature flaws. Also gave advice on not merging PRs that do not pass the GitHub checks since merged PRs with failed checks could be seen on their User Guide.

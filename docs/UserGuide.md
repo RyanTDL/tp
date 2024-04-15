@@ -19,11 +19,11 @@ Don’t let another special occasion slip by uncelebrated. Sign up for 'Flirt an
 ## Quick Start
 
 1. Ensure you have Java `11` or above installed in your Computer.
-2. Download the latest version of `Flirt and Fork` from [here](http://link.to/FlirtandFork).
+2. Download the latest version of `Flirt and Fork` from [here](https://github.com/AY2324S2-CS2113-T11-2/tp/releases).
 3. Copy the file to the folder you want to use as the _home folder_
 4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar Flirt_and_Fork.jar` command to run the bot. The GUI should appear in a few seconds.
 5. Type the command in the command box and press Enter to execute it.
-6. Refer to the [Features](#Features) section below for an overview of all valid commands.
+6. Refer to the [Features](#features-) section below for an overview of all valid commands.
 
 ### Warning
 Do NOT manually tamper with the .txt files in the data folder - `Flirt and Fork` will refuse to cooperate with you if you choose to violate this rule.
@@ -68,7 +68,7 @@ Extra commands to facilitate application use.
 There is only one command to terminate the program:
 - `exit`: Saves all current data and exits the program.
 
-Refer to the [Usage](#Usage) section below for details of each command.
+Refer to the [Usage](#usage) section below for details of each command.
 
 ## Usage
 
@@ -457,6 +457,7 @@ The itinerary selected will be based off the user's indicated location and budge
 
 Format: `itinerary [LOCATION], [PRICE]`
 
+
 > Note: The `location` and `price` must be within the [legend](#Legend).
 > Ensure the formatting is strictly followed, including the spacing and the capitalisation for location and price.
 > For example, ``itinerary E, A` will be registered, whereas `itinerary E,A` or `itinerary e, a` will result in an error.
@@ -524,7 +525,7 @@ Adds a new restaurant to your favourites list.
 
 Format: `food [NAME_OF_EATERY], [LOCATION], [PRICE], [CUISINE]`
 
-> Note: The `location` and `price` must be within the [legend](#Legend).  
+> Note: The `location` and `price` must be within the [legend](#legend).  
 > Repeated food entries are allowed to be added to favourites. We understand that franchises like Mcdonalds and KFC do not have unique names for their respective branches, and thus we will consider them as separate entries. For example, 'food KFC, E, C, W' could be used to represent both the KFC branch at Pasir Ris Park and at East Coast Park. The responsibility is on the user to ensure that the naming convention used allows him/her to clearly differentiate the food 
 > For the name of eatery, commas are not allowed. Kindly omit commas used. For example, `food Steak, Burgers and Cocktail Bar, C, S, J` should be replaced with `food Steak Burgers and Cocktail Bar, C, S, J`
 > Ensure the formatting is strictly followed, including the spacing and the capitalisation for location, price and cuisine. 
@@ -547,7 +548,7 @@ Adds a new activity to your favourites list.
 
 Format: `activity [NAME_OF_ACTIVITY], [LOCATION], [PRICE]`
 
-> Note: The `location` and `price` must be within the [legend](#Legend).  
+> Note: The `location` and `price` must be within the [legend](#legend).  
 > Repeated activity entries are allowed to be added to favourites. We understand that common activities like cycling or swimming do not have unique names, and thus we will consider them as separate entries. For example, 'activity cycling, E, C' could be used to represent both cycling at Pasir Ris Park and cycling at East Coast Park. The responsibility is on the user to ensure that the naming convention used allows him/her to clearly differentiate the activity 
 > For the name of activity, commas are not allowed. Kindly omit commas used. For example, `activity Bizad Run, 2024 Version, C, S` should be replaced with `activity Bizad Run 2024 Version, C, S`
 > Ensure the formatting is strictly followed, including the spacing and the capitalisation for location and price. 
