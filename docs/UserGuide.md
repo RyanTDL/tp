@@ -70,7 +70,6 @@ There is only one command to terminate the program:
 Refer to the [Usage](#usage) section below for details of each command.
 
 ## Usage
-
 For all the commands below, please only use English Language to test them out. 
 
 ### Put in your personal details: `me`
