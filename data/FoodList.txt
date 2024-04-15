@@ -75,7 +75,7 @@ Sushi Spectacular | E | P | J | U
 Spanish Fiesta | E | P | S | U
 Gourmet Grille | E | P | W | U
 Thai Elite | E | P | T | U
-Korean Kuisine | E | P | K | C
+Korean Kuisine | E | P | K | U
 Knead To Eat | E | P | W | U
 Craze Kitchen | E | P | I | U
 Neptune | E | P | I | U
@@ -149,7 +149,7 @@ Burger Labo | S | A | W | U
 Old Habits Cafe | S | A | W | U
 South End Italian | S | P | I | U
 Sushi Scene | S | P | J | U
-Southern Spain | S | P | S | C
+Southern Spain | S | P | S | U
 Gourmet Southern Grill | S | P | W | U
 Thai Fine Dining | S | P | T | U
 Southern Korean Delights | S | P | K | U
@@ -225,7 +225,7 @@ Thai Treats | ACC | B | T | U
 Fusion Fast | ACC | B | F | U
 Accessible Diner | ACC | B | W | U
 Lenu | ACC | B | C | U
-A&W | ACC | B | W | C
+A&W | ACC | B | W | U
 Monster Curry | ACC | B | J | U
 All-around Bistro | ACC | A | F | U
 Sushi Stop | ACC | A | J | U
@@ -234,7 +234,7 @@ Easy Italian | ACC | A | I | U
 Thai Table | ACC | A | T | U
 Sichuan Station | ACC | A | C | U
 Pepperlunch | ACC | A | J | U
-Crystal Jade | C | P | C | C
+Crystal Jade | C | P | C | U
 Shi Li Fang | ACC | A | C | U
 Soup Spoon | ACC | A | W | U
 Italian Impressions | ACC | P | I | U
