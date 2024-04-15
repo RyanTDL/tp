@@ -382,7 +382,6 @@ Expected outcome:
 ```
 That's great! Enjoy your date!
 ```
-Note: Saving an idea to history does not work as of v2.0 and will be fixed in the next release.
 
 ---
 - If user input `cancel`: Terminates the current session and exits the idea generation process.
@@ -485,7 +484,6 @@ Expected outcome:
 ```
 That's great! Enjoy your date!
 ```
-Note: Saving an itinerary to history does not work as of v2.0 and will be fixed in the next release.
 
 ### Generate a smart itinerary, based on your user profile: `smart`
 The smart command generates a personalised itinerary tailored to your preferences, including your favorite cuisine and preferred location. This feature takes into account the details you've provided to Flirt and Fork to recommend a combination of food and activities that align with your tastes and interests.
