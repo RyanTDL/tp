@@ -162,7 +162,7 @@ Henderson Waves Bridge Walk | W | S | U
 Henderson Waves Bridge Walk | S | C | U
 Labrador Park Nature Walk | S | C | U
 Sentosa Beach Leisure Day | S | C | U
-Mount Faber Park Hiking | S | C | U
+Mount Faber Park Hiking | S | C | C
 VivoCity Waterfront Promenade | S | C | U
 Sentosa Nature Discovery Trail | S | C | U
 Fort Siloso Skywalk Visit | S | C | U
@@ -187,7 +187,7 @@ Adventure Cove Waterpark Full Access | S | A | U
 Wings of Time Show Standard Seating | S | A | U
 Sentosa Island Tour | S | A | U
 Siloso Beach Bars Evening Out | S | A | U
-S.E.A. Aquarium Standard Entry | S | A | U
+S.E.A. Aquarium Standard Entry | S | A | C
 Siloso Beach Party | S | A | U
 Sentosa Island Beach Clubs | S | A | U
 Marina Bay Sands Fine Dining | S | A | U

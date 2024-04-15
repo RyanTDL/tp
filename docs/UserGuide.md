@@ -455,10 +455,10 @@ Remember, great ideas need their own time to unwrap.
 Generates out a date itinerary, consisting of 2 restaurants and 2 activities from our curated collection.
 The itinerary selected will be based off the user's indicated location and budget.
 
-Format: `itinerary [PREFERRED_LOCATION], [PREFERRED_PRICE]`
+Format: `itinerary [LOCATION], [PRICE]`
 
-> Note: The `preferred location` and `preferred price` must be within the [legend](#Legend).
-> Ensure the formatting is strictly followed, including the spacing and the capitalisation for preferred location and preferred price.
+> Note: The `location` and `price` must be within the [legend](#Legend).
+> Ensure the formatting is strictly followed, including the spacing and the capitalisation for location and price.
 > For example, ``itinerary E, A` will be registered, whereas `itinerary E,A` or `itinerary e, a` will result in an error.
 Example of usage: `itinerary E, A`
 
@@ -522,7 +522,7 @@ By using the smart command, you can discover new and exciting ways to enjoy your
 ### Add a restaurant to your favourites: `food`
 Adds a new restaurant to your favourites list.
 
-Format: `food [name of eatery], [LOCATION], [PRICE], [CUISINE]`
+Format: `food [NAME_OF_EATERY], [LOCATION], [PRICE], [CUISINE]`
 
 > Note: The `location` and `price` must be within the [legend](#Legend).  
 > Repeated food entries are allowed to be added to favourites. We understand that franchises like Mcdonalds and KFC do not have unique names for their respective branches, and thus we will consider them as separate entries. For example, 'food KFC, E, C, W' could be used to represent both the KFC branch at Pasir Ris Park and at East Coast Park. The responsibility is on the user to ensure that the naming convention used allows him/her to clearly differentiate the food 
@@ -545,7 +545,7 @@ You've collected 1 romantic treasures!
 ### Add an activity to your favourites: `activity`
 Adds a new activity to your favourites list.
 
-Format: `activity [name of activity], [LOCATION], [PRICE]`
+Format: `activity [NAME_OF_ACTIVITY], [LOCATION], [PRICE]`
 
 > Note: The `location` and `price` must be within the [legend](#Legend).  
 > Repeated activity entries are allowed to be added to favourites. We understand that common activities like cycling or swimming do not have unique names, and thus we will consider them as separate entries. For example, 'activity cycling, E, C' could be used to represent both cycling at Pasir Ris Park and cycling at East Coast Park. The responsibility is on the user to ensure that the naming convention used allows him/her to clearly differentiate the activity 
@@ -579,7 +579,7 @@ Drumroll, please! Presenting the stars of your romantic sky:
 ### Delete an entry from your favourites list: `delete`
 Deletes an entry from your favourites list, based on the entry index inputted.
 
-Format: `delete [index of entry]`
+Format: `delete [INDEX_OF_ENTRY]`
 
 Example of usage: 
 `delete 2`
@@ -693,12 +693,12 @@ A: Only English at the moment.
 * Update your personal information: `me`
 * Generate a randomised date idea: `idea`
 * Generate a randomised gift idea: `gift`
-* Generate a date itinerary, based on preferred location and budget: `itinerary [PREFERRED_LOCATION], [PREFERRED_PRICE]`
+* Generate a date itinerary, based on preferred location and budget: `itinerary [LOCATION], [PRICE]`
 * Generate a smart date itinerary, based on your user profile: `smart`
-* Add a restaurant to your favourites: `food [name of eatery], [LOCATION], [PRICE], [CUISINE]`
-* Add an activity to your favourites: `activity [name of activity], [LOCATION], [PRICE]`
+* Add a restaurant to your favourites: `food [NAME_OF_EATERY], [LOCATION], [PRICE], [CUISINE]`
+* Add an activity to your favourites: `activity [NAME_OF_ACTIVITY], [LOCATION], [PRICE]`
 * Find an entry based on a keyword: `find`
 * List out all entries in your favourites list: `favourites`
-* Delete an entry from your favourites list: `delete [index of entry]`
+* Delete an entry from your favourites list: `delete [INDEX_OF_ENTRY]`
 * List out all entries from your past date history: `history`
 * Exit the program: `exit`
